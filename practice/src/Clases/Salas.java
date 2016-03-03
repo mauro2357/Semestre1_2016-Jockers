@@ -1,10 +1,10 @@
 package Clases;
 
 public class Salas {
-	public String sal_bloque;
-	public String sal_nombre;
-	public int sal_equipos;
-	public String sal_videobeam;
+	private String sal_bloque;
+	private String sal_nombre;
+	private int sal_equipos;
+	private String sal_videobeam;
 	
 	public String getSal_bloque() {
 		return sal_bloque;
