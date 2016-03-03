@@ -4,7 +4,7 @@ public class Aulas {
 	private String nombre_aula;
 	private String nombre_bloque;
 	private int capacidad;
-	private char videobeam;
+	private String videobeam;
 	
 	public String getNombre_aula() {
 		return nombre_aula;
@@ -24,13 +24,13 @@ public class Aulas {
 	public void setCapacidad(int capacidad) {
 		this.capacidad = capacidad;
 	}
-	public char getVideobeam() {
+	public String getVideobeam() {
 		return videobeam;
 	}
-	public void setVideobeam(char videobeam) {
+	public void setVideobeam(String videobeam) {
 		this.videobeam = videobeam;
 	}
-	public Aulas(String nombre_aula,String nombre_bloque,int capacidad,char videobeam){
+	public Aulas(String nombre_aula,String nombre_bloque,String videobeam,int capacidad){
 		this.nombre_aula=nombre_aula;
 		this.nombre_bloque=nombre_bloque;
 		this.capacidad=capacidad;
