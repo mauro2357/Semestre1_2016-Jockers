@@ -10,43 +10,41 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.AgregarFacultades;
-import Clases.Facultades;
+import BD.AgregarParqueaderos;
+import Clases.Parqueaderos;
 
 /**
- * Servlet implementation class ServletFacultades
+ * Servlet implementation class ServletParqueaderos
  */
-@WebServlet("/ServletFacultades")
-public class ServletFacultades extends HttpServlet {
+@WebServlet("/ServletParqueaderos")
+public class ServletParqueaderos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
-     */	
+     */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("Facultades.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("Parqueadero.jsp");
        
         PrintWriter out = response.getWriter();
         try{
-        	String facu_bloque=request.getParameter("facbloque");
-        	String fac_nombre=request.getParameter("facnombre");
-        	int fac_telefono=Integer.parseInt(request.getParameter("factel"));
-        	String fac_horario=request.getParameter("fachora");
-        	String fac_descripcion=request.getParameter("facdesc");
+        	String par_bloque=request.getParameter("parbloque");
+        	String par_nombre=request.getParameter("parnombre");
+        	int par_capacidad=Integer.parseInt(request.getParameter("parcap"));
         	
-        	Facultades nfacultades= new Facultades(facu_bloque, fac_nombre, fac_telefono, fac_horario, fac_descripcion);
-        	AgregarFacultades.agregar(nfacultades);
-        	out.println("Se ha agregado correctamente la facultad");
+        	Parqueaderos nparqueaderos = new Parqueaderos(par_bloque, par_nombre, par_capacidad);
+        	AgregarParqueaderos.agregar(nparqueaderos);
+        	out.println("Se ha agregado el parqueadero correctamente");
         	
-        	}catch (NumberFormatException e) {
-        		request.setAttribute("estado", "error");
-            	}finally {
-            	rd.forward(request, response);
-            	out.close();
+        }catch (NumberFormatException e) {
+            request.setAttribute("estado", "error");
+            }finally {
+             rd.forward(request, response);
+             out.close();
          }
-    }       	
-        
-    public ServletFacultades() {
+    }
+   
+    public ServletParqueaderos() {
         super();
         // TODO Auto-generated constructor stub
     }

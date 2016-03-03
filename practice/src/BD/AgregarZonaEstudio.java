@@ -5,19 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import Clases.Facultades;
+import Clases.ZonaEstudio;
 
-public class AgregarFacultades {
-	public AgregarFacultades(Facultades Facultades1){
+public class AgregarZonaEstudio {
+	public AgregarZonaEstudio(ZonaEstudio ZonaEstudio1){
 	}
-	public static void agregar(Facultades Facultades1){
+	public static void agregar(ZonaEstudio ZonaEstudio1){
 		Connection con;
         Statement st;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
             st = con.createStatement();
-            String i = "INSERT INTO facultades (`fac_bloque`, `fac_nombre`, `fac_telefono`, `fac_horario`, `fac_descripcion`) VALUES ('"+ Facultades1.getFacultades_bloque() + "','"+ Facultades1.getFacultades_nombre() + "'," + Facultades1.getFacultades_telefono() +" ,'"+ Facultades1.getFacultades_horario()+ "','" + Facultades1.getFacultades_descripcion() +"')";
+            String i = "INSERT INTO zona_estudio (`zon_nombre`, `zon_capacidad`, `zon_bloque`) VALUES ('"+ ZonaEstudio1.getZona_nombre() + "',"+ ZonaEstudio1.getZona_capacidad() + ",'" + ZonaEstudio1.getZona_bloque() +"')";
             System.out.println(i);
             st.executeUpdate(i);
             st.close();

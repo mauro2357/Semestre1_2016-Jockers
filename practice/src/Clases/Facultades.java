@@ -1,47 +1,47 @@
 package Clases;
 
 public class Facultades {
-	private String facu_bloque;
-	private String fac_nombre;
-	private int fac_telefono;
-	private String fac_horario;
-	private String fac_descripcion;
+	private String facultades_bloque;
+	private String facultades_nombre;
+	private int facultades_telefono;
+	private String facultades_horario;
+	private String facultades_descripcion;
 	
-	public String getFacu_bloque() {
-		return facu_bloque;
+	public String getFacultades_bloque() {
+		return facultades_bloque;
 	}
-	public void setFacu_bloque(String facu_bloque) {
-		this.facu_bloque = facu_bloque;
+	public void setFacultades_bloque(String facultades_bloque) {
+		this.facultades_bloque = facultades_bloque;
 	}
-	public String getFac_nombre() {
-		return fac_nombre;
+	public String getFacultades_nombre() {
+		return facultades_nombre;
 	}
-	public void setFac_nombre(String fac_nombre) {
-		this.fac_nombre = fac_nombre;
+	public void setFacultades_nombre(String facultades_nombre) {
+		this.facultades_nombre = facultades_nombre;
 	}
-	public int getFac_telefono() {
-		return fac_telefono;
+	public int getFacultades_telefono() {
+		return facultades_telefono;
 	}
-	public void setFac_telefono(int fac_telefono) {
-		this.fac_telefono = fac_telefono;
+	public void setFacultades_telefono(int facultades_telefono) {
+		this.facultades_telefono = facultades_telefono;
 	}
-	public String getFac_horario() {
-		return fac_horario;
+	public String getFacultades_horario() {
+		return facultades_horario;
 	}
-	public void setFac_horario(String fac_horario) {
-		this.fac_horario = fac_horario;
+	public void setFacultades_horario(String facultades_horario) {
+		this.facultades_horario = facultades_horario;
 	}
-	public String getFac_descripcion() {
-		return fac_descripcion;
+	public String getFacultades_descripcion() {
+		return facultades_descripcion;
 	}
-	public void setFac_descripcion(String fac_descripcion) {
-		this.fac_descripcion = fac_descripcion;
+	public void setFacultades_descripcion(String facultades_descripcion) {
+		this.facultades_descripcion = facultades_descripcion;
 	}
-	public Facultades(String facu_bloque, String fac_nombre, int fac_telefono, String fac_horario, String fac_descripcion){
-		this.facu_bloque=facu_bloque;
-		this.fac_nombre=fac_nombre;
-		this.fac_telefono=fac_telefono;
-		this.fac_horario=fac_horario;
-		this.fac_descripcion=fac_descripcion;		
+	public Facultades(String facultades_bloque, String facultades_nombre, int facultades_telefono, String facultades_horario, String facultades_descripcion){
+		this.facultades_bloque=facultades_bloque;
+		this.facultades_nombre=facultades_nombre;
+		this.facultades_telefono=facultades_telefono;
+		this.facultades_horario=facultades_horario;
+		this.facultades_descripcion=facultades_descripcion;
 	}
 }
