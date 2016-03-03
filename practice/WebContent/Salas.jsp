@@ -9,9 +9,13 @@
 <body>
 	<h1>Registre un centro de informatica</h1>
 	<form action="ServletSalas" method ="post">
-	<p>Ingrese el bloque del centro informatico: <input type="text" name="nomsala" value="<%=request.getParameter("nomsala")!=null?request.getParameter("nomsala"):""%>"  />
-	
+	<p>Ingrese el bloque del centro informatico: <input type="text" name="blosala" value="<%=request.getParameter("blosala")!=null?request.getParameter("blosala"):""%>"  />
+	<p>Ingrese el nombre del centro informatico: <input type="text" name="nomsala" value="<%=request.getParameter("nomsala")!=null?request.getParameter("nomsala"):""%>"  />	
+	<p>Ingrese el numero de equipos del centro informatico: <input type="text" name="equisala" value="<%=request.getParameter("equisala")!=null?request.getParameter("equisala"):""%>"  />
+	<p>Cuenta con VideoBeam:
+			Si:<input type="radio" name="salavideobeam" value="s" value="<%=request.getParameter("salavideobeam")!=null && request.getParameter("salavideobeam").equals("n")?"selected='selected'":""%>" checked="checked"/>
+			No:<input type="radio" name="salavideobeam" value="n" value="<%=request.getParameter("salavideobeam")!=null?request.getParameter("salavideobeam"):""%>" />
+	<p><input type="submit" name="Ingresar" value="Ingresar Sala"/>
 </form>
-
 </body>
 </html>

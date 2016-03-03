@@ -3,9 +3,8 @@ package Clases;
 public class Salas {
 	public String sal_bloque;
 	public String sal_nombre;
-	public int sal_telefono;
-	public String sal_horario;
-	public String sal_descripcion;
+	public int sal_equipos;
+	public String sal_videobeam;
 	
 	public String getSal_bloque() {
 		return sal_bloque;
@@ -19,29 +18,22 @@ public class Salas {
 	public void setSal_nombre(String sal_nombre) {
 		this.sal_nombre = sal_nombre;
 	}
-	public int getSal_telefono() {
-		return sal_telefono;
+	public int getSal_equipos() {
+		return sal_equipos;
 	}
-	public void setSal_telefono(int sal_telefono) {
-		this.sal_telefono = sal_telefono;
+	public void setSal_equipos(int sal_equipos) {
+		this.sal_equipos = sal_equipos;
 	}
-	public String getSal_horario() {
-		return sal_horario;
+	public String getSal_videobeam() {
+		return sal_videobeam;
 	}
-	public void setSal_horario(String sal_horario) {
-		this.sal_horario = sal_horario;
-	}
-	public String getSal_descripcion() {
-		return sal_descripcion;
-	}
-	public void setSal_descripcion(String sal_descripcion) {
-		this.sal_descripcion = sal_descripcion;
-	}
-	public Salas(String sal_bloque,String sal_nombre, int sal_telefono, String sal_horario, String sal_descripcion){
+	public void setSal_videobeam(String sal_videobeam) {
+		this.sal_videobeam = sal_videobeam;
+	} 
+	public Salas(String sal_bloque, String sal_nombre, int sal_equipos, String sal_videobeam){
 		this.sal_bloque=sal_bloque;
 		this.sal_nombre=sal_nombre;
-		this.sal_telefono=sal_telefono;
-		this.sal_horario=sal_horario;
-		this.sal_descripcion=sal_descripcion;
+		this.sal_equipos=sal_equipos;
+		this.sal_videobeam=sal_videobeam;
 	}
-}
+}	
