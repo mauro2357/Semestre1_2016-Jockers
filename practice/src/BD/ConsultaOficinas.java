@@ -6,10 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
-
-
 import Clases.Oficinas;
-import Clases.Salas;
 public class ConsultaOficinas {
 	@SuppressWarnings("finally")
 	public static ArrayList<Oficinas> getOficinas() {

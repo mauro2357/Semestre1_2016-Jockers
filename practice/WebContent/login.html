@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>login</title>
+<script type="text/javascript" language="javascript">
+function carga(){
+document.getElementById("usuario").focus();
+}
+
+function valideDatos (){
+	var usuario = document.getElementById("usuario");
+	var contraseña = document.getElementById("contraseña");
+	
+	if (usuario.value==""|| usuario.value== null ){
+		          alert("ingrese su usuario");
+		          usuario.focus() ;
+		          
+	             return false ;
+	
+	
+	    
+       }else if (contraseña.value==""|| contraseña.value==null  ){
+	          alert("ingrese su contraseña");
+	          contraseña.focus() ;
+	          return false;
+	          
+       }else if (contraseña.value=="maps"&& usuario.value=="uco" ){
+    	   return true;
+    	   
+       }
+    	   
+        else{
+    	   alert ("ingreso fallido")
+   		    return false;
+   	          }   
+} 
+
+
+</script>
+
+
+
+
+</head>
+<body onload=carga>
+
+<p> BIENVENIDO</p>
+<p>A</p>
+<p> UCOMAPS</p>
+<form action = "menu.html" method="POST" onsubmit ="return valideDatos();">
+<table align="center">
+<tr> 
+<td colspan="2"  style="background-color: yellow;font-weight:bold ;size:50px" > 
+ingrese su usuario y contraseña 
+</td>
+</tr>
+<!-- campo para ingresar usuario -->
+<tr>
+<td style = "background-color: white;"> 
+usuario: </td>
+<td> 
+<input type="text" name ="usuario"  id="usuario"></td>
+</tr>
+<!-- campo para ingresar contraseña -->
+<tr>
+<td style="background-color: green;font-weight:bold ;size: 12px"> 
+password </td>
+<td> 
+<input type="password" name ="contraseña"  id="contraseña"></td>
+</tr>
+<!-- boton de aceptar o 
+cancelar -->
+<tr>
+<ul>  
+<li><a href="javascript:window.close();">salir</a></li>
+ </ul>
+<td><input type="submit" value ="aceptar" style="background-color: green;font-weight:bold ;size :12px"></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
