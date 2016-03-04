@@ -4,7 +4,8 @@ public class Oficinas {
 	private String ofi_bloque;
 	private String ofi_nombre;
 	private int ofi_telefono;
-	private String ofi_horario;
+	private String ofi_hora_apertura;
+	private String ofi_hora_cierre;
 	private String ofi_descripcion;
 	
 	public String getOfi_bloque() {
@@ -25,23 +26,31 @@ public class Oficinas {
 	public void setOfi_telefono(int ofi_telefono) {
 		this.ofi_telefono = ofi_telefono;
 	}
-	public String getOfi_horario() {
-		return ofi_horario;
+	 
+	public String getOfi_hora_apertura() {
+		return ofi_hora_apertura;
 	}
-	public void setOfi_horario(String ofi_horario) {
-		this.ofi_horario = ofi_horario;
-	} 
+	public void setOfi_hora_apertura(String ofi_hora_apertura) {
+		this.ofi_hora_apertura = ofi_hora_apertura;
+	}
+	public String getOfi_hora_cierre() {
+		return ofi_hora_cierre;
+	}
+	public void setOfi_hora_cierre(String ofi_hora_cierre) {
+		this.ofi_hora_cierre = ofi_hora_cierre;
+	}
 	public String getOfi_descripcion() {
 		return ofi_descripcion;
 	}
 	public void setOfi_descripcion(String ofi_descripcion) {
 		this.ofi_descripcion = ofi_descripcion;
 	}
-	public Oficinas(String ofi_bloque, String ofi_nombre, int ofi_telefono, String ofi_horario, String ofi_descripcion){
+	public Oficinas(String ofi_bloque, String ofi_nombre, int ofi_telefono, String ofi_hora_apertura, String ofi_hora_cierre, String ofi_descripcion){
 		this.ofi_bloque=ofi_bloque;
 		this.ofi_nombre=ofi_nombre;
 		this.ofi_telefono=ofi_telefono;
-		this.ofi_horario=ofi_horario;
+		this.ofi_hora_apertura=ofi_hora_apertura;
+		this.ofi_hora_cierre=ofi_hora_cierre;
 		this.ofi_descripcion=ofi_descripcion;
 	}
 }

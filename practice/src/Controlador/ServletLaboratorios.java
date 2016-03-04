@@ -24,16 +24,18 @@ public class ServletLaboratorios extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("Facultades.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("Laboratorios.jsp");
        
         PrintWriter out = response.getWriter();
         try{
         	String lab_bloque=request.getParameter("blolab");
         	String lab_nombre=request.getParameter("nomlab");
+        	String lab_hora_apertura=request.getParameter("labape");
+        	String lab_hora_cierre=request.getParameter("labcie");
         	String lab_descripcion=request.getParameter("labdesc");
         	String lab_videobeam=request.getParameter("labvideobeam");
         	
-        	Laboratorios nlaboratorios= new Laboratorios(lab_bloque, lab_nombre, lab_descripcion, lab_videobeam);
+        	Laboratorios nlaboratorios= new Laboratorios(lab_bloque, lab_nombre, lab_hora_apertura, lab_hora_cierre, lab_descripcion, lab_videobeam);
         	AgregarLaboratorios.agregar(nlaboratorios);
         	out.println("Se ha agregado el laboratorio correctamente");
         	

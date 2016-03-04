@@ -30,11 +30,12 @@ public class ServletSalas extends HttpServlet {
         try{
         	String sal_bloque = request.getParameter("blosala");
         	String sal_nombre = request.getParameter("nomsala");
-        	int sal_equipos = Integer.parseInt(request.getParameter("equisala"));
+        	int sal_equipos = Integer.parseInt(request.getParameter("equisala"));        	
+        	String sal_hora_apertura= request.getParameter("apesala");
+        	String sal_hora_cierre= request.getParameter("ciesala");
         	String sal_videobeam= request.getParameter("salavideobeam");
         	
-        	
-        	Salas nsalas= new Salas(sal_bloque, sal_nombre, sal_equipos, sal_videobeam);
+        	Salas nsalas= new Salas( sal_nombre, sal_bloque, sal_equipos, sal_hora_apertura, sal_hora_cierre, sal_videobeam);
         	AgregarSalas.agregar(nsalas);
         	out.println("Se ha registrado correctamente el centro informatico");
         	

@@ -3,6 +3,8 @@ package Clases;
 public class Laboratorios {
 	private String lab_bloque;
 	private String lab_nombre;
+	private String lab_hora_apertura;
+	private String lab_hora_cierre;
 	private String lab_descripcion;
 	private String lab_videobeam;
 	
@@ -29,10 +31,24 @@ public class Laboratorios {
 	}
 	public void setLab_videobeam(String lab_videobeam) {
 		this.lab_videobeam = lab_videobeam;
+	}	
+	public String getLab_hora_apertura() {
+		return lab_hora_apertura;
 	}
-	public Laboratorios(String lab_bloque, String lab_nombre, String lab_descripcion, String lab_videobeam){
+	public void setLab_hora_apertura(String lab_hora_apertura) {
+		this.lab_hora_apertura = lab_hora_apertura;
+	}
+	public String getLab_hora_cierre() {
+		return lab_hora_cierre;
+	}
+	public void setLab_hora_cierre(String lab_hora_cierre) {
+		this.lab_hora_cierre = lab_hora_cierre;
+	}
+	public Laboratorios(String lab_bloque, String lab_nombre, String lab_hora_apertura, String lab_hora_cierre, String lab_descripcion, String lab_videobeam){
 		this.lab_bloque=lab_bloque;
 		this.lab_nombre=lab_nombre;
+		this.lab_hora_apertura=lab_hora_apertura;
+		this.lab_hora_cierre=lab_hora_cierre;
 		this.lab_descripcion=lab_descripcion;
 		this.lab_videobeam=lab_videobeam;
 	}

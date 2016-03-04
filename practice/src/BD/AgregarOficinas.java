@@ -17,7 +17,7 @@ public class AgregarOficinas {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
             st = con.createStatement();
-            String i = "INSERT INTO oficinas (`ofi_bloque`, `ofi_nombre`, `ofi_telefono`, `ofi_horario`, `ofi_descripcion`) VALUES ('"+ Oficinas1.getOfi_bloque()+ "','"+ Oficinas1.getOfi_nombre()+ "'," + Oficinas1.getOfi_telefono()+",'"+ Oficinas1.getOfi_horario()+ "','"+ Oficinas1.getOfi_descripcion()+ "')"; 
+            String i = "INSERT INTO oficinas (`ofi_bloque`, `ofi_nombre`, `ofi_telefono`, `ofi_horario_apertura`, `ofi_horario_cierre`, `ofi_descripcion`) VALUES ('"+ Oficinas1.getOfi_bloque()+ "','"+ Oficinas1.getOfi_nombre()+ "'," + Oficinas1.getOfi_telefono()+",'"+ Oficinas1.getOfi_hora_apertura()+ "','"+ Oficinas1.getOfi_hora_cierre()+ "','"+ Oficinas1.getOfi_descripcion()+ "')"; 
             System.out.println(i);
             st.executeUpdate(i);
             st.close();

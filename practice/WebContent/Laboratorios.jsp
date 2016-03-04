@@ -11,6 +11,8 @@
 	<form action ="ServletLaboratorios" method="post">
 	<p>Ingrese el bloque del laboratorio: <input type="text" name="blolab" value="<%=request.getParameter("blolab")!=null?request.getParameter("blolab"):""%>"  />
 	<p>Ingrese el nombre del laboratorio: <input type="text" name="nomlab" value="<%=request.getParameter("nomlab")!=null?request.getParameter("nomlab"):""%>"  />	
+	<p>Ingrese la hora de apertura del laboratorio: <input type="text" name="labape" value="<%=request.getParameter("labape")!=null?request.getParameter("labape"):""%>"  />	
+	<p>Ingrese la hora de cierre del laboratorio: <input type="text" name="labcie" value="<%=request.getParameter("labcie")!=null?request.getParameter("labcie"):""%>"  />	
 	<p>Ingrese una breve descripcion acerca del laboratorio: <input type="text" name="labdesc" value="<%=request.getParameter("labdesc")!=null?request.getParameter("labdesc"):""%>"  />
 	<p>Cuenta con VideoBeam o TV:
 			Si:<input type="radio" name="labvideobeam" value="s" value="<%=request.getParameter("labvideobeam")!=null && request.getParameter("labvideobeam").equals("n")?"selected='selected'":""%>" checked="checked"/>

@@ -12,7 +12,8 @@
 	<p>Ingrese el bloque de la oficina: <input type="text" name="ofibloque" value="<%=request.getParameter("ofibloque")!=null?request.getParameter("ofibloque"):""%>"  />
 	<p>Ingrese el nombre de la oficina: <input type="text" name="ofinombre" value="<%=request.getParameter("ofinombre")!=null?request.getParameter("ofinombre"):""%>"  />	
 	<p>Ingrese el telefono de la oficina: <input type="text" name="ofitel" value="<%=request.getParameter("ofitel")!=null?request.getParameter("ofitel"):""%>"  />
-	<p>Ingrese el horario de la oficina: <input type="text" name="ofihora" value="<%=request.getParameter("ofihora")!=null?request.getParameter("ofihora"):""%>"  />
+	<p>Ingrese la hora de apertura  de la oficina: <input type="text" name="ofiape" value="<%=request.getParameter("ofiape")!=null?request.getParameter("ofiape"):""%>"  />
+	<p>Ingrese la hora de cierre de la oficina: <input type="text" name="oficie" value="<%=request.getParameter("oficie")!=null?request.getParameter("oficie"):""%>"  />
 	<p>Ingrese una breve descripcion de la oficina: <input type="text" name="ofidesc" value="<%=request.getParameter("ofidesc")!=null?request.getParameter("ofidesc"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Oficina"/>	
 </form>

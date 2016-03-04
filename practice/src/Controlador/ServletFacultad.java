@@ -31,10 +31,11 @@ public class ServletFacultad extends HttpServlet {
         	String facultades_bloque=request.getParameter("facubloque");
         	String facultades_nombre=request.getParameter("facunombre");
         	int facultades_telefono=Integer.parseInt(request.getParameter("facutel"));
-        	String facultades_horario=request.getParameter("faculhora");
+        	String facultades_hora_apertura=request.getParameter("faculape");
+        	String facultades_hora_cierre=request.getParameter("faculcie");
         	String facultades_descripcion=request.getParameter("facudesc");
         	
-        	Facultades nfacultades= new Facultades(facultades_bloque, facultades_nombre, facultades_telefono, facultades_horario, facultades_descripcion);
+        	Facultades nfacultades= new Facultades(facultades_bloque, facultades_nombre, facultades_telefono, facultades_hora_apertura, facultades_hora_cierre, facultades_descripcion);
         	AgregarFacultades.agregar(nfacultades);
         	out.println("Se ha agregado la facultad correctamente");
         	

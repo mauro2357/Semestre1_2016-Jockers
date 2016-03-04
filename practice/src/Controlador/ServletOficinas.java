@@ -31,10 +31,11 @@ public class ServletOficinas extends HttpServlet {
         	String ofi_bloque = request.getParameter("ofibloque");
         	String ofi_nombre = request.getParameter("ofinombre");
         	int ofi_telefono = Integer.parseInt(request.getParameter("ofitel"));
-        	String ofi_horario = request.getParameter("ofihora");
+        	String ofi_hora_apertura = request.getParameter("ofiape");
+        	String ofi_hora_cierre = request.getParameter("oficie");
         	String ofi_descripcion = request.getParameter("ofidesc");
         	
-        	Oficinas noficinas = new Oficinas(ofi_bloque, ofi_nombre, ofi_telefono, ofi_horario, ofi_descripcion);
+        	Oficinas noficinas = new Oficinas(ofi_bloque, ofi_nombre, ofi_telefono, ofi_hora_apertura, ofi_hora_cierre, ofi_descripcion);
         	AgregarOficinas.agregar(noficinas);
         	out.println("Se ha agregado la oficina correctamente" );
         	

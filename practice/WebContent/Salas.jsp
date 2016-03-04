@@ -15,6 +15,9 @@
 	<p>Cuenta con VideoBeam:
 			Si:<input type="radio" name="salavideobeam" value="s" value="<%=request.getParameter("salavideobeam")!=null && request.getParameter("salavideobeam").equals("n")?"selected='selected'":""%>" checked="checked"/>
 			No:<input type="radio" name="salavideobeam" value="n" value="<%=request.getParameter("salavideobeam")!=null?request.getParameter("salavideobeam"):""%>" />
+	
+	<p>Ingrese la hora de apertura del centro informatico: <input type="text" name="apesala" value="<%=request.getParameter("apesala")!=null?request.getParameter("apesala"):""%>"  />
+	<p>Ingrese la hora de cierre del centro informatico: <input type="text" name="ciesala" value="<%=request.getParameter("ciesala")!=null?request.getParameter("eciesala"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Sala"/>
 </form>
 </body>

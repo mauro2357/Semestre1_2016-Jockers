@@ -1,10 +1,12 @@
 package Clases;
 
 public class Salas {
-	private String sal_bloque;
-	private String sal_nombre;
-	private int sal_equipos;
-	private String sal_videobeam;
+	public String sal_bloque;
+	public String sal_nombre;
+	public int sal_equipos;
+	public String sal_videobeam;
+	public String sal_hora_apertura;
+	public String sal_hora_cierre;
 	
 	public String getSal_bloque() {
 		return sal_bloque;
@@ -29,11 +31,25 @@ public class Salas {
 	}
 	public void setSal_videobeam(String sal_videobeam) {
 		this.sal_videobeam = sal_videobeam;
-	} 
-	public Salas(String sal_bloque, String sal_nombre, int sal_equipos, String sal_videobeam){
+	} 	
+	public String getSal_hora_apertura() {
+		return sal_hora_apertura;
+	}
+	public void setSal_hora_apertura(String sal_hora_apertura) {
+		this.sal_hora_apertura = sal_hora_apertura;
+	}
+	public String getSal_hora_cierre() {
+		return sal_hora_cierre;
+	}
+	public void setSal_hora_cierre(String sal_hora_cierre) {
+		this.sal_hora_cierre = sal_hora_cierre;
+	}
+	public Salas(String sal_bloque, String sal_nombre, int sal_equipos, String sal_hora_apertura, String sal_hora_cierre, String sal_videobeam){
 		this.sal_bloque=sal_bloque;
 		this.sal_nombre=sal_nombre;
 		this.sal_equipos=sal_equipos;
 		this.sal_videobeam=sal_videobeam;
+		this.sal_hora_apertura=sal_hora_apertura;
+		this.sal_hora_cierre=sal_hora_cierre;
 	}
-}	
+}		
