@@ -17,7 +17,7 @@ public class AgregarSalas {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
             st = con.createStatement();
-            String i = "INSERT INTO salas (`sal_bloque`, `sal_nombre`, `sal_numero_equipos`, `sal_horario_apertura`, `sal_horario_cierre`, `sal_videobeam`) VALUES ('"+ Salas1.getSal_bloque()+ "','"+ Salas1.getSal_nombre()+ "'," + Salas1.getSal_equipos()+",'" + Salas1.getSal_hora_apertura()+ "','"+ Salas1.getSal_hora_cierre()+"','"+ Salas1.getSal_videobeam()+  "')";
+            String i = "INSERT INTO salas (`blo_nombre`, `sal_nombre`, `sal_numero_equipos`, `sal_horario_apertura`, `sal_horario_cierre`, `sal_videobeam`) VALUES ('"+ Salas1.getBlo_nombre()+ "','"+ Salas1.getSal_nombre()+ "'," + Salas1.getSal_equipos()+",'" + Salas1.getSal_hora_apertura()+ "','"+ Salas1.getSal_hora_cierre()+"','"+ Salas1.getSal_videobeam()+  "')";
             System.out.println(i);
             st.executeUpdate(i);
             st.close();
