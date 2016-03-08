@@ -8,12 +8,12 @@ import java.util.ArrayList;
 
 
 
-import Clases.Salas;
+import Clases.SalasAgregar;
 
 public class ConsultaSala {
 	@SuppressWarnings("finally")
-	public static ArrayList<Salas> getSalas() {
-        ArrayList<Salas> lista = new ArrayList<Salas>();
+	public static ArrayList<SalasAgregar> getSalas() {
+        ArrayList<SalasAgregar> lista = new ArrayList<SalasAgregar>();
         Connection con = null;
         Statement sql = null;
         try {
@@ -22,7 +22,7 @@ public class ConsultaSala {
             sql = con.createStatement();
             ResultSet rs = sql.executeQuery("Select  * from salas");
             while (rs.next()) {
-                Salas h = new Salas(rs.getString("blo_nombre"), rs.getString("sal_nombre"), rs.getInt("sal_numero_equipos"), rs.getString("sal_horario_apertura"), rs.getString("sal_horario_cierre"), rs.getString("sal_videobeam"));
+                SalasAgregar h = new SalasAgregar(rs.getString("blo_nombre"), rs.getString("sal_nombre"), rs.getInt("sal_numero_equipos"), rs.getString("sal_horario_apertura"), rs.getString("sal_horario_cierre"), rs.getString("sal_videobeam"));
                 lista.add(h);
             }
             System.out.println("conexion establecida ");

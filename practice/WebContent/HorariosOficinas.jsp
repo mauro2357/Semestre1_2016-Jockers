@@ -4,7 +4,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="BD.ConsultaOficinas"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Clases.Oficinas"%>
+<%@page import="Clases.OficinasAgregar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,15 +16,17 @@
 <body>
 <h1>Consulte los horarios de las oficinas</h1>
 
-	<br>oficina:<select name="oficina"> 
-                    <%ArrayList<Oficinas> lista = ConsultaOficinas.getOficinas();
-                        for (Oficinas h : lista) {
+	<br>Seleccione Oficina:<select name="oficina"> 
+                    <%ArrayList<OficinasAgregar> lista = ConsultaOficinas.getOficinas();
+                        for (OficinasAgregar h : lista) {
                     %>
                     
-                    <option value="<%=h.getOfi_nombre()%>"><%=(h.getOfi_nombre()+" Hora Apertura: "+ h.getOfi_hora_apertura()+ " Hora Cierre: "+ h.getOfi_hora_cierre())%></option>
+                    <option value="<%=h.getOfi_nombre()%>"><%=(h.getOfi_nombre()+", Hora Apertura: "+ h.getOfi_hora_apertura()+ " y Hora Cierre: "+ h.getOfi_hora_cierre())%></option>
                     
                     <%}
                     %>
-                </select><br> 
+                </select><br>
+                <br>
+                <li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
                 </body>
 </html>
