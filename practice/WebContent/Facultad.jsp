@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCOMAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registre la facultad en la aplicacion</h1>
 	<form action="FacultadControlador" method="post">
@@ -32,6 +33,6 @@
 	<p>Ingrese una breve descripcion acerca de la facultad: <input type="text" name="facudesc" value="<%=request.getParameter("facudesc")!=null?request.getParameter("facudesc"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Facultad"/>	
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

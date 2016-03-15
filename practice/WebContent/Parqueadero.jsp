@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCOMAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registre un parqueadero en la aplicacion</h1>
 	<form action="ParqueaderosControlador" method="post">
@@ -28,6 +29,6 @@
                 </select><br>	<p>Ingrese la capacidad del parqueadero: <input type="text" name="parcap" value="<%=request.getParameter("parcap")!=null?request.getParameter("parcap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Parqueadero"/>
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

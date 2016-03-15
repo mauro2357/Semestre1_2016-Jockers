@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCO-MAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registre oficinas en la aplicacion</h1>
 	<form action="OficinasControlador" method="post">
@@ -33,6 +34,6 @@
 	<p>Ingrese una breve descripcion de la oficina: <input type="text" name="ofidesc" value="<%=request.getParameter("ofidesc")!=null?request.getParameter("ofidesc"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Oficina"/>	
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

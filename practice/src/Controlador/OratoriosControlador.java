@@ -14,9 +14,9 @@ import BD.OratoriosRepositorio;
 import Clases.OratoriosAgregar;
 
 /**
- * Servlet implementation class ServletOratorios
+ * Servlet implementation class OratoriosControlador
  */
-@WebServlet("/ServletOratorios")
+@WebServlet("/OratoriosControlador")
 public class OratoriosControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

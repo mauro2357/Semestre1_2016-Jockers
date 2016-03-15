@@ -14,9 +14,9 @@ import BD.SalasRepositorio;
 import Clases.SalasAgregar;
 
 /**
- * Servlet implementation class ServletSalas
+ * Servlet implementation class SalasControlador
  */
-@WebServlet("/ServletSalas")
+@WebServlet("/SalasControlador")
 public class SalasControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

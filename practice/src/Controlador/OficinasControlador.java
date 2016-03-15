@@ -14,9 +14,9 @@ import BD.OficinasRepositorio;
 import Clases.OficinasAgregar;
 
 /**
- * Servlet implementation class ServletOficinas
+ * Servlet implementation class OficinasControlador
  */
-@WebServlet("/ServletOficinas")
+@WebServlet("/OficinasControlador")
 public class OficinasControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

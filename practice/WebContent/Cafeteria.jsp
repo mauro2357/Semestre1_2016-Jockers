@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCOMAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registre la cafeteria en la aplicacion</h1>
 	<form action="CafeteriaControlador" method ="post">
@@ -29,6 +30,6 @@
 	<p>Ingrese la capacidad de la cafeteria: <input type="text" name="cafcap" value="<%=request.getParameter("cafcap")!=null?request.getParameter("cafcap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Cafeteria"/>
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

@@ -2,7 +2,6 @@ package Controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,9 +12,9 @@ import BD.BloquesRepositorio;
 import Clases.BloquesAgregar;
 
 /**
- * Servlet implementation class ServletBloques
+ * Servlet implementation class BloquesControlador
  */
-@WebServlet("/ServletBloques")
+@WebServlet("/BloquesControlador")
 public class BloquesControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -23,7 +22,7 @@ public class BloquesControlador extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("Bloques.jsp");
        
         PrintWriter out = response.getWriter();
         try{

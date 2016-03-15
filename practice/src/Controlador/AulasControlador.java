@@ -14,9 +14,9 @@ import BD.AulasRepositorio;
 import Clases.AulasAgregar;
 
 /**
- * Servlet implementation class ServletAulas
+ * Servlet implementation class AulasControlador
  */
-@WebServlet("/ServletAulas")
+@WebServlet("/AulasControlador")
 public class AulasControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCOMAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registrar un laboratorio en la aplicacion</h1>
 	<form action ="LaboratoriosControlador" method="post">
@@ -33,6 +34,6 @@
 			No:<input type="radio" name="labvideobeam" value="n" value="<%=request.getParameter("labvideobeam")!=null?request.getParameter("labvideobeam"):""%>" />
 	<p><input type="submit" name="Ingresar" value="Ingresar Laboratorio"/>
 	</form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

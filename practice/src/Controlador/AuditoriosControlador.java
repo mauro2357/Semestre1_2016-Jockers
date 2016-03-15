@@ -14,9 +14,9 @@ import BD.AuditoriosRepositorio;
 import Clases.AuditoriosAgregar;
 
 /**
- * Servlet implementation class ServletAuditorios
+ * Servlet implementation class AuditoriosControlador
  */
-@WebServlet("/ServletAuditorios")
+@WebServlet("/AuditoriosControlador")
 public class AuditoriosControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

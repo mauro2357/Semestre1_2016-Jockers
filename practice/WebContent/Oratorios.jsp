@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCOMAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registrar oratorio en la aplicacion</h1>
 	<form action ="OratoriosControlador" method="post">
@@ -28,6 +29,6 @@
                 </select><br>	<p>Ingrese la capacidad del oratorio: <input type="text" name="oratcap" value="<%=request.getParameter("oratcap")!=null?request.getParameter("oratcap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Oratorio"/>
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

@@ -14,9 +14,9 @@ import BD.FacultadesRepositorio;
 import Clases.FacultadesAgregar;
 
 /**
- * Servlet implementation class ServletFacultad
+ * Servlet implementation class FacultadControlador
  */
-@WebServlet("/ServletFacultad")
+@WebServlet("/FacultadControlador")
 public class FacultadControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCOmaps</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 <h1>Consulte los horarios de las oficinas</h1>
 
@@ -27,6 +28,6 @@
                     %>
                 </select><br>
                 <br>
-                <li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+                <a href="MenuPrincipal.html">Regrese al Menu Principal</a>
                 </body>
 </html>

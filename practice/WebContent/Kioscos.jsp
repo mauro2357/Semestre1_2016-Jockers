@@ -1,7 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
 <%@page import="BD.ConsultaBloques"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.BloquesAgregar"%>
@@ -13,23 +9,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCOMAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registrar kiosco en la aplicacion</h1>
 	<form action = "KioscosControlador" method="post">
 	<p>Ingrese el nombre del kiosco: <input type="text" name="kionombre" value="<%=request.getParameter("kionombre")!=null?request.getParameter("kionombre"):""%>"  />	
-	<br>	
-	<br>Selecciones el Bloque:<select name="kiobloque"> 
-                    <%ArrayList<BloquesAgregar> lista = ConsultaBloques.getBloques();
-                        for (BloquesAgregar h : lista) {
-                    %>                    
-                    <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
-                    <%}
-                    %>
-                </select><br>
-
+	<br>
+	<% 
+	ArrayList<BloquesAgregar> listaBloques = ConsultaBloques.getBloques();
+	for (int i=0; i<listaBloques.size(); i++){
+	out.println("<td>"+listaBloques.get(i).getNombre_bloque()+"<td>");
+	}
+	%>
 	<p>Ingrese la capacidad del kiosco: <input type="text" name="kiocap" value="<%=request.getParameter("kiocap")!=null?request.getParameter("kiocap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Kiosco"/>
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

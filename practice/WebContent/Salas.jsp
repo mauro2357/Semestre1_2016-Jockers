@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCO-MAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registre un centro de informatica</h1>
 	<form action="SalasControlador" method ="post">
@@ -34,6 +35,6 @@
 	<p>Ingrese la hora de cierre del centro informatico: <input type="text" name="ciesala" value="<%=request.getParameter("ciesala")!=null?request.getParameter("eciesala"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Sala"/>
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

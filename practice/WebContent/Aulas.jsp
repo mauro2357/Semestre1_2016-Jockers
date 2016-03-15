@@ -13,6 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCO-Maps en construccion..</title>
 	</head>
+	<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 	<body>
 	<h1>Registrar nueva aula en UCO-Maps</h1>
 	<form action="AulasControlador" method ="post">
@@ -32,6 +33,6 @@
 	<p>Ingrese la capacidad del aula: <input type="text" name="aulacap" value="<%=request.getParameter("aulacap")!=null?request.getParameter("aulacap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Aula"/>	
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>

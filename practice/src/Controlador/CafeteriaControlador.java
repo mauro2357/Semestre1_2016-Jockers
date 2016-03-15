@@ -14,9 +14,9 @@ import BD.CafeteriasRepositorio;
 import Clases.CafeteriasAgregar;
 
 /**
- * Servlet implementation class ServletCafeteria
+ * Servlet implementation class CafeteriaControlador
  */
-@WebServlet("/ServletCafeteria")
+@WebServlet("/CafeteriaControlador")
 public class CafeteriaControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

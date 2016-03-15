@@ -14,9 +14,9 @@ import BD.LaboratoriosRepositorio;
 import Clases.LaboratoriosAgregar;
 
 /**
- * Servlet implementation class ServletLaboratorios
+ * Servlet implementation class LaboratoriosControlador
  */
-@WebServlet("/ServletLaboratorios")
+@WebServlet("/LaboratoriosControlador")
 public class LaboratoriosControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

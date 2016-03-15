@@ -14,9 +14,9 @@ import BD.ParqueaderosRepositorio;
 import Clases.ParqueaderosAgregar;
 
 /**
- * Servlet implementation class ServletParqueaderos
+ * Servlet implementation class ParqueaderosControlador
  */
-@WebServlet("/ServletParqueaderos")
+@WebServlet("/ParqueaderosControlador")
 public class ParqueaderosControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

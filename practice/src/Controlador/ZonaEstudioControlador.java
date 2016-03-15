@@ -14,9 +14,9 @@ import BD.ZonaEstudioRepositorio;
 import Clases.ZonaEstudioAgregar;
 
 /**
- * Servlet implementation class ServletZonaEstudio
+ * Servlet implementation class ZonaEstudioControlador
  */
-@WebServlet("/ServletZonaEstudio")
+@WebServlet("/ZonaEstudioControlador")
 public class ZonaEstudioControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

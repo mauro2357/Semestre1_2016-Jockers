@@ -1,8 +1,8 @@
+<%@page import="BD.ConsultaBloques"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="BD.ConsultaBloques"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.BloquesAgregar"%>
 
@@ -14,6 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Aplicacion UCO-MAPS en construccion</title>
 </head>
+<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 	<h1>Registre un auditorio en la aplicacion</h1>
 	<form action ="AuditoriosControlador" method="post">
@@ -30,6 +31,6 @@
 	<p>Ingrese la capacidad del auditorio: <input type="text" name="audcap" value="<%=request.getParameter("audcap")!=null?request.getParameter("audcap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Auditorio"/>
 </form>
-<li><a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<a href="MenuPrincipal.html">Regrese al Menu Principal</a>
 </body>
 </html>
