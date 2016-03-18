@@ -24,11 +24,12 @@
                     %>
                 </select><br>		
 	<p>Ingrese el telefono de la oficina: <input type="text" name="ofitel" value="<%=request.getParameter("ofitel")!=null?request.getParameter("ofitel"):""%>"  />
-<br>Seleccione el horario de la oficina:<select name="horaofi"> 
+	<br>
+	<br>Seleccione el horario de la oficina:<select name="horaofi"> 
                     <%ArrayList<HorarioAgregar> listaHorarios = (ArrayList<HorarioAgregar>)request.getAttribute("Horario");
                         for (HorarioAgregar h : listaHorarios) {
                     %>                    
-                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde"+ h.getHorario_inicio()+", Hasta"+ h.getHorario_fin())%></option>                    
+                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde: "+ h.getHorario_inicio()+", Hasta: "+ h.getHorario_fin())%></option>                    
                     <%}
                     %>
                 </select><br>

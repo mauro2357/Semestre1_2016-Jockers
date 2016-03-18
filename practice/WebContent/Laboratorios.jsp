@@ -27,7 +27,7 @@
                     <%ArrayList<HorarioAgregar> listaHorarios = (ArrayList<HorarioAgregar>)request.getAttribute("Horario");
                         for (HorarioAgregar h : listaHorarios) {
                     %>                    
-                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde"+ h.getHorario_inicio()+", Hasta"+ h.getHorario_fin())%></option>                    
+                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde: "+ h.getHorario_inicio()+", Hasta: "+ h.getHorario_fin())%></option>                    
                     <%}
                     %>
                 </select><br>

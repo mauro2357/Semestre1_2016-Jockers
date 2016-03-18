@@ -19,7 +19,7 @@ public class ConsultaOficinas {
             sql = con.createStatement();
             ResultSet rs = sql.executeQuery("Select * from oficinas");
             while (rs.next()) {
-                OficinasAgregar h = new OficinasAgregar(rs.getString("bloque_nombre"), rs.getString("ofi_nombre"), rs.getInt("ofi_telefono"), rs.getString("horario_nombre"), rs.getString("ofi_descripcion"));
+                OficinasAgregar h = new OficinasAgregar(rs.getString("blo_nombre"), rs.getString("ofi_nombre"), rs.getInt("ofi_telefono"), rs.getString("hor_nombre"), rs.getString("ofi_descripcion"));
                 lista.add(h);
             }
             System.out.println("conexion establecida ");
