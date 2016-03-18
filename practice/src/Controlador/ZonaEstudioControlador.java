@@ -1,15 +1,13 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import BD.ConsultaBloques;
 import BD.ZonaEstudioRepositorio;
 import Clases.ZonaEstudioAgregar;
 
@@ -24,24 +22,21 @@ public class ZonaEstudioControlador extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("ZonaEstudio.jsp");
-        
-        PrintWriter out = response.getWriter();
+        RequestDispatcher rd = request.getRequestDispatcher("ZonaEstudio.jsp");        
         try{
-        	String zona_nombre=request.getParameter("zonanom");
+        	String nombre_bloque=request.getParameter("zonanom");
         	int zona_capacidad=Integer.parseInt(request.getParameter("zonacap"));
-        	String zona_bloque=request.getParameter("zonablo");
+        	String zona_bloque=request.getParameter("zonablo");        	
         	
-        	ZonaEstudioAgregar nzonaestudio = new ZonaEstudioAgregar(zona_nombre, zona_capacidad, zona_bloque);
-        	ZonaEstudioRepositorio.agregar(nzonaestudio);
-        	out.println("Se ha agregado la zona de estudio correctamente");
-        	
+        	ZonaEstudioAgregar nzonaestudio = new ZonaEstudioAgregar(nombre_bloque, zona_capacidad, zona_bloque);
+        	ZonaEstudioRepositorio.agregar(nzonaestudio);       	       	
         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
+        }finally {
+        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
              rd.forward(request, response);
-             out.close();
-         }
+           }
     }
 	
     public ZonaEstudioControlador() {
@@ -54,7 +49,9 @@ public class ZonaEstudioControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		RequestDispatcher rd = request.getRequestDispatcher("ZonaEstudio.jsp");
+		request.setAttribute("bloques", ConsultaBloques.getBloques());
+        rd.forward(request, response);
 	}
 
 	/**

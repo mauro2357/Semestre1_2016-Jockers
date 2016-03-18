@@ -1,15 +1,13 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import BD.ConsultaBloques;
 import BD.FacultadesRepositorio;
 import Clases.FacultadesAgregar;
 
@@ -25,25 +23,21 @@ public class FacultadControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("Facultad.jsp");
-        
-        PrintWriter out = response.getWriter();
         try{
         	String facultades_bloque=request.getParameter("facubloque");
         	String facultades_nombre=request.getParameter("facunombre");
         	int facultades_telefono=Integer.parseInt(request.getParameter("facutel"));
-        	String facultades_hora_apertura=request.getParameter("faculape");
-        	String facultades_hora_cierre=request.getParameter("faculcie");
+        	String facultades_horario=request.getParameter("facuhora");        	
         	String facultades_descripcion=request.getParameter("facudesc");
         	
-        	FacultadesAgregar nfacultades= new FacultadesAgregar(facultades_bloque, facultades_nombre, facultades_telefono, facultades_hora_apertura, facultades_hora_cierre, facultades_descripcion);
-        	FacultadesRepositorio.agregar(nfacultades);
-        	out.println("Se ha agregado la facultad correctamente");
-        	
+        	FacultadesAgregar nfacultades= new FacultadesAgregar(facultades_bloque, facultades_nombre, facultades_telefono, facultades_horario, facultades_descripcion);
+        	FacultadesRepositorio.agregar(nfacultades);        	
         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
-             rd.forward(request, response);
-             out.close();
+        }finally {
+        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
+             rd.forward(request, response);            
          }
     }
     
@@ -57,7 +51,9 @@ public class FacultadControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+        RequestDispatcher rd = request.getRequestDispatcher("Facultad.jsp");
+        request.setAttribute("bloques", ConsultaBloques.getBloques());
+        rd.forward(request, response);
 	}
 
 	/**

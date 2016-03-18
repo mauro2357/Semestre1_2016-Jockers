@@ -17,7 +17,7 @@ public class LaboratoriosRepositorio {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
             st = con.createStatement();
-            String i = "INSERT INTO laboratorios (`lab_bloque`, `lab_nombre`, `lab_descripcion`,`lab_horario_apertura`, `lab_horario_cierre`, `lab_videobeam_tv`) VALUES ('"+ Laboratorios1.getLab_bloque()+ "','"+ Laboratorios1.getLab_nombre()+ "','" + Laboratorios1.getLab_descripcion()+ "','" +Laboratorios1.getLab_hora_apertura()+ "','"+ Laboratorios1.getLab_hora_cierre()+ "','" + Laboratorios1.getLab_videobeam() +"')"; 
+            String i = "INSERT INTO laboratorios (`blo_nombre`, `lab_nombre`, `lab_descripcion`, `hor_nombre`, `lab_videobeam_tv`) VALUES ('"+ Laboratorios1.getNombre_bloque()+ "','"+ Laboratorios1.getLab_nombre()+ "','" + Laboratorios1.getLab_descripcion()+ "','" +Laboratorios1.getHorario_nombre()+ "','" + Laboratorios1.getLab_videobeam() +"')"; 
             System.out.println(i);
             st.executeUpdate(i);
             st.close();

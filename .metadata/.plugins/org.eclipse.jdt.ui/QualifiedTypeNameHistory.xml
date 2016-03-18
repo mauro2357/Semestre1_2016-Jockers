@@ -2,8 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="BD.KioscosRepositorio"/>
 <fullyQualifiedTypeName name="Clases.KioscosAgregar"/>
-<fullyQualifiedTypeName name="BD.ConsultaBloques"/>
-<fullyQualifiedTypeName name="Clases.BloquesAgregar"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
@@ -13,4 +11,14 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Clases.BloquesAgregar"/>
+<fullyQualifiedTypeName name="BD.ConsultaBloques"/>
+<fullyQualifiedTypeName name="BD.MateriaRepositorio"/>
+<fullyQualifiedTypeName name="BD.ConsultaHorarios"/>
+<fullyQualifiedTypeName name="Clases.FacultadesAgregar"/>
+<fullyQualifiedTypeName name="BD.ConsultaFacultades"/>
+<fullyQualifiedTypeName name="BD.ConsultaOficinas"/>
+<fullyQualifiedTypeName name="BD.ConsultaSala"/>
+<fullyQualifiedTypeName name="Clases.MateriaAgregar"/>
 </qualifiedTypeNameHistroy>

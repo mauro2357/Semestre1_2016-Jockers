@@ -1,15 +1,13 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import BD.ConsultaBloques;
 import BD.ParqueaderosRepositorio;
 import Clases.ParqueaderosAgregar;
 
@@ -24,23 +22,20 @@ public class ParqueaderosControlador extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("Parqueadero.jsp");
-       
-        PrintWriter out = response.getWriter();
-        try{
-        	String par_bloque=request.getParameter("parbloque");
+       RequestDispatcher rd = request.getRequestDispatcher("Parqueadero.jsp");
+       try{
+        	String nombre_bloque=request.getParameter("parbloque");
         	String par_nombre=request.getParameter("parnombre");
         	int par_capacidad=Integer.parseInt(request.getParameter("parcap"));
         	
-        	ParqueaderosAgregar nparqueaderos = new ParqueaderosAgregar(par_bloque, par_nombre, par_capacidad);
+        	ParqueaderosAgregar nparqueaderos = new ParqueaderosAgregar(nombre_bloque, par_nombre, par_capacidad);
         	ParqueaderosRepositorio.agregar(nparqueaderos);
-        	out.println("Se ha agregado el parqueadero correctamente");
-        	
         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
+        }finally {
+        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
              rd.forward(request, response);
-             out.close();
          }
     }
    
@@ -54,7 +49,9 @@ public class ParqueaderosControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+	      RequestDispatcher rd = request.getRequestDispatcher("Parqueadero.jsp");
+	      request.setAttribute("bloques", ConsultaBloques.getBloques());
+          rd.forward(request, response);
 	}
 
 	/**

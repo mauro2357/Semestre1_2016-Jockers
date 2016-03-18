@@ -17,7 +17,7 @@ public class KioscosRepositorio {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
             st = con.createStatement();
-            String i = "INSERT INTO kioscos (`kio_bloque`, `kio_nombre`, `kio_capacidad`) VALUES ('"+ Kioscos1.getKio_bloque() + "','"+ Kioscos1.getKio_nombre()+ "'," + Kioscos1.getKio_capacidad() + ")";
+            String i = "INSERT INTO kioscos (`blo_nombre`, `kio_nombre`, `kio_capacidad`) VALUES ('"+ Kioscos1.getNombre_bloque() + "','"+ Kioscos1.getKio_nombre()+ "'," + Kioscos1.getKio_capacidad() + ")";
             System.out.println(i);
             st.executeUpdate(i);
             st.close();

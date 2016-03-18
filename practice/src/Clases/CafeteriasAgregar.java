@@ -1,16 +1,9 @@
 package Clases;
 
-public class CafeteriasAgregar {
-	private String caf_bloque;
+public class CafeteriasAgregar extends BloquesPrincipal {
 	private String caf_nombre;
 	private int caf_capacidad;
-	
-	public String getCaf_bloque() {
-		return caf_bloque;
-	}
-	public void setCaf_bloque(String caf_bloque) {
-		this.caf_bloque = caf_bloque;
-	}
+		
 	public String getCaf_nombre() {
 		return caf_nombre;
 	}
@@ -23,8 +16,8 @@ public class CafeteriasAgregar {
 	public void setCaf_capacidad(int caf_capacidad) {
 		this.caf_capacidad = caf_capacidad;
 	}
-	public CafeteriasAgregar(String caf_bloque, String caf_nombre, int caf_capacidad){
-		this.caf_bloque=caf_bloque;
+	public CafeteriasAgregar(String nombre_bloque, String caf_nombre, int caf_capacidad){
+		super(nombre_bloque);
 		this.caf_nombre=caf_nombre;
 		this.caf_capacidad=caf_capacidad;
 	}

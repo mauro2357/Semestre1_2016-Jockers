@@ -1,16 +1,14 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import BD.CafeteriasRepositorio;
+import BD.ConsultaBloques;
 import Clases.CafeteriasAgregar;
 
 /**
@@ -25,23 +23,21 @@ public class CafeteriaControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("Cafeteria.jsp");
-        
-        PrintWriter out = response.getWriter();
-        try{
-        	String caf_bloque= request.getParameter("cafbloque");
+		try{
+        	String nombre_bloque= request.getParameter("cafbloque");
         	String caf_nombre= request.getParameter("cafnombre");
         	int caf_capacidad= Integer.parseInt(request.getParameter("cafcap"));
         	
-        	CafeteriasAgregar ncafeterias = new CafeteriasAgregar(caf_bloque, caf_nombre, caf_capacidad);
+        	CafeteriasAgregar ncafeterias = new CafeteriasAgregar(nombre_bloque, caf_nombre, caf_capacidad);
         	CafeteriasRepositorio.agregar(ncafeterias);
-        	out.println("Se ha ingresado correctamente la cafeteria");
         	
         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
-             rd.forward(request, response);
-             out.close();
-         }
+        }finally {
+        	request.setAttribute("bloques", ConsultaBloques.getBloques());
+            rd.forward(request, response);              
+        }
     }        
     
     public CafeteriaControlador() {
@@ -53,8 +49,10 @@ public class CafeteriaControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
-	}
+        RequestDispatcher rd = request.getRequestDispatcher("Cafeteria.jsp");
+        request.setAttribute("bloques", ConsultaBloques.getBloques());
+        rd.forward(request, response);
+        }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

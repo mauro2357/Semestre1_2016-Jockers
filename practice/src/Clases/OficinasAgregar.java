@@ -1,19 +1,11 @@
 package Clases;
 
-public class OficinasAgregar {
-	private String ofi_bloque;
+public class OficinasAgregar extends BloquesPrincipal {
 	private String ofi_nombre;
 	private int ofi_telefono;
-	private String ofi_hora_apertura;
-	private String ofi_hora_cierre;
+	private String horario_nombre;
 	private String ofi_descripcion;
 	
-	public String getOfi_bloque() {
-		return ofi_bloque;
-	}
-	public void setOfi_bloque(String ofi_bloque) {
-		this.ofi_bloque = ofi_bloque;
-	}
 	public String getOfi_nombre() {
 		return ofi_nombre;
 	}
@@ -27,17 +19,11 @@ public class OficinasAgregar {
 		this.ofi_telefono = ofi_telefono;
 	}
 	 
-	public String getOfi_hora_apertura() {
-		return ofi_hora_apertura;
+	public String getHorario_nombre() {
+		return horario_nombre;
 	}
-	public void setOfi_hora_apertura(String ofi_hora_apertura) {
-		this.ofi_hora_apertura = ofi_hora_apertura;
-	}
-	public String getOfi_hora_cierre() {
-		return ofi_hora_cierre;
-	}
-	public void setOfi_hora_cierre(String ofi_hora_cierre) {
-		this.ofi_hora_cierre = ofi_hora_cierre;
+	public void setHorario_nombre(String horario_nombre) {
+		this.horario_nombre = horario_nombre;
 	}
 	public String getOfi_descripcion() {
 		return ofi_descripcion;
@@ -45,12 +31,11 @@ public class OficinasAgregar {
 	public void setOfi_descripcion(String ofi_descripcion) {
 		this.ofi_descripcion = ofi_descripcion;
 	}
-	public OficinasAgregar(String ofi_bloque, String ofi_nombre, int ofi_telefono, String ofi_hora_apertura, String ofi_hora_cierre, String ofi_descripcion){
-		this.ofi_bloque=ofi_bloque;
+	public OficinasAgregar(String nombre_bloque, String ofi_nombre, int ofi_telefono, String horario_nombre, String ofi_descripcion){
+		super(nombre_bloque);
 		this.ofi_nombre=ofi_nombre;
 		this.ofi_telefono=ofi_telefono;
-		this.ofi_hora_apertura=ofi_hora_apertura;
-		this.ofi_hora_cierre=ofi_hora_cierre;
+		this.horario_nombre=horario_nombre;
 		this.ofi_descripcion=ofi_descripcion;
 	}
 }

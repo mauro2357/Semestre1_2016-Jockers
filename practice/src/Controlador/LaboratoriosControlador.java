@@ -1,7 +1,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BD.ConsultaBloques;
+import BD.ConsultaHorarios;
 import BD.LaboratoriosRepositorio;
 import Clases.LaboratoriosAgregar;
 
@@ -25,25 +26,22 @@ public class LaboratoriosControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("Laboratorios.jsp");
-       
-        PrintWriter out = response.getWriter();
         try{
-        	String lab_bloque=request.getParameter("blolab");
+        	String nombre_bloque=request.getParameter("blolab");
         	String lab_nombre=request.getParameter("nomlab");
-        	String lab_hora_apertura=request.getParameter("labape");
-        	String lab_hora_cierre=request.getParameter("labcie");
+        	String horario_nombre=request.getParameter("horalab");
         	String lab_descripcion=request.getParameter("labdesc");
         	String lab_videobeam=request.getParameter("labvideobeam");
         	
-        	LaboratoriosAgregar nlaboratorios= new LaboratoriosAgregar(lab_bloque, lab_nombre, lab_hora_apertura, lab_hora_cierre, lab_descripcion, lab_videobeam);
+        	LaboratoriosAgregar nlaboratorios= new LaboratoriosAgregar(nombre_bloque, lab_nombre, horario_nombre, lab_descripcion, lab_videobeam);
         	LaboratoriosRepositorio.agregar(nlaboratorios);
-        	out.println("Se ha agregado el laboratorio correctamente");
-        	
         }catch (NumberFormatException e) {
-    		request.setAttribute("estado", "error");
-        	}finally {
-        	rd.forward(request, response);
-        	out.close();
+        	e.printStackTrace();
+            request.setAttribute("estado", "error");
+        }finally {
+        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
+        	 request.setAttribute("Horario", ConsultaHorarios.getHorario());
+             rd.forward(request, response);
         	}
 	}
         
@@ -57,7 +55,10 @@ public class LaboratoriosControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		RequestDispatcher rd = request.getRequestDispatcher("Laboratorios.jsp");	
+		request.setAttribute("bloques", ConsultaBloques.getBloques());
+   	 	request.setAttribute("Horario", ConsultaHorarios.getHorario());
+        rd.forward(request, response);		
 	}
 
 	/**

@@ -1,10 +1,6 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="BD.ConsultaBloques"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.BloquesAgregar"%>
+<%@page import="Clases.HorarioAgregar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,20 +16,26 @@
 	<p>Ingrese el nombre de la oficina: <input type="text" name="ofinombre" value="<%=request.getParameter("ofinombre")!=null?request.getParameter("ofinombre"):""%>"  />	
 	<br>
 	<br>Selecciones el Bloque: <select name="ofibloque"> 
-                    <%ArrayList<BloquesAgregar> lista = ConsultaBloques.getBloques();
+                    <%ArrayList<BloquesAgregar> lista = (ArrayList<BloquesAgregar>)request.getAttribute("bloques");
                         for (BloquesAgregar h : lista) {
                     %>                    
                     <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
                     <%}
                     %>
-                </select><br>	
-	
+                </select><br>		
 	<p>Ingrese el telefono de la oficina: <input type="text" name="ofitel" value="<%=request.getParameter("ofitel")!=null?request.getParameter("ofitel"):""%>"  />
-	<p>Ingrese la hora de apertura  de la oficina: <input type="text" name="ofiape" value="<%=request.getParameter("ofiape")!=null?request.getParameter("ofiape"):""%>"  />
-	<p>Ingrese la hora de cierre de la oficina: <input type="text" name="oficie" value="<%=request.getParameter("oficie")!=null?request.getParameter("oficie"):""%>"  />
+<br>Seleccione el horario de la oficina:<select name="horaofi"> 
+                    <%ArrayList<HorarioAgregar> listaHorarios = (ArrayList<HorarioAgregar>)request.getAttribute("Horario");
+                        for (HorarioAgregar h : listaHorarios) {
+                    %>                    
+                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde"+ h.getHorario_inicio()+", Hasta"+ h.getHorario_fin())%></option>                    
+                    <%}
+                    %>
+                </select><br>
 	<p>Ingrese una breve descripcion de la oficina: <input type="text" name="ofidesc" value="<%=request.getParameter("ofidesc")!=null?request.getParameter("ofidesc"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Oficina"/>	
 </form>
 <a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<%request.getAttribute("estado"); %>
 </body>
 </html>

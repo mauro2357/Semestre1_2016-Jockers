@@ -18,11 +18,11 @@
 <h1>Consulte los horarios de los Centros de Informática</h1>
 
 	<br>Seleccione Sala:<select name="sala"> 
-                    <%ArrayList<SalasAgregar> lista = ConsultaSala.getSalas();
+                    <%ArrayList<SalasAgregar> lista =  (ArrayList<SalasAgregar>)request.getAttribute("salas");
                         for (SalasAgregar h : lista) {
                     %>
                     
-                    <option value="<%=h.getSal_nombre()%>"><%=(h.getSal_nombre()+", Hora Apertura: "+ h.getSal_hora_apertura()+ " y Hora Cierre: "+ h.getSal_hora_cierre())%></option>
+                    <option value="<%=h.getSal_nombre()%>"><%=(h.getSal_nombre()+", Horario: "+ h.getHorario_nombre())%></option>
                   	<%}
                     %>
                 </select><br>

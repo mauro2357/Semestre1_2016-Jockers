@@ -1,8 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="BD.ConsultaOficinas"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.OficinasAgregar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -18,11 +13,11 @@
 <h1>Consulte los horarios de las oficinas</h1>
 
 	<br>Seleccione Oficina:<select name="oficina"> 
-                    <%ArrayList<OficinasAgregar> lista = ConsultaOficinas.getOficinas();
+                    <%ArrayList<OficinasAgregar> lista = (ArrayList<OficinasAgregar>)request.getAttribute("oficinas");
                         for (OficinasAgregar h : lista) {
                     %>
                     
-                    <option value="<%=h.getOfi_nombre()%>"><%=(h.getOfi_nombre()+", Hora Apertura: "+ h.getOfi_hora_apertura()+ " y Hora Cierre: "+ h.getOfi_hora_cierre())%></option>
+                    <option value="<%=h.getOfi_nombre()%>"><%=(h.getOfi_nombre()+", Horario: "+ h.getHorario_nombre())%></option>
                     
                     <%}
                     %>

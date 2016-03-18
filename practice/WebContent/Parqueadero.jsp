@@ -1,8 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="BD.ConsultaBloques"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.BloquesAgregar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -20,15 +15,17 @@
 	<p>Ingrese el nombre del parqueadero: <input type="text" name="parnombre" value="<%=request.getParameter("parnombre")!=null?request.getParameter("parnombre"):""%>"  />	
 	<br>	
 	<br>Selecciones el Bloque:<select name="parbloque"> 
-                    <%ArrayList<BloquesAgregar> lista = ConsultaBloques.getBloques();
+                    <%ArrayList<BloquesAgregar> lista = (ArrayList<BloquesAgregar>)request.getAttribute("bloques");
                         for (BloquesAgregar h : lista) {
                     %>                    
                     <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
                     <%}
                     %>
-                </select><br>	<p>Ingrese la capacidad del parqueadero: <input type="text" name="parcap" value="<%=request.getParameter("parcap")!=null?request.getParameter("parcap"):""%>"  />
+                </select><br>	
+    <p>Ingrese la capacidad del parqueadero: <input type="text" name="parcap" value="<%=request.getParameter("parcap")!=null?request.getParameter("parcap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Parqueadero"/>
 </form>
 <a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<%request.getAttribute("estado"); %>
 </body>
 </html>

@@ -1,8 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="BD.ConsultaBloques"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.BloquesAgregar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -20,13 +15,13 @@
 	<p>Ingrese el nombre del aula: <input type="text" name="nomaula" value="<%=request.getParameter("nomaula")!=null?request.getParameter("nomaula"):""%>"  />
 	<br>
 	<br>Selecciones el Bloque:<select name="aulabloque"> 
-                    <%ArrayList<BloquesAgregar> lista = ConsultaBloques.getBloques();
+                   <%ArrayList<BloquesAgregar> lista = (ArrayList<BloquesAgregar>)request.getAttribute("bloques");
                         for (BloquesAgregar h : lista) {
                     %>                    
                     <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
                     <%}
                     %>
-                </select><br>
+                </select><br>	
 	<p>Cuenta el aula con VideoBeam o TV:
 		Si:<input type="radio" name="videobeamtv" value="s" value="<%=request.getParameter("videobeamtv")!=null && request.getParameter("videobeamtv").equals("n")?"selected='selected'":""%>" checked="checked"/>
 		No:<input type="radio" name="videobeamtv" value="n" value="<%=request.getParameter("videobeamtv")!=null?request.getParameter("videobeamtv"):""%>" /> 
@@ -34,5 +29,6 @@
 	<p><input type="submit" name="Ingresar" value="Ingresar Aula"/>	
 </form>
 <a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<%request.getAttribute("estado"); %>
 </body>
 </html>

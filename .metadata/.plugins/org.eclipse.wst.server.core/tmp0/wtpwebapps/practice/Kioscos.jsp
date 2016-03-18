@@ -1,4 +1,3 @@
-<%@page import="BD.ConsultaBloques"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.BloquesAgregar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -15,15 +14,18 @@
 	<form action = "KioscosControlador" method="post">
 	<p>Ingrese el nombre del kiosco: <input type="text" name="kionombre" value="<%=request.getParameter("kionombre")!=null?request.getParameter("kionombre"):""%>"  />	
 	<br>
-	<% 
-	ArrayList<BloquesAgregar> listaBloques = ConsultaBloques.getBloques();
-	for (int i=0; i<listaBloques.size(); i++){
-	out.println("<td>"+listaBloques.get(i).getNombre_bloque()+"<td>");
-	}
-	%>
+	<br>Selecciones el Bloque:<select name="kiobloque"> 
+                   <%ArrayList<BloquesAgregar> lista = (ArrayList<BloquesAgregar>)request.getAttribute("bloques");
+                        for (BloquesAgregar h : lista) {
+                    %>                    
+                    <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
+                    <%}
+                    %>
+                </select><br>	
 	<p>Ingrese la capacidad del kiosco: <input type="text" name="kiocap" value="<%=request.getParameter("kiocap")!=null?request.getParameter("kiocap"):""%>"  />
 	<p><input type="submit" name="Ingresar" value="Ingresar Kiosco"/>
 </form>
 <a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+<%request.getAttribute("estado"); %>
 </body>
 </html>

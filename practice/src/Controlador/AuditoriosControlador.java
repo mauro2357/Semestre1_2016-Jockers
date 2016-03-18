@@ -1,16 +1,14 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import BD.AuditoriosRepositorio;
+import BD.ConsultaBloques;
 import Clases.AuditoriosAgregar;
 
 /**
@@ -24,24 +22,21 @@ public class AuditoriosControlador extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("Auditorios.jsp");
-        
-        PrintWriter out = response.getWriter();
-        try{
-        	String aud_bloque = request.getParameter("audbloque");
+		RequestDispatcher rd = request.getRequestDispatcher("Auditorios.jsp");
+		try{
+        	String nombre_bloque = request.getParameter("audbloque");
         	String aud_nombre = request.getParameter("audnombre");
         	int aud_capacidad = Integer.parseInt(request.getParameter("audcap"));
         	
-        	AuditoriosAgregar nauditorios= new AuditoriosAgregar(aud_bloque, aud_nombre, aud_capacidad);
-        	AuditoriosRepositorio.agregar(nauditorios);
-        	out.println("Se ha ingresado el auditorio correctamente");
-        	
+        	AuditoriosAgregar nauditorios= new AuditoriosAgregar(nombre_bloque, aud_nombre, aud_capacidad);
+        	AuditoriosRepositorio.agregar(nauditorios);        	
         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
-             rd.forward(request, response);
-             out.close();
-         }
+        }finally {
+        	request.setAttribute("bloques", ConsultaBloques.getBloques());
+            rd.forward(request, response);         
+            }
     }        
     
     public AuditoriosControlador() {
@@ -54,7 +49,9 @@ public class AuditoriosControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		RequestDispatcher rd = request.getRequestDispatcher("Auditorios.jsp");
+		request.setAttribute("bloques", ConsultaBloques.getBloques());
+        rd.forward(request, response);
 	}
 		
 

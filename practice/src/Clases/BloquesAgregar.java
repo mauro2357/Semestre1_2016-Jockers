@@ -1,7 +1,6 @@
 package Clases;
 
-public class BloquesAgregar {	
-	private String nombre_bloque;
+public class BloquesAgregar extends BloquesPrincipal {	
 	private int aulas;
 	private int pisos;
 	private int banos;
@@ -10,14 +9,7 @@ public class BloquesAgregar {
 	private String oratorios;
 	private String parqueaderos;
 	private String zonas_estudio;
-	
-	
-	public String getNombre_bloque() {
-		return nombre_bloque;
-	}	
-	public void setNombre_bloque(String nombre_bloque) {
-		this.nombre_bloque = nombre_bloque;
-	}
+		
 	public int getAulas() {
 		return aulas;
 	}
@@ -67,7 +59,7 @@ public class BloquesAgregar {
 		this.zonas_estudio = zonas_estudio;
 	}
 	public BloquesAgregar(String nombre_bloque,int aulas,int pisos,int banos,int laboratorios_salas,int oficinas_facultades,String oratorios,String parqueaderos,String zonas_estudio){
-		this.nombre_bloque=nombre_bloque;
+		super(nombre_bloque);
 		this.aulas=aulas;
 		this.pisos=pisos;
 		this.banos=banos;

@@ -1,19 +1,11 @@
 package Clases;
 
-public class SalasAgregar {
-	public String blo_nombre;
+public class SalasAgregar extends BloquesPrincipal {
 	public String sal_nombre;
 	public int sal_equipos;
 	public String sal_videobeam;
-	public String sal_hora_apertura;
-	public String sal_hora_cierre;
+	public String horario_nombre;;
 	
-	public String getBlo_nombre() {
-		return blo_nombre;
-	}
-	public void setBlo_nombre(String blo_nombre) {
-		this.blo_nombre = blo_nombre;
-	}
 	public String getSal_nombre() {
 		return sal_nombre;
 	}
@@ -32,24 +24,17 @@ public class SalasAgregar {
 	public void setSal_videobeam(String sal_videobeam) {
 		this.sal_videobeam = sal_videobeam;
 	} 	
-	public String getSal_hora_apertura() {
-		return sal_hora_apertura;
+	public String getHorario_nombre() {
+		return horario_nombre;
 	}
-	public void setSal_hora_apertura(String sal_hora_apertura) {
-		this.sal_hora_apertura = sal_hora_apertura;
+	public void setHorario_nombre(String horario_nombre) {
+		this.horario_nombre = horario_nombre;
 	}
-	public String getSal_hora_cierre() {
-		return sal_hora_cierre;
-	}
-	public void setSal_hora_cierre(String sal_hora_cierre) {
-		this.sal_hora_cierre = sal_hora_cierre;
-	}
-	public SalasAgregar(String blo_nombre, String sal_nombre, int sal_equipos, String sal_hora_apertura, String sal_hora_cierre, String sal_videobeam){
-		this.blo_nombre=blo_nombre;
+	public SalasAgregar(String nombre_bloque, String sal_nombre, int sal_equipos, String horario_nombre, String sal_videobeam){
+		super(nombre_bloque);
 		this.sal_nombre=sal_nombre;
 		this.sal_equipos=sal_equipos;
 		this.sal_videobeam=sal_videobeam;
-		this.sal_hora_apertura=sal_hora_apertura;
-		this.sal_hora_cierre=sal_hora_cierre;
+		this.horario_nombre=horario_nombre;
 	}
 }		

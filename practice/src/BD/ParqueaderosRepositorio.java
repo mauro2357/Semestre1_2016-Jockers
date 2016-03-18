@@ -17,7 +17,7 @@ public class ParqueaderosRepositorio {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
             st = con.createStatement();
-            String i = "INSERT INTO parqueaderos (`par_bloque`, `par_nombre`, `par_capacidad`) VALUES ('"+ Parqueaderos1.getPar_bloque()+ "','"+ Parqueaderos1.getPar_nombre()+ "'," + Parqueaderos1.getPar_capacidad() +")"; 
+            String i = "INSERT INTO parqueaderos (`par_bloque`, `par_nombre`, `par_capacidad`) VALUES ('"+ Parqueaderos1.getNombre_bloque()+ "','"+ Parqueaderos1.getPar_nombre()+ "'," + Parqueaderos1.getPar_capacidad() +")"; 
             System.out.println(i);
             st.executeUpdate(i);
             st.close();

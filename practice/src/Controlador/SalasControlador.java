@@ -1,7 +1,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BD.ConsultaBloques;
+import BD.ConsultaHorarios;
 import BD.SalasRepositorio;
 import Clases.SalasAgregar;
 
@@ -25,25 +26,22 @@ public class SalasControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("Salas.jsp");
-        
-        PrintWriter out = response.getWriter();
         try{
-        	String blo_nombre = request.getParameter("blosala");
+        	String nombre_bloque = request.getParameter("blosala");
         	String sal_nombre = request.getParameter("nomsala");
         	int sal_equipos = Integer.parseInt(request.getParameter("equisala"));        	
-        	String sal_hora_apertura= request.getParameter("apesala");
-        	String sal_hora_cierre= request.getParameter("ciesala");
+        	String horario_nombre= request.getParameter("horasala");
         	String sal_videobeam= request.getParameter("salavideobeam");
         	
-        	SalasAgregar nsalas= new SalasAgregar( blo_nombre, sal_nombre,  sal_equipos, sal_hora_apertura, sal_hora_cierre, sal_videobeam);
+        	SalasAgregar nsalas= new SalasAgregar(nombre_bloque, sal_nombre,  sal_equipos, horario_nombre, sal_videobeam);
         	SalasRepositorio.agregar(nsalas);
-        	out.println("Se ha registrado correctamente el centro informatico");
-        	
         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
+        }finally {
+        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
+        	 request.setAttribute("Horario", ConsultaHorarios.getHorario());
              rd.forward(request, response);
-             out.close();
          }
     }       	
         
@@ -57,7 +55,10 @@ public class SalasControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+        RequestDispatcher rd = request.getRequestDispatcher("Salas.jsp");
+        request.setAttribute("bloques", ConsultaBloques.getBloques());
+   		request.setAttribute("Horario", ConsultaHorarios.getHorario());
+        rd.forward(request, response);
 	}
 
 	/**

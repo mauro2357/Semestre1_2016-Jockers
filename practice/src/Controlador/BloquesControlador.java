@@ -1,7 +1,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,9 +22,7 @@ public class BloquesControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("Bloques.jsp");
-       
-        PrintWriter out = response.getWriter();
-        try{
+       try{
         	String nombre=request.getParameter("nombloque");
             int pisos = Integer.parseInt(request.getParameter("numpiso"));
             int aulas = Integer.parseInt(request.getParameter("numaulas"));            
@@ -35,19 +32,13 @@ public class BloquesControlador extends HttpServlet {
             String oratorio =request.getParameter("oratorios");
             String parqueadero =request.getParameter("parqueo");
             String zona_estudio =request.getParameter("estudio");
-        
           
-  
-            
             BloquesAgregar nbloque=new BloquesAgregar(nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
                 BloquesRepositorio.agregar(nbloque);                
-                out.println("Se ha registrado totalmente el bloque. Gracias por tu aporte");               
-            
-        }catch (NumberFormatException e) {
+         }catch (NumberFormatException e) {
             request.setAttribute("estado", "error");
             }finally {
              rd.forward(request, response);
-             out.close();
          }
     }
 	

@@ -1,8 +1,7 @@
 package Clases;
 
-public class AulasAgregar {	
+public class AulasAgregar extends BloquesPrincipal {	
 	private String nombre_aula;
-	private String nombre_bloque;
 	private int capacidad;
 	private String videobeam;
 	
@@ -11,12 +10,6 @@ public class AulasAgregar {
 	}
 	public void setNombre_aula(String nombre_aula) {
 		this.nombre_aula = nombre_aula;
-	}
-	public String getNombre_bloque() {
-		return nombre_bloque;
-	}
-	public void setNombre_bloque(String nombre_bloque) {
-		this.nombre_bloque = nombre_bloque;
 	}
 	public int getCapacidad() {
 		return capacidad;
@@ -31,10 +24,9 @@ public class AulasAgregar {
 		this.videobeam = videobeam;
 	}
 	public AulasAgregar(String nombre_aula,String nombre_bloque,String videobeam,int capacidad){
+		super(nombre_bloque);
 		this.nombre_aula=nombre_aula;
-		this.nombre_bloque=nombre_bloque;
 		this.capacidad=capacidad;
 		this.videobeam=videobeam;
 	}
 }
-

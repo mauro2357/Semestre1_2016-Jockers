@@ -1,7 +1,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BD.ConsultaBloques;
+import BD.ConsultaHorarios;
 import BD.OficinasRepositorio;
 import Clases.OficinasAgregar;
 
@@ -25,25 +26,22 @@ public class OficinasControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("Oficinas.jsp");
-        
-        PrintWriter out = response.getWriter();
         try{
-        	String ofi_bloque = request.getParameter("ofibloque");
+        	String nombre_bloque = request.getParameter("ofibloque");
         	String ofi_nombre = request.getParameter("ofinombre");
         	int ofi_telefono = Integer.parseInt(request.getParameter("ofitel"));
-        	String ofi_hora_apertura = request.getParameter("ofiape");
-        	String ofi_hora_cierre = request.getParameter("oficie");
+        	String horario_nombre = request.getParameter("horaofi");
         	String ofi_descripcion = request.getParameter("ofidesc");
         	
-        	OficinasAgregar noficinas = new OficinasAgregar(ofi_bloque, ofi_nombre, ofi_telefono, ofi_hora_apertura, ofi_hora_cierre, ofi_descripcion);
+        	OficinasAgregar noficinas = new OficinasAgregar(nombre_bloque, ofi_nombre, ofi_telefono, horario_nombre, ofi_descripcion);
         	OficinasRepositorio.agregar(noficinas);
-        	out.println("Se ha agregado la oficina correctamente" );
-        	
         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
+        }finally {
+        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
+        	 request.setAttribute("Horario", ConsultaHorarios.getHorario());
              rd.forward(request, response);
-             out.close();
          }
     }           	       
             
@@ -57,8 +55,10 @@ public class OficinasControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
-	}		
+        RequestDispatcher rd = request.getRequestDispatcher("Oficinas.jsp");
+		request.setAttribute("bloques", ConsultaBloques.getBloques());
+   	 	request.setAttribute("Horario", ConsultaHorarios.getHorario());
+        rd.forward(request, response);	}		
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

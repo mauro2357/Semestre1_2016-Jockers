@@ -1,15 +1,13 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import BD.ConsultaBloques;
 import BD.OratoriosRepositorio;
 import Clases.OratoriosAgregar;
 
@@ -25,22 +23,19 @@ public class OratoriosControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("Oratorios.jsp");
-        
-        PrintWriter out = response.getWriter();
         try{
-        	String ora_bloque=request.getParameter("orabloque");
+        	String nombre_bloque=request.getParameter("orabloque");
         	String ora_nombre=request.getParameter("oranombre");
         	int ora_capacidad=Integer.parseInt(request.getParameter("oratcap"));
         	
-        	OratoriosAgregar noratorios= new OratoriosAgregar(ora_bloque, ora_nombre, ora_capacidad);
+        	OratoriosAgregar noratorios= new OratoriosAgregar(nombre_bloque, ora_nombre, ora_capacidad);
         	OratoriosRepositorio.agregar(noratorios);
-        	out.println("Se ha agregado el oratorio correctamente");
-        	
-        }catch (NumberFormatException e) {
+         }catch (NumberFormatException e) {
+        	e.printStackTrace();
             request.setAttribute("estado", "error");
-            }finally {
+        }finally {
+        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
              rd.forward(request, response);
-             out.close();
          }
     }        
     
@@ -54,7 +49,9 @@ public class OratoriosControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+        RequestDispatcher rd = request.getRequestDispatcher("Oratorios.jsp");
+        request.setAttribute("bloques", ConsultaBloques.getBloques());
+        rd.forward(request, response);
 	}
 
 	/**

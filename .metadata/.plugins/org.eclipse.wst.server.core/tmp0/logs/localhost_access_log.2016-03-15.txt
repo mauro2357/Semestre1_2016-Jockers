@@ -1,0 +1,4 @@
+127.0.0.1 - - [15/Mar/2016:14:42:21 -0500] "GET / HTTP/1.1" 404 1004
+127.0.0.1 - - [15/Mar/2016:14:42:32 -0500] "GET /practice/MenuPrincipal.html HTTP/1.1" 304 -
+127.0.0.1 - - [15/Mar/2016:16:18:05 -0500] "GET /practice/AulasControlador HTTP/1.1" 200 2549
+127.0.0.1 - - [15/Mar/2016:16:18:05 -0500] "GET /practice/estilo1.css HTTP/1.1" 200 372

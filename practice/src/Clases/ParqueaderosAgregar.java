@@ -1,16 +1,9 @@
 package Clases;
 
-public class ParqueaderosAgregar {
-	private String par_bloque;
+public class ParqueaderosAgregar extends BloquesPrincipal {
 	private String par_nombre;
 	private int par_capacidad;
 	
-	public String getPar_bloque() {
-		return par_bloque;
-	}
-	public void setPar_bloque(String par_bloque) {
-		this.par_bloque = par_bloque;
-	}
 	public String getPar_nombre() {
 		return par_nombre;
 	}
@@ -23,8 +16,8 @@ public class ParqueaderosAgregar {
 	public void setPar_capacidad(int par_capacidad) {
 		this.par_capacidad = par_capacidad;
 	}
-	public ParqueaderosAgregar(String par_bloque, String par_nombre, int par_capacidad){
-		this.par_bloque=par_bloque;
+	public ParqueaderosAgregar(String nombre_bloque, String par_nombre, int par_capacidad){
+		super(nombre_bloque);
 		this.par_nombre=par_nombre;
 		this.par_capacidad=par_capacidad;
 	}
