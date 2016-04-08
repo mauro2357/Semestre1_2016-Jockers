@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="Clases.BloquesAgregar"%>
-<%@page import="Clases.HorarioAgregar"%>
+<%@page import="Clases.Bloque"%>
+<%@page import="Clases.HorarioO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,18 +16,18 @@
 	<p>Ingrese el nombre del laboratorio: <input type="text" name="nomlab" value="<%=request.getParameter("nomlab")!=null?request.getParameter("nomlab"):""%>"  />	
 	<br>	
 	<br>Selecciones el Bloque:<select name="blolab"> 
-                    <%ArrayList<BloquesAgregar> lista = (ArrayList<BloquesAgregar>)request.getAttribute("bloques");
-                        for (BloquesAgregar h : lista) {
+                    <%ArrayList<Bloque> lista = (ArrayList<Bloque>)request.getAttribute("bloques");
+                        for (Bloque h : lista) {
                     %>                    
                     <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
                     <%}
                     %>
                 </select><br>	
 <br>Seleccione el horario del Laboratorio:<select name="horalab"> 
-                    <%ArrayList<HorarioAgregar> listaHorarios = (ArrayList<HorarioAgregar>)request.getAttribute("Horario");
-                        for (HorarioAgregar h : listaHorarios) {
+                    <%ArrayList<HorarioO> listaHorarios = (ArrayList<HorarioO>)request.getAttribute("Horario");
+                        for (HorarioO h : listaHorarios) {
                     %>                    
-                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde: "+ h.getHorario_inicio()+", Hasta: "+ h.getHorario_fin())%></option>                    
+                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde"+ h.getHorario_inicio()+", Hasta"+ h.getHorario_fin())%></option>                    
                     <%}
                     %>
                 </select><br>

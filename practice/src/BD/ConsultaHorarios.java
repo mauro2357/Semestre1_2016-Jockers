@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Clases.HorarioAgregar;
+import Clases.HorarioO;
 
 public class ConsultaHorarios {
-	public static ArrayList<HorarioAgregar> getHorario(){
-		ArrayList<HorarioAgregar> listaHorarios = new ArrayList<HorarioAgregar>();	
+	public static ArrayList<HorarioO> getHorario(){
+		ArrayList<HorarioO> listaHorarios = new ArrayList<HorarioO>();	
         Connection con = null;
         Statement sql = null;
         {        	
@@ -20,11 +20,11 @@ public class ConsultaHorarios {
             sql = con.createStatement();
             ResultSet rs = sql.executeQuery("Select * from horario");  
             while (rs.next()){
-            	HorarioAgregar Horario = new HorarioAgregar(rs.getString("hor_nombre"), rs.getString("hor_hora_inicio"), rs.getString("hor_hora_fin"));
+            	HorarioO Horario = new HorarioO(rs.getString("hor_nombre"), rs.getString("hor_hora_inicio"), rs.getString("hor_hora_fin"));
             	Horario.setHorario_nombre(rs.getString("hor_nombre"));            	
-            	listaHorarios.add(Horario);
-                System.out.println("conexion establecida ");	
+            	listaHorarios.add(Horario);                	
             	}
+            System.out.println("Conexion establecida en Horario");
             rs.close();       
             } catch (Exception e) {
             System.out.println("error en la conexion" + e);

@@ -1,6 +1,7 @@
 package Controlador;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,9 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import BD.ConsultaBloques;
 import BD.ConsultaFacultades;
-import BD.ConsultaHorarios;
-import BD.MateriaRepositorio;
-import Clases.MateriaAgregar;
+import Clases.Materia;
+import Clases.MateriaHorarioA;
+import Clases.MateriaHorarioAA;
+import Clases.MateriaHorarioAAA;
 
 /**
  * Servlet implementation class MateriasControlador
@@ -21,26 +23,61 @@ import Clases.MateriaAgregar;
 @WebServlet("/MateriasControlador")
 public class MateriasControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private RequestDispatcher rs;
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("Materia.jsp");
+        //RequestDispatcher rd = request.getRequestDispatcher("Materia.jsp");        
+        PrintWriter out= response.getWriter();
         try{
         	String materia_nombre=request.getParameter("matnombre");
         	int materia_creditos=Integer.parseInt(request.getParameter("matcreditos"));
         	String aula_nombre=request.getParameter("mataula");        	
         	String facultad_nombre=request.getParameter("matfacultad");
-        	String horario_nombre=request.getParameter("mathorario");
+        	String horario_nombre=request.getParameter("horario");
         	String nombre_bloque=request.getParameter("matbloque");
         	
-        	MateriaAgregar nmateria= new MateriaAgregar(materia_nombre, materia_creditos, nombre_bloque, aula_nombre, facultad_nombre, horario_nombre);
-        	MateriaRepositorio.agregar(nmateria);        	
+        	if (request.getParameter("horario").equals("A")){
+            	Materia nMateriaHorarioA= new MateriaHorarioA(materia_nombre, nombre_bloque, materia_creditos, aula_nombre, facultad_nombre, horario_nombre);
+            	if (nMateriaHorarioA.validar() && nMateriaHorarioA.agregarbd()){
+            		out.print("<p style=\"color:blue\">La Materia se ha agregado correctamente</p>");
+            		rs=request.getRequestDispatcher("Materia.jsp"); 
+	            	rs.include(request,response);            		  	            	 
+            	}else{
+        		out.print("<p style=\"color:red\">No se puede agregar. Solo se permiten en el bloque J</p>");    
+        		rs=request.getRequestDispatcher("Materia.jsp"); 
+        		rs.include(request,response);
+        		}
+        	}     		
+        	else if (request.getParameter("horario").equals("AA")){
+            	Materia nMateriaHorarioAA= new MateriaHorarioAA(materia_nombre, nombre_bloque, materia_creditos, aula_nombre, facultad_nombre, horario_nombre);
+            	if (nMateriaHorarioAA.validar() && nMateriaHorarioAA.agregarbd()){
+            		out.print("<p style=\"color:blue\">La Materia se ha agregado correctamente</p>"); 
+            		rs=request.getRequestDispatcher("Materia.jsp"); 
+	            	rs.include(request,response);            	
+            	}else{
+        		out.print("<p style=\"color:red\">No se puede agregar. Solo se permiten asignaturas de Ingenieria</p>");    
+        		rs=request.getRequestDispatcher("Materia.jsp"); 
+           	 	rs.include(request,response);
+            	}
+        	}
+        	else if (request.getParameter("horario").equals("AAA")){
+            	Materia nMateriaHorarioAAA= new MateriaHorarioAAA(materia_nombre, nombre_bloque, materia_creditos, aula_nombre, facultad_nombre, horario_nombre);
+            	if (nMateriaHorarioAAA.validar() && nMateriaHorarioAAA.agregarbd()){
+            		out.print("<p style=\"color:blue\">La Materia se ha agregado correctamente</p>"); 
+            		rs=request.getRequestDispatcher("Materia.jsp"); 
+	            	rs.include(request,response);
+	            }else{
+        		out.print("<p style=\"color:red\">No se puede agregar. Solo se permiten materias con numero de creditos menor a 7</p>");    
+        		rs=request.getRequestDispatcher("Materia.jsp"); 
+           	 	rs.include(request,response);
+	            }
+        	}
         }catch (NumberFormatException e) {
         	e.printStackTrace();
             request.setAttribute("estado", "error");
-        }finally {
-        	 request.setAttribute("bloques", ConsultaBloques.getBloques());
-        	 request.setAttribute("facultad", ConsultaFacultades.getFacultades());
-             request.setAttribute("horario", ConsultaHorarios.getHorario());
-             rd.forward(request, response);            
+        }finally {       	
+        	request.setAttribute("facultad", ConsultaFacultades.getFacultades());
+        	request.setAttribute("bloques", ConsultaBloques.getBloques());
+            rs.forward(request, response);            
          }
     }     
 
@@ -59,7 +96,6 @@ public class MateriasControlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("Materia.jsp");
         request.setAttribute("facultad", ConsultaFacultades.getFacultades());
-        request.setAttribute("horario", ConsultaHorarios.getHorario());
         request.setAttribute("bloques", ConsultaBloques.getBloques());
         rd.forward(request, response);
 	}

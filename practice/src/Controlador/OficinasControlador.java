@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.ConsultaHorarios;
 import BD.OficinasRepositorio;
-import Clases.OficinasAgregar;
+import Clases.Oficina;
 
 /**
  * Servlet implementation class OficinasControlador
@@ -33,7 +33,7 @@ public class OficinasControlador extends HttpServlet {
         	String horario_nombre = request.getParameter("horaofi");
         	String ofi_descripcion = request.getParameter("ofidesc");
         	
-        	OficinasAgregar noficinas = new OficinasAgregar(nombre_bloque, ofi_nombre, ofi_telefono, horario_nombre, ofi_descripcion);
+        	Oficina noficinas = new Oficina(nombre_bloque, ofi_nombre, ofi_telefono, horario_nombre, ofi_descripcion);
         	OficinasRepositorio.agregar(noficinas);
         }catch (NumberFormatException e) {
         	e.printStackTrace();

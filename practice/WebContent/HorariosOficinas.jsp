@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="Clases.OficinasAgregar"%>
+<%@page import="Clases.Oficina"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,8 +13,8 @@
 <h1>Consulte los horarios de las oficinas</h1>
 
 	<br>Seleccione Oficina:<select name="oficina"> 
-                    <%ArrayList<OficinasAgregar> lista = (ArrayList<OficinasAgregar>)request.getAttribute("oficinas");
-                        for (OficinasAgregar h : lista) {
+                    <%ArrayList<Oficina> lista = (ArrayList<Oficina>)request.getAttribute("oficinas");
+                        for (Oficina h : lista) {
                     %>
                     
                     <option value="<%=h.getOfi_nombre()%>"><%=(h.getOfi_nombre()+", Horario: "+ h.getHorario_nombre())%></option>
@@ -23,6 +23,6 @@
                     %>
                 </select><br>
                 <br>
-                <a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+                <a href="Usuarios.jsp">Regrese al Menu Principal</a>
                 </body>
 </html>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.ConsultaHorarios;
 import BD.SalasRepositorio;
-import Clases.SalasAgregar;
+import Clases.Sala;
 
 /**
  * Servlet implementation class SalasControlador
@@ -33,7 +33,7 @@ public class SalasControlador extends HttpServlet {
         	String horario_nombre= request.getParameter("horasala");
         	String sal_videobeam= request.getParameter("salavideobeam");
         	
-        	SalasAgregar nsalas= new SalasAgregar(nombre_bloque, sal_nombre,  sal_equipos, horario_nombre, sal_videobeam);
+        	Sala nsalas= new Sala(nombre_bloque, sal_nombre,  sal_equipos, horario_nombre, sal_videobeam);
         	SalasRepositorio.agregar(nsalas);
         }catch (NumberFormatException e) {
         	e.printStackTrace();

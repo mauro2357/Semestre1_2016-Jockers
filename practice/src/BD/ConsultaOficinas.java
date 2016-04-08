@@ -6,11 +6,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
-import Clases.OficinasAgregar;
+import Clases.Oficina;
 public class ConsultaOficinas {
 	@SuppressWarnings("finally")
-	public static ArrayList<OficinasAgregar> getOficinas() {
-        ArrayList<OficinasAgregar> lista = new ArrayList<OficinasAgregar>();
+	public static ArrayList<Oficina> getOficinas() {
+        ArrayList<Oficina> lista = new ArrayList<Oficina>();
         Connection con = null;
         Statement sql = null;
         try {
@@ -19,10 +19,10 @@ public class ConsultaOficinas {
             sql = con.createStatement();
             ResultSet rs = sql.executeQuery("Select * from oficinas");
             while (rs.next()) {
-                OficinasAgregar h = new OficinasAgregar(rs.getString("blo_nombre"), rs.getString("ofi_nombre"), rs.getInt("ofi_telefono"), rs.getString("hor_nombre"), rs.getString("ofi_descripcion"));
+                Oficina h = new Oficina(rs.getString("bloque_nombre"), rs.getString("ofi_nombre"), rs.getInt("ofi_telefono"), rs.getString("horario_nombre"), rs.getString("ofi_descripcion"));
                 lista.add(h);
             }
-            System.out.println("conexion establecida ");
+            System.out.println("Conexion establecida en Oficinas");
         } catch (Exception e) {
             System.out.println("error en la conexion" + e);
         } finally {

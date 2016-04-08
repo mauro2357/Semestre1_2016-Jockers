@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.OratoriosRepositorio;
-import Clases.OratoriosAgregar;
+import Clases.Oratorio;
 
 /**
  * Servlet implementation class OratoriosControlador
@@ -28,7 +28,7 @@ public class OratoriosControlador extends HttpServlet {
         	String ora_nombre=request.getParameter("oranombre");
         	int ora_capacidad=Integer.parseInt(request.getParameter("oratcap"));
         	
-        	OratoriosAgregar noratorios= new OratoriosAgregar(nombre_bloque, ora_nombre, ora_capacidad);
+        	Oratorio noratorios= new Oratorio(nombre_bloque, ora_nombre, ora_capacidad);
         	OratoriosRepositorio.agregar(noratorios);
          }catch (NumberFormatException e) {
         	e.printStackTrace();

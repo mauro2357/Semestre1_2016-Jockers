@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.FacultadesRepositorio;
-import Clases.FacultadesAgregar;
+import Clases.Facultad;
 
 /**
  * Servlet implementation class FacultadControlador
@@ -30,7 +30,7 @@ public class FacultadControlador extends HttpServlet {
         	String facultades_horario=request.getParameter("facuhora");        	
         	String facultades_descripcion=request.getParameter("facudesc");
         	
-        	FacultadesAgregar nfacultades= new FacultadesAgregar(facultades_bloque, facultades_nombre, facultades_telefono, facultades_horario, facultades_descripcion);
+        	Facultad nfacultades= new Facultad(facultades_bloque, facultades_nombre, facultades_telefono, facultades_horario, facultades_descripcion);
         	FacultadesRepositorio.agregar(nfacultades);        	
         }catch (NumberFormatException e) {
         	e.printStackTrace();

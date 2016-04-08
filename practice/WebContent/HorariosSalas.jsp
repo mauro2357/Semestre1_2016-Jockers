@@ -1,10 +1,5 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="BD.ConsultaSala"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Clases.SalasAgregar"%>
+<%@page import="Clases.Sala"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,8 +13,8 @@
 <h1>Consulte los horarios de los Centros de Informática</h1>
 
 	<br>Seleccione Sala:<select name="sala"> 
-                    <%ArrayList<SalasAgregar> lista =  (ArrayList<SalasAgregar>)request.getAttribute("salas");
-                        for (SalasAgregar h : lista) {
+                    <%ArrayList<Sala> lista =  (ArrayList<Sala>)request.getAttribute("salas");
+                        for (Sala h : lista) {
                     %>
                     
                     <option value="<%=h.getSal_nombre()%>"><%=(h.getSal_nombre()+", Horario: "+ h.getHorario_nombre())%></option>
@@ -27,6 +22,6 @@
                     %>
                 </select><br>
                 <br>
-                <a href="MenuPrincipal.html">Regrese al Menu Principal</a>
+                <a href="Usuarios.jsp">Regrese al Menu Principal</a>
                 </body>
 </html>

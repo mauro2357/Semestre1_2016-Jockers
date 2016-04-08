@@ -1,3 +1,4 @@
+
 package Controlador;
 
 import java.io.IOException;
@@ -8,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.BloquesRepositorio;
-import Clases.BloquesAgregar;
+import Clases.Bloque;
 
 /**
  * Servlet implementation class BloquesControlador
@@ -33,8 +34,8 @@ public class BloquesControlador extends HttpServlet {
             String parqueadero =request.getParameter("parqueo");
             String zona_estudio =request.getParameter("estudio");
           
-            BloquesAgregar nbloque=new BloquesAgregar(nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
-                BloquesRepositorio.agregar(nbloque);                
+            Bloque nbloque=new Bloque(new BloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
+            nbloque.agregar();                
          }catch (NumberFormatException e) {
             request.setAttribute("estado", "error");
             }finally {

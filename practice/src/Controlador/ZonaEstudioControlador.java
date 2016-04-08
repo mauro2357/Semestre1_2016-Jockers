@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.ZonaEstudioRepositorio;
-import Clases.ZonaEstudioAgregar;
+import Clases.ZonaEstudio;
 
 /**
  * Servlet implementation class ZonaEstudioControlador
@@ -28,7 +28,7 @@ public class ZonaEstudioControlador extends HttpServlet {
         	int zona_capacidad=Integer.parseInt(request.getParameter("zonacap"));
         	String zona_bloque=request.getParameter("zonablo");        	
         	
-        	ZonaEstudioAgregar nzonaestudio = new ZonaEstudioAgregar(nombre_bloque, zona_capacidad, zona_bloque);
+        	ZonaEstudio nzonaestudio = new ZonaEstudio(nombre_bloque, zona_capacidad, zona_bloque);
         	ZonaEstudioRepositorio.agregar(nzonaestudio);       	       	
         }catch (NumberFormatException e) {
         	e.printStackTrace();

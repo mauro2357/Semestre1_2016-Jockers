@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.ParqueaderosRepositorio;
-import Clases.ParqueaderosAgregar;
+import Clases.Parqueadero;
 
 /**
  * Servlet implementation class ParqueaderosControlador
@@ -28,7 +28,7 @@ public class ParqueaderosControlador extends HttpServlet {
         	String par_nombre=request.getParameter("parnombre");
         	int par_capacidad=Integer.parseInt(request.getParameter("parcap"));
         	
-        	ParqueaderosAgregar nparqueaderos = new ParqueaderosAgregar(nombre_bloque, par_nombre, par_capacidad);
+        	Parqueadero nparqueaderos = new Parqueadero(nombre_bloque, par_nombre, par_capacidad);
         	ParqueaderosRepositorio.agregar(nparqueaderos);
         }catch (NumberFormatException e) {
         	e.printStackTrace();

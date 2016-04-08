@@ -1,7 +1,6 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="Clases.BloquesAgregar"%>
-<%@page import="Clases.FacultadesAgregar"%>
-<%@page import="Clases.HorarioAgregar"%>
+<%@page import="Clases.Bloque"%>
+<%@page import="Clases.Facultad"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,34 +17,29 @@
 	<p>Ingrese el numero de creditos de la Materia: <input type="text" name="matcreditos" value="<%=request.getParameter("matcreditos")!=null?request.getParameter("matcreditos"):""%>"  />	
 	<br>
 	<br>Seleccione la Facultad a la que pertenece la Materia: <select name="matfacultad"> 
-                    <%ArrayList<FacultadesAgregar> lista = (ArrayList<FacultadesAgregar>)request.getAttribute("facultad");
-                        for (FacultadesAgregar h : lista) {
+                    <%ArrayList<Facultad> lista = (ArrayList<Facultad>)request.getAttribute("facultad");
+                        for (Facultad h : lista) {
                     %>                    
                     <option value="<%=h.getFacultades_nombre()%>"><%=(h.getFacultades_nombre())%></option>                    
                     <%
                     }
                     %>
-                    </select><br>	
-    <p>Ingrese el Aula: <input type="text" name="mataula" value="<%=request.getParameter("mataula")!=null?request.getParameter("mataula"):""%>"  />	
-    <br>
-	<br>Seleccione el Horario de la Materia: <select name="mathorario"> 
-                    <%ArrayList<HorarioAgregar> listaa = (ArrayList<HorarioAgregar>)request.getAttribute("horario");
-                        for (HorarioAgregar h : listaa) {
-                    %>                    
-                    <option value="<%=h.getHorario_nombre()%>"><%=(h.getHorario_nombre()+", Desde: "+ h.getHorario_inicio()+", Hasta: "+ h.getHorario_fin())%></option>                    
-                    <%
-                    }
-                    %>
-                    </select><br>    
-	<br>Seleccione el Bloque donde se dictara la Materia: <select name="matbloque"> 
-                    <%ArrayList<BloquesAgregar> listab = (ArrayList<BloquesAgregar>)request.getAttribute("bloques");
-                        for (BloquesAgregar h : listab) {
+                    </select><br>
+    <br>Seleccione el Bloque donde se dictara la Materia: <select name="matbloque"> 
+                    <%ArrayList<Bloque> listab = (ArrayList<Bloque>)request.getAttribute("bloques");
+                        for (Bloque h : listab) {
                     %>                    
                     <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
                     <%
                     }
                     %>
-                    </select><br>                               
+                    </select><br>                	
+    <p>Ingrese el Aula: <input type="text" name="mataula" value="<%=request.getParameter("mataula")!=null?request.getParameter("mataula"):""%>"  />	
+    <br>
+	<br>Seleccione el Horario de la Materia:<br>
+Horario A: <input type="radio" name="horario" value="A" value="<%=request.getParameter("horario")!=null && request.getParameter("horario").equals("A")?"selected='selected'":""%>" checked="checked"/><br>    
+Horario AA: <input type="radio" name="horario" value="AA" value="<%=request.getParameter("horario")!=null?request.getParameter("horario"):""%>" /><br>	
+Horario AAA: <input type="radio" name="horario" value="AAA" value="<%=request.getParameter("horario")!=null?request.getParameter("horario"):""%>" /><br>	
 	<p><input type="submit" name="Ingresar" value="Ingresar Materia"/>
 </form>
 <a href="MenuPrincipal.html">Regrese al Menu Principal</a>

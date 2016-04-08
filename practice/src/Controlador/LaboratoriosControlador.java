@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.ConsultaHorarios;
 import BD.LaboratoriosRepositorio;
-import Clases.LaboratoriosAgregar;
+import Clases.Laboratorio;
 
 /**
  * Servlet implementation class LaboratoriosControlador
@@ -33,7 +33,7 @@ public class LaboratoriosControlador extends HttpServlet {
         	String lab_descripcion=request.getParameter("labdesc");
         	String lab_videobeam=request.getParameter("labvideobeam");
         	
-        	LaboratoriosAgregar nlaboratorios= new LaboratoriosAgregar(nombre_bloque, lab_nombre, horario_nombre, lab_descripcion, lab_videobeam);
+        	Laboratorio nlaboratorios= new Laboratorio(nombre_bloque, lab_nombre, horario_nombre, lab_descripcion, lab_videobeam);
         	LaboratoriosRepositorio.agregar(nlaboratorios);
         }catch (NumberFormatException e) {
         	e.printStackTrace();

@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="Clases.BloquesAgregar"%>
+<%@page import="Clases.Bloque"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,8 +15,8 @@
 	<p>Ingrese el nombre del auditorio: <input type="text" name="audnombre" value="<%=request.getParameter("audnombre")!=null?request.getParameter("audnombre"):""%>"  />	
 	<br>
 	<br>Seleccione el Bloque: <select name="audbloque"> 
-                    <%ArrayList<BloquesAgregar> lista = (ArrayList<BloquesAgregar>)request.getAttribute("bloques");
-                        for (BloquesAgregar h : lista) {
+                    <%ArrayList<Bloque> lista = (ArrayList<Bloque>)request.getAttribute("bloques");
+                        for (Bloque h : lista) {
                     %>                    
                     <option value="<%=h.getNombre_bloque()%>"><%=(h.getNombre_bloque())%></option>                    
                     <%

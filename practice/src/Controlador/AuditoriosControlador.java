@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.AuditoriosRepositorio;
 import BD.ConsultaBloques;
-import Clases.AuditoriosAgregar;
+import Clases.Auditorio;
 
 /**
  * Servlet implementation class AuditoriosControlador
@@ -28,7 +28,7 @@ public class AuditoriosControlador extends HttpServlet {
         	String aud_nombre = request.getParameter("audnombre");
         	int aud_capacidad = Integer.parseInt(request.getParameter("audcap"));
         	
-        	AuditoriosAgregar nauditorios= new AuditoriosAgregar(nombre_bloque, aud_nombre, aud_capacidad);
+        	Auditorio nauditorios= new Auditorio(nombre_bloque, aud_nombre, aud_capacidad);
         	AuditoriosRepositorio.agregar(nauditorios);        	
         }catch (NumberFormatException e) {
         	e.printStackTrace();

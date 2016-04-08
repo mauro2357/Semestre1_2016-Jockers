@@ -1,16 +1,17 @@
 package BD;
 
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import Clases.BloquesAgregar;
+import Clases.Bloque;
 
-public class BloquesRepositorio {
-	public BloquesRepositorio(BloquesAgregar Bloque1) {
+public class BloquesRepositorio implements IBloquesRepositorio{
+	public BloquesRepositorio() {
     }
-    public static void agregar(BloquesAgregar Bloque1) {
+    public void agregar(Bloque Bloque1){
         Connection con;
         Statement st;
         try {
@@ -21,6 +22,29 @@ public class BloquesRepositorio {
             System.out.println(i);
             st.executeUpdate(i);
             st.close();
+            File archivo;
+            FileWriter w;
+            BufferedWriter bw;
+            PrintWriter wr;
+            try {
+                archivo = new File ("C:\\0NuevaFuncionalidad\\archivo.txt");
+                w = new FileWriter(archivo);
+                bw = new BufferedWriter (w);
+                wr = new PrintWriter (bw);
+                
+                wr.write("Esta es ");
+                wr.append("segu");
+
+				if(archivo.createNewFile()){
+					System.out.println("Se ha creado el archivo");
+					wr.close();
+					bw.close();
+				}
+			} catch (IOException e) {
+				System.err.println("No se ha podido crear el archivo" + e );
+				System.out.println("NOOO Se ha creado el archivo");				
+			}
+            
         }catch (ClassNotFoundException e){
             System.out.println("La clase no existe");
         }catch (SQLException e){

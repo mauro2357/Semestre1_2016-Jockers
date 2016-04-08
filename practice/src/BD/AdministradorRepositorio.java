@@ -6,8 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import Clases.Administrador;
+
 public class AdministradorRepositorio {
-	public static boolean validate(String name, String pass) {          
+	public static boolean validate(Administrador Administrador1) {          
         boolean status = false;  
         Connection conn = null;  
         PreparedStatement pst = null;  
@@ -23,8 +25,8 @@ public class AdministradorRepositorio {
             conn = DriverManager.getConnection(url + dbName, userName, password);  
   
             pst = conn.prepareStatement("select * from `ucomaps`.`administrador` where adminuser=? and adminpass=?");  
-            pst.setString(1, name);  
-            pst.setString(2, pass); 
+            pst.setString(1, Administrador1.getAdminuser());  
+            pst.setString(2, Administrador1.getAdminpass()); 
             System.out.println(pst);
   
             rs = pst.executeQuery();  

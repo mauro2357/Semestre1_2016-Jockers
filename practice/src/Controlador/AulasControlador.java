@@ -1,15 +1,17 @@
 package Controlador;
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import BD.AulasRepositorio;
 import BD.ConsultaBloques;
-import Clases.AulasAgregar;
+import Clases.Aula;
 
 /**
  * Servlet implementation class AulasControlador
@@ -29,8 +31,8 @@ public class AulasControlador extends HttpServlet {
         	String videobeam=request.getParameter("videobeamtv");
         	int capacidad=Integer.parseInt(request.getParameter("aulacap"));
         	        	
-        	AulasAgregar naulas= new AulasAgregar(nombre_aula,nombre_bloque,videobeam,capacidad);
-        	AulasRepositorio.agregar(naulas);       	
+        	Aula naulas= new Aula(nombre_aula,nombre_bloque,videobeam,capacidad);
+        	AulasRepositorio.agregar(naulas);
         }catch (NumberFormatException e) {
         	e.printStackTrace();
             request.setAttribute("estado", "error");

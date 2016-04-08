@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import BD.AdministradorRepositorio;
+import Clases.Administrador;
 
 /**
  * Servlet implementation class AdministradorControlador
@@ -26,14 +27,16 @@ public class AdministradorControlador extends HttpServlet {
 		response.setContentType("text/html");    
         PrintWriter out = response.getWriter();    
           
-        String n =request.getParameter("adminuser");    
-        String p =request.getParameter("adminpass");        
+        String adminuser =request.getParameter("adminuser");    
+        String adminpass =request.getParameter("adminpass");        
         
         HttpSession session = request.getSession(false);  
         if(session!=null)  
-        session.setAttribute("name", n );  
-  		
-		if(AdministradorRepositorio.validate(n, p)){    
+        session.setAttribute("name", adminuser); 
+        
+        Administrador nadministrador = new Administrador(adminuser, adminpass);
+ 		
+		if(AdministradorRepositorio.validate(nadministrador)){    
             RequestDispatcher rd=request.getRequestDispatcher("MenuPrincipal.html");    
             rd.forward(request,response);
             out.println("Entro al if");

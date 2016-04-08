@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.ConsultaBloques;
 import BD.KioscosRepositorio;
-import Clases.KioscosAgregar;
+import Clases.Kiosco;
 
 /**
  * Servlet implementation class KioscosControlador
@@ -28,7 +28,7 @@ public class KioscosControlador extends HttpServlet {
         	String kio_nombre= request.getParameter("kionombre");
         	int kio_capacidad=Integer.parseInt(request.getParameter("kiocap"));
         	
-        	KioscosAgregar nkioscos= new KioscosAgregar(nombre_bloque, kio_nombre, kio_capacidad);
+        	Kiosco nkioscos= new Kiosco(nombre_bloque, kio_nombre, kio_capacidad);
         	KioscosRepositorio.agregar(nkioscos);
         }catch (NumberFormatException e) {
         	e.printStackTrace();

@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import Clases.SalasAgregar;
+import Clases.Sala;
 
 public class SalasRepositorio {
-	public SalasRepositorio(SalasAgregar Salas1){
+	public SalasRepositorio(Sala Salas1){
 	}
-	public static void agregar(SalasAgregar Salas1){
+	public static void agregar(Sala Salas1){
 		Connection con;
         Statement st;
         try {

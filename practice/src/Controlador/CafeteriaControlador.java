@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import BD.CafeteriasRepositorio;
 import BD.ConsultaBloques;
-import Clases.CafeteriasAgregar;
+import Clases.Cafeteria;
 
 /**
  * Servlet implementation class CafeteriaControlador
@@ -28,7 +28,7 @@ public class CafeteriaControlador extends HttpServlet {
         	String caf_nombre= request.getParameter("cafnombre");
         	int caf_capacidad= Integer.parseInt(request.getParameter("cafcap"));
         	
-        	CafeteriasAgregar ncafeterias = new CafeteriasAgregar(nombre_bloque, caf_nombre, caf_capacidad);
+        	Cafeteria ncafeterias = new Cafeteria(nombre_bloque, caf_nombre, caf_capacidad);
         	CafeteriasRepositorio.agregar(ncafeterias);
         	
         }catch (NumberFormatException e) {

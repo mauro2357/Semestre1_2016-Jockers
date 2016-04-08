@@ -1,7 +1,0 @@
-package Clases;
-
-public class MateriaAgregar {
-	public String materia_nombre;
-	
-
-}
