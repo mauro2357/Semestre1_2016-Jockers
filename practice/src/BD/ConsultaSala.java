@@ -22,7 +22,7 @@ public class ConsultaSala {
             sql = con.createStatement();
             ResultSet rs = sql.executeQuery("Select  * from salas");
             while (rs.next()) {
-                Sala h = new Sala(rs.getString("blo_nombre"), rs.getString("sal_nombre"), rs.getInt("sal_numero_equipos"), rs.getString("horario_nombre"), rs.getString("sal_videobeam"));
+                Sala h = new Sala(rs.getString("blo_nombre"), rs.getString("sal_nombre"), rs.getInt("sal_numero_equipos"), rs.getString("hor_nombre"), rs.getString("sal_videobeam"));
                 lista.add(h);
             }
             System.out.println("Conexion establecida en Salas");

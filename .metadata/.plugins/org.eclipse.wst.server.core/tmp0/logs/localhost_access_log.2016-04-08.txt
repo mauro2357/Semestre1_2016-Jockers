@@ -1,7 +1,0 @@
-127.0.0.1 - - [08/Apr/2016:12:18:56 -0500] "GET / HTTP/1.1" 404 1004
-127.0.0.1 - - [08/Apr/2016:12:18:58 -0500] "GET /practice/MenuPrincipal.html HTTP/1.1" 200 1898
-127.0.0.1 - - [08/Apr/2016:12:19:14 -0500] "GET /practice/Bloques.jsp HTTP/1.1" 200 1674
-127.0.0.1 - - [08/Apr/2016:12:19:14 -0500] "GET /practice/estilo1.css HTTP/1.1" 200 372
-127.0.0.1 - - [08/Apr/2016:12:20:29 -0500] "GET /practice/MateriasControlador HTTP/1.1" 200 3319
-127.0.0.1 - - [08/Apr/2016:12:22:19 -0500] "GET /practice/ReporteControlador HTTP/1.1" 500 1276
-127.0.0.1 - - [08/Apr/2016:12:27:12 -0500] "POST /practice/ReporteControlador HTTP/1.1" 200 1307

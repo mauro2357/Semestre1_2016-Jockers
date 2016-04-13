@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="BD.ActualizacionOficinasRepositorio"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="BD.ConsultaOficinas"/>
+<fullyQualifiedTypeName name="BD.ConsultaHorarios"/>
+<fullyQualifiedTypeName name="BD.ConsultaSala"/>
+<fullyQualifiedTypeName name="Clases.Laboratorio"/>
+<fullyQualifiedTypeName name="BD.ConsultaLaboratorios"/>
+<fullyQualifiedTypeName name="BD.ActualizacionSalasRepositorio"/>
+<fullyQualifiedTypeName name="BD.ActualizacionLaboratoriosRepositorio"/>
+</qualifiedTypeNameHistroy>
