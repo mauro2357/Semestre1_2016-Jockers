@@ -69,6 +69,7 @@
 					<ul>
 					<li><a href="ConsultaOficinasControlador">Horarios Oficinas</a>
 					<li><a href="ConsultaSalasControlador">Horarios Salas</a>
+					<li><a href="ConsultaLaboratoriosControlador">Horarios Laboratorios</a>
 					</ul>					
 				</li>			
 				<li><a href="ReporteControlador">Envie Sugerencias</a>

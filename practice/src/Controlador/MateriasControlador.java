@@ -25,7 +25,7 @@ public class MateriasControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RequestDispatcher rs;
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //RequestDispatcher rd = request.getRequestDispatcher("Materia.jsp");        
+        RequestDispatcher rd = request.getRequestDispatcher("Materia.jsp");        
         PrintWriter out= response.getWriter();
         try{
         	String materia_nombre=request.getParameter("matnombre");

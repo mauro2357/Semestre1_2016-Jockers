@@ -19,7 +19,8 @@ public class ConsultaLaboratorios {
             ResultSet rs = sql.executeQuery("Select * from laboratorios");
             while (rs.next()) {
                 Laboratorio h = new Laboratorio(rs.getString("blo_nombre"), rs.getString("lab_nombre"), rs.getString("lab_descripcion"), rs.getString("lab_videobeam_tv"), rs.getString("hor_nombre"));
-                h.setLab_nombre(rs.getString("lab_nombre"));            	
+                h.setLab_nombre(rs.getString("lab_nombre"));  
+                h.setHorario_nombre(rs.getString("hor_nombre"));
                 lista.add(h);
             }
             System.out.println("Conexion establecida en Laboratorios");
@@ -28,5 +29,5 @@ public class ConsultaLaboratorios {
         } finally {
             return lista;
         }
-}
+	}
 }

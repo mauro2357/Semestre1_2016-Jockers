@@ -8,7 +8,9 @@
 <fullyQualifiedTypeName name="BD.ConsultaHorarios"/>
 <fullyQualifiedTypeName name="BD.ConsultaSala"/>
 <fullyQualifiedTypeName name="Clases.Laboratorio"/>
-<fullyQualifiedTypeName name="BD.ConsultaLaboratorios"/>
 <fullyQualifiedTypeName name="BD.ActualizacionSalasRepositorio"/>
 <fullyQualifiedTypeName name="BD.ActualizacionLaboratoriosRepositorio"/>
+<fullyQualifiedTypeName name="BD.ConsultaLaboratorios"/>
+<fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.File"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>
