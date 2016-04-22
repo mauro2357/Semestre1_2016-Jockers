@@ -23,7 +23,8 @@
                     <%}
                     %>
                 </select><br>		
-	<p>Ingrese el telefono de la oficina: <input type="text" name="ofitel" value="<%=request.getParameter("ofitel")!=null?request.getParameter("ofitel"):""%>"  />
+<p>Ingrese el telefono de la oficina: <input type="text" name="ofitel" value="<%=request.getParameter("ofitel")!=null?request.getParameter("ofitel"):""%>"  />
+<br>
 <br>Seleccione el horario de la oficina:<select name="horaofi"> 
                     <%ArrayList<HorarioO> listaHorarios = (ArrayList<HorarioO>)request.getAttribute("Horario");
                         for (HorarioO h : listaHorarios) {

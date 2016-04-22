@@ -14,17 +14,17 @@
 <h1>Agregue una nueva materia</h1>
 	<form action ="MateriasControlador" method="post">
 	<p>Ingrese el nombre de la Materia: <input type="text" name="matnombre" value="<%=request.getParameter("matnombre")!=null?request.getParameter("matnombre"):""%>"  />	
-	<p>Ingrese el numero de creditos de la Materia: <input type="text" name="matcreditos" value="<%=request.getParameter("matcreditos")!=null?request.getParameter("matcreditos"):""%>"  />	
 	<br>
-	<br>Seleccione la Facultad a la que pertenece la Materia: <select name="matfacultad"> 
+	<br>Seleccione la facultad a la que pertenece la materia:<select name="facumat"> 
                     <%ArrayList<Facultad> lista = (ArrayList<Facultad>)request.getAttribute("facultad");
                         for (Facultad h : lista) {
                     %>                    
                     <option value="<%=h.getFacultades_nombre()%>"><%=(h.getFacultades_nombre())%></option>                    
-                    <%
-                    }
+                    <%}
                     %>
-                    </select><br>
+                </select><br>
+	<p>Ingrese el numero de creditos de la Materia: <input type="text" name="matcreditos" value="<%=request.getParameter("matcreditos")!=null?request.getParameter("matcreditos"):""%>"  />	
+	<br>		
     <br>Seleccione el Bloque donde se dictara la Materia: <select name="matbloque"> 
                     <%ArrayList<Bloque> listab = (ArrayList<Bloque>)request.getAttribute("bloques");
                         for (Bloque h : listab) {
@@ -37,9 +37,9 @@
     <p>Ingrese el Aula: <input type="text" name="mataula" value="<%=request.getParameter("mataula")!=null?request.getParameter("mataula"):""%>"  />	
     <br>
 	<br>Seleccione el Horario de la Materia:<br>
-Horario A: <input type="radio" name="horario" value="A" value="<%=request.getParameter("horario")!=null && request.getParameter("horario").equals("A")?"selected='selected'":""%>" checked="checked"/><br>    
-Horario AA: <input type="radio" name="horario" value="AA" value="<%=request.getParameter("horario")!=null?request.getParameter("horario"):""%>" /><br>	
-Horario AAA: <input type="radio" name="horario" value="AAA" value="<%=request.getParameter("horario")!=null?request.getParameter("horario"):""%>" /><br>	
+	Horario A: <input type="radio" name="horario" value="A" value="<%=request.getParameter("horario")!=null && request.getParameter("horario").equals("A")?"selected='selected'":""%>" checked="checked"/><br>    
+	Horario AA: <input type="radio" name="horario" value="AA" value="<%=request.getParameter("horario")!=null?request.getParameter("horario"):""%>" /><br>	
+	Horario AAA: <input type="radio" name="horario" value="AAA" value="<%=request.getParameter("horario")!=null?request.getParameter("horario"):""%>" /><br>	
 	<p><input type="submit" name="Ingresar" value="Ingresar Materia"/>
 </form>
 <a href="MenuPrincipal.html">Regrese al Menu Principal</a>

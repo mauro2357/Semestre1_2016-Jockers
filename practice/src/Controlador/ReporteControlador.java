@@ -33,13 +33,12 @@ public class ReporteControlador extends HttpServlet {
         	String reporte_correo = request.getParameter("sugcorreo");
         	String reporte_usuario = request.getParameter("datou");
         	
-        	if (request.getParameter("dato").equals("Fallo")){
+        	if(request.getParameter("dato").equals("Fallo")){
         		Reporte nfallo = new Fallo (new ReporteFalloRepositorio(), reporte_nombre, reporte_reporte, reporte_correo, reporte_usuario);
-        	    nfallo.agregar();    	
-            	           		  	            	 
-            	}else if(request.getParameter("dato").equals("Sugerencia")){
-               	Reporte nsugerencia = new Sugerencia(new ReporteSugerenciaRepositorio(), reporte_nombre, reporte_reporte, reporte_correo, reporte_usuario);
-            	nsugerencia.agregar();   	
+        	    nfallo.agregar();              	           		  	            	 
+            	}else{
+            			Reporte nsugerencia = new Sugerencia(new ReporteSugerenciaRepositorio(), reporte_nombre, reporte_reporte, reporte_correo, reporte_usuario);
+                    	nsugerencia.agregar();             		       		
             	}      	
         }catch (NumberFormatException e) {
         	e.printStackTrace();

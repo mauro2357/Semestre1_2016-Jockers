@@ -1,5 +1,7 @@
 package Clases;
 
+import java.sql.ResultSet;
+import BD.Conexion;
 import BD.IBloquesRepositorio;
 
 public class Bloque extends Lugar {	
@@ -8,8 +10,7 @@ public class Bloque extends Lugar {
 	
 	public Bloque(IBloquesRepositorio bloquesRepositorio) {
 		this.bloquesRepositorio=bloquesRepositorio;
-	}
-	
+	}	
 	private int aulas;
 	private int pisos;
 	private int banos;
@@ -68,22 +69,32 @@ public class Bloque extends Lugar {
 		this.zonas_estudio = zonas_estudio;
 	}
 	public Bloque(IBloquesRepositorio bloquesRepositorio, String nombre_bloque,int aulas,int pisos,int banos,int laboratorios_salas,int oficinas_facultades,String oratorios,String parqueaderos,String zonas_estudio){
-		super(nombre_bloque);
-		this.bloquesRepositorio=bloquesRepositorio;
-		this.aulas=aulas;
-		this.pisos=pisos;
-		this.banos=banos;
-		this.laboratorios_salas=laboratorios_salas;
-		this.oficinas_facultades=oficinas_facultades;
-		this.oratorios=oratorios;
-		this.parqueaderos=parqueaderos;
-		this.zonas_estudio=zonas_estudio;	
+			super(nombre_bloque);
+			this.bloquesRepositorio=bloquesRepositorio;
+			this.aulas=aulas;
+			this.pisos=pisos;
+			this.banos=banos;
+			this.laboratorios_salas=laboratorios_salas;
+			this.oficinas_facultades=oficinas_facultades;
+			this.oratorios=oratorios;
+			this.parqueaderos=parqueaderos;
+			this.zonas_estudio=zonas_estudio;
 	}
 	@Override
 	public void agregar() {
 		bloquesRepositorio.agregar(this);  
 		}
+	
+	Conexion cx= new Conexion();
+	
+	public ResultSet ListarBloques(){
+		cx.con();
+        String com=("Select * from bloques");
+        System.out.println(com);
+        ResultSet rs = cx.getDatos(com); 	
+		return rs;
 	}
+}
 	
 	
 

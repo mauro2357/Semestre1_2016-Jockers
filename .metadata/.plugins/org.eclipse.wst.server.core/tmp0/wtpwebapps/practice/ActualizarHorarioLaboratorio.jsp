@@ -12,14 +12,12 @@
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 <h1>Actualice Horario del Laboratorio</h1>
-	<form action ="ActualizacionLaboratoriosControlador" method="post">
+<form action ="ActualizacionLaboratoriosControlador" method="post">
 Seleccione Laboratorio: <select name="laboratorio"> 
                     <%ArrayList<Laboratorio> lista = (ArrayList<Laboratorio>)request.getAttribute("laboratorio");
                         for (Laboratorio h : lista) {
-                    %>
-                    
-                    <option value="<%=h.getLab_nombre()%>"><%=(h.getLab_nombre())%></option>
-                    
+                    %>                    
+                    <option value="<%=h.getLab_nombre()%>"><%=(h.getLab_nombre())%></option>                    
                     <%}
                     %>
                 </select><br>

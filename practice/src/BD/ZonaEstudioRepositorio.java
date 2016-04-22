@@ -17,7 +17,7 @@ public class ZonaEstudioRepositorio {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
             st = con.createStatement();
-            String i = "INSERT INTO zona_estudio (`zon_nombre`, `zon_capacidad`, `zon_bloque`) VALUES ('"+ ZonaEstudio1.getZona_nombre() + "',"+ ZonaEstudio1.getZona_capacidad() + ",'" + ZonaEstudio1.getNombre_bloque() +"')";
+            String i = "INSERT INTO zona_estudio (`zon_nombre`, `zon_capacidad`, `blo_nombre`) VALUES ('"+ ZonaEstudio1.getZona_nombre() + "',"+ ZonaEstudio1.getZona_capacidad() + ",'" + ZonaEstudio1.getNombre_bloque() +"')";
             System.out.println(i);
             st.executeUpdate(i);
             st.close();

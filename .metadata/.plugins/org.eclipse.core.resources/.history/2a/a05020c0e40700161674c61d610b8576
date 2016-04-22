@@ -1,0 +1,33 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Clases.Bloque"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Selects dependentes com jquery e jsp</title>
+        <script src = "jquery-1.7.1.js"></script>
+        <script src = "ajax.js"></script>
+    </head>
+    <body>
+        <form action ="#" method ="post">
+            <ul>
+                <li><label for ="nomepais">Nome do pais</label></li>
+                <li><select name ="sltnomepais" id ="nomepais">
+                       Bloque pd = new Bloque();
+                            List<Bloque> lp = pd.visualizar();
+                            for (Bloque p : lp) {
+                        %>
+                        <option value=<%=p.getCodigoPais()%>><%=p.getNomePais()%></option>
+                        <%%>
+                
+                <br>
+                    
+                <li><label for ="nomepais">Nome da provincia</label></li>
+                <li><select name ="sltnomeprovincia" id ="nomeprovincia">
+                        <option selected="selected">--Seleccione o da provincia--</option>
+                    </select></li>
+            </ul>
+        </form>
+    </body>
+</html>

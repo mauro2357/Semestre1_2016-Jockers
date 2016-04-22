@@ -27,7 +27,7 @@
 	<p>Cuenta con VideoBeam:
 			Si:<input type="radio" name="salavideobeam" value="s" value="<%=request.getParameter("salavideobeam")!=null && request.getParameter("salavideobeam").equals("n")?"selected='selected'":""%>" checked="checked"/>
 			No:<input type="radio" name="salavideobeam" value="n" value="<%=request.getParameter("salavideobeam")!=null?request.getParameter("salavideobeam"):""%>" />
-	
+	<br>
 	<br>Seleccione el horario del Centro Informatico:<select name="horasala"> 
                     <%ArrayList<HorarioO> listaHorarios = (ArrayList<HorarioO>)request.getAttribute("Horario");
                         for (HorarioO h : listaHorarios) {

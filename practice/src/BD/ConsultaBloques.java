@@ -30,6 +30,6 @@ public class ConsultaBloques {
             }
         }
 		return listaBloques; 
-	}
+	}	
 }
-
+           

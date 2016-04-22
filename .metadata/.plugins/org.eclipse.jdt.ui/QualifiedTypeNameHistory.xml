@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="BD.ActualizacionOficinasRepositorio"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="BD.ConsultaOficinas"/>
-<fullyQualifiedTypeName name="BD.ConsultaHorarios"/>
 <fullyQualifiedTypeName name="BD.ConsultaSala"/>
 <fullyQualifiedTypeName name="Clases.Laboratorio"/>
 <fullyQualifiedTypeName name="BD.ActualizacionSalasRepositorio"/>
@@ -13,4 +8,17 @@
 <fullyQualifiedTypeName name="BD.ConsultaLaboratorios"/>
 <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.File"/>
 <fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="BD.Conexion"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="Clases.Bloque"/>
+<fullyQualifiedTypeName name="BD.ConsultaInformacionRepositorio"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="BD.ActualizacionBloquesRepositorio"/>
+<fullyQualifiedTypeName name="BD.ConsultaBloques"/>
+<fullyQualifiedTypeName name="BD.ConsultaOficinas"/>
+<fullyQualifiedTypeName name="BD.ConsultaHorarios"/>
+<fullyQualifiedTypeName name="BD.ActualizacionOficinasRepositorio"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>

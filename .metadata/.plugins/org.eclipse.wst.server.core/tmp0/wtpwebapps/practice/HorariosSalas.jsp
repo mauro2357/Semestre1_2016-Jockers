@@ -16,7 +16,6 @@
                     <%ArrayList<Sala> lista =  (ArrayList<Sala>)request.getAttribute("salas");
                         for (Sala h : lista) {
                     %>
-                    
                     <option value="<%=h.getSal_nombre()%>"><%=(h.getSal_nombre()+", Horario: "+ h.getHorario_nombre())%></option>
                   	<%}
                     %>

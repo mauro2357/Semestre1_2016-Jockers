@@ -24,7 +24,6 @@ Seleccione Sala: <select name="salas">
                     %>
                 </select><br>
                 <br>
-
 Seleccione Nuevo Horario: <select name="horario"> 
                     <%ArrayList<HorarioO> listaa = (ArrayList<HorarioO>)request.getAttribute("horario");
                         for (HorarioO h : listaa) {

@@ -12,9 +12,9 @@
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
 <h1>Actualice Horario de la Oficina</h1>
-	<form action ="ActualizacionOficinasControlador" method="post">
+	<form action ="ActualizacionOficinaControlador" method="post">
 Seleccione Oficina: <select name="oficina"> 
-                    <%ArrayList<Oficina> lista = (ArrayList<Oficina>)request.getAttribute("oficinas");
+                    <%ArrayList<Oficina> lista = (ArrayList<Oficina>)request.getAttribute("oficina");
                         for (Oficina h : lista) {
                     %>
                     
