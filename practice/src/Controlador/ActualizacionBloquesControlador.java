@@ -1,7 +1,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import BD.ActualizacionBloquesRepositorio;
 import BD.ConsultaBloques;
+import Clases.Bloque;
 
 
 /**
@@ -23,7 +23,6 @@ public class ActualizacionBloquesControlador extends HttpServlet {
 	
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("ActualizacionDatosBloques.jsp");
-        PrintWriter out = response.getWriter(); 
         try{
         	int aulas = Integer.parseInt(request.getParameter("numaulas")); 
             int pisos = Integer.parseInt(request.getParameter("numpiso"));                       
@@ -35,10 +34,9 @@ public class ActualizacionBloquesControlador extends HttpServlet {
             String zona_estudio =request.getParameter("estudio");
             String nombre=request.getParameter("bloques");
             
-            if(ActualizacionBloquesRepositorio.actualizar(aulas,pisos,laboratorio_salas,oficinas_facultades,banos,oratorio,parqueadero,zona_estudio,nombre)){ 
-				out.print("<p style=\"color:red\">Usuario y/o Contraseña Invalidos</p>"); 
-			}
-        	
+            Bloque nbloque=new Bloque(new ActualizacionBloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
+            nbloque.actualizar();
+            
         }catch (NumberFormatException e) {
         	e.printStackTrace();
             request.setAttribute("estado", "error");

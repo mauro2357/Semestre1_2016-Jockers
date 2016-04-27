@@ -6,9 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ActualizacionBloquesRepositorio {
-	public static boolean actualizar (int aulas,int pisos,int banos,int laboratorios_salas,int oficinas_facultades,String oratorios,String parqueaderos,String zonas_estudio,String nombre_bloque){
-		boolean status = false;  
+import Clases.Bloque;
+
+public class ActualizacionBloquesRepositorio implements IBloquesRepositorio{
+	public void actualizar (Bloque Bloque1){
         Connection conn = null;  
         PreparedStatement pst = null;  
         ResultSet rs = null;  
@@ -23,15 +24,15 @@ public class ActualizacionBloquesRepositorio {
             conn = DriverManager.getConnection(url + dbName, userName, password);  
   
             pst = conn.prepareStatement("UPDATE bloques SET blo_aulas=? , blo_pisos=? , blo_banos=? , blo_salas_laboratorios=? , blo_oficinas_facultades=? , blo_oratorio=? , blo_parqueadero=? , blo_zona_estudio=? WHERE blo_nombre=?"); 
-            pst.setInt(1,aulas);
-            pst.setInt(2, pisos);
-            pst.setInt(3, banos);
-            pst.setInt(4, laboratorios_salas);
-            pst.setInt(5, oficinas_facultades);
-            pst.setString(6, oratorios);
-            pst.setString(7, parqueaderos);
-            pst.setString(8, zonas_estudio);   
-            pst.setString(9, nombre_bloque);
+            pst.setInt(1,Bloque1.getAulas());
+            pst.setInt(2, Bloque1.getPisos());
+            pst.setInt(3, Bloque1.getBanos());
+            pst.setInt(4, Bloque1.getLaboratorios_salas());
+            pst.setInt(5, Bloque1.getOficinas_facultades());
+            pst.setString(6, Bloque1.getOratorios());
+            pst.setString(7, Bloque1.getParqueaderos());
+            pst.setString(8, Bloque1.getZonas_estudio());   
+            pst.setString(9, Bloque1.getNombre_bloque());
             System.out.println(pst);
   
             pst.executeUpdate();     
@@ -61,7 +62,12 @@ public class ActualizacionBloquesRepositorio {
                 }  
             }  
         }  
-        return status;  
-    }  
+    }
+
+	@Override
+	public void agregar(Bloque Bloque1) {
+		// TODO Auto-generated method stub
+		
+	}  
 }  
         

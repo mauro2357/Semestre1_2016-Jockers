@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import BD.BloquesRepositorio;
+import BD.ProxyBloquesRepositorio;
 import Clases.Bloque;
 
 /**
@@ -34,7 +34,7 @@ public class BloquesControlador extends HttpServlet {
             String parqueadero =request.getParameter("parqueo");
             String zona_estudio =request.getParameter("estudio");
           
-            Bloque nbloque=new Bloque(new BloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
+            Bloque nbloque=new Bloque(new ProxyBloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
             nbloque.agregar();                
          }catch (NumberFormatException e) {
             request.setAttribute("estado", "error");

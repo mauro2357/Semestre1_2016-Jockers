@@ -1,0 +1,20 @@
+package BD;
+
+import Clases.Bloque;
+
+public class ProxyBloquesRepositorio implements IBloquesRepositorio{
+	public ProxyBloquesRepositorio() {
+    }
+    public void agregar(Bloque Bloque1){
+        if(Bloque1.nombre_bloque.equals("null")){
+        	Bloque1.agregar();
+        }
+    }
+        
+    	
+	@Override
+	public void actualizar(Bloque Bloque1) {
+		// TODO Auto-generated method stub
+		
+	}
+}

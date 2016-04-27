@@ -10,9 +10,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/Documents/Juan Pablo Urrea Correa/Ing.Software 2/Jockers Trabajos Antiguos/Semestre1_2016-Jockers - copia/practice/WebContent/WEB-INF/lib/com.mysql.jdbc_5.1.5.jar"/>
-	<classpathentry kind="lib" path="D:/Documents/Juan Pablo Urrea Correa/Ing.Software 2/Librerias/taglibs-standard-impl-1.2.5.jar"/>
-	<classpathentry kind="lib" path="D:/Documents/Juan Pablo Urrea Correa/Ing.Software 2/Librerias/javax.servlet-api-3.0.1.jar"/>
-	<classpathentry kind="lib" path="D:/Documents/Juan Pablo Urrea Correa/Ing.Software 2/Librerias/java-util-1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/IsabelRincon/Documents/GitHub/Librerias/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/IsabelRincon/Documents/GitHub/Librerias/java-util-1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/IsabelRincon/Documents/GitHub/Librerias/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/IsabelRincon/Documents/GitHub/Librerias/taglibs-standard-impl-1.2.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

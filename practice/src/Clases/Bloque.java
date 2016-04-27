@@ -94,6 +94,10 @@ public class Bloque extends Lugar {
         ResultSet rs = cx.getDatos(com); 	
 		return rs;
 	}
+	public void actualizar(){
+		bloquesRepositorio.actualizar(this);
+		
+	}
 }
 	
 	

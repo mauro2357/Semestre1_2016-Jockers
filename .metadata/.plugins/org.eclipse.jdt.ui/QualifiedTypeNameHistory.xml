@@ -14,11 +14,11 @@
 <fullyQualifiedTypeName name="Clases.Bloque"/>
 <fullyQualifiedTypeName name="BD.ConsultaInformacionRepositorio"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="BD.ActualizacionBloquesRepositorio"/>
 <fullyQualifiedTypeName name="BD.ConsultaBloques"/>
 <fullyQualifiedTypeName name="BD.ConsultaOficinas"/>
 <fullyQualifiedTypeName name="BD.ConsultaHorarios"/>
 <fullyQualifiedTypeName name="BD.ActualizacionOficinasRepositorio"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="BD.ActualizacionBloquesRepositorio"/>
 </qualifiedTypeNameHistroy>

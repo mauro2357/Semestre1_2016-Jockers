@@ -51,5 +51,10 @@ public class BloquesRepositorio implements IBloquesRepositorio{
             throw new RuntimeException(e);
         }
     }
+	@Override
+	public void actualizar(Bloque Bloque1) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

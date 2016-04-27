@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BloquesRepositorio.java&apos; to &apos;BD.BloquesRepositorio.java&apos;&#x0D;&#x0A;- Original project: &apos;practice&apos;&#x0D;&#x0A;- Destination element: &apos;BD.BloquesRepositorio.java&apos;&#x0D;&#x0A;- Original element: &apos;BD.BloquesRepositorio.java&apos;" description="Copy compilation unit" destination="/src&lt;BD{BloquesRepositorio.java" element1="/src&lt;BD{BloquesRepositorio.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1461784143318" units="1" version="1.0"/>
+</session>
