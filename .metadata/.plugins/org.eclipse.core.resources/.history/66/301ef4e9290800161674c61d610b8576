@@ -1,7 +1,0 @@
-package Clases;
-
-public class AdminAgregarImg {
-	public String sitio;
-	
-
-}

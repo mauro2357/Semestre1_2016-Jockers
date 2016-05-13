@@ -1,7 +1,5 @@
 package Clases;
 
-import java.sql.ResultSet;
-import BD.Conexion;
 import BD.IBloquesRepositorio;
 
 public class Bloque extends Lugar {	
@@ -80,23 +78,14 @@ public class Bloque extends Lugar {
 			this.parqueaderos=parqueaderos;
 			this.zonas_estudio=zonas_estudio;
 	}
+	
 	@Override
 	public void agregar() {
-		bloquesRepositorio.agregar(this);  
-		}
-	
-	Conexion cx= new Conexion();
-	
-	public ResultSet ListarBloques(){
-		cx.con();
-        String com=("Select * from bloques");
-        System.out.println(com);
-        ResultSet rs = cx.getDatos(com); 	
-		return rs;
+		bloquesRepositorio.agregar(this);
+		
 	}
 	public void actualizar(){
 		bloquesRepositorio.actualizar(this);
-		
 	}
 }
 	

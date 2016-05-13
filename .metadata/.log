@@ -3673,3 +3673,202 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2016-05-12 20:23:00.095 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2016-05-12 20:24:45.550
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-05-12 20:24:45.550
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@17c8f9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@18b765b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-05-12 20:24:45.550
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1078ca7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@a333c0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-05-12 20:25:56.177
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-05-12 20:25:56.180
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Familiar'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2016-05-12 20:27:03.006
+!MESSAGE The archive: C:/Users/IsabelRincon/Documents/GitHub/apache-tomcat-8.0.32/bin/bootstrap.jar which is referenced by the classpath, does not exist.
+!SESSION 2016-05-13 10:54:16.283 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2016-05-13 11:01:53.743
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-05-13 11:01:53.744
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@244625,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1795979,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-05-13 11:01:53.744
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e13570,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7b5a5c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.osgi 2 0 2016-05-13 11:02:32.640
+!MESSAGE While loading class "org.scalaide.ui.internal.explorer.ScalaDecorator", thread "Thread[Worker-1,5,main]" timed out waiting (5097ms) for thread "Thread[main,6,main]" to finish starting bundle "org.scala-ide.sdt.core_4.3.0.v-2_11-201512011536-499c89a [865]". To avoid deadlock, thread "Thread[Worker-1,5,main]" is proceeding but "org.scalaide.ui.internal.explorer.ScalaDecorator" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="org.scala-ide.sdt.core"; type="osgi.bundle"; version:Version="4.3.0.v-2_11-201512011536-499c89a"; singleton:="true" [id=865] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:568)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:285)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition$1.run(LightweightDecoratorDefinition.java:125)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:867)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.internalGetDecorator(LightweightDecoratorDefinition.java:120)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:255)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:83)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:367)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:349)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:372)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:332)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-05-13 11:03:47.311
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-05-13 11:03:47.316
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Familiar'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.osgi 2 0 2016-05-13 11:04:06.517
+!MESSAGE While loading class "org.eclipse.wb.internal.core.editor.describer.JavaSourceUiDescriber", thread "Thread[Worker-8,5,main]" timed out waiting (5001ms) for thread "Thread[org.eclipse.jdt.internal.ui.text.JavaReconciler,1,main]" to finish starting bundle "org.eclipse.wb.core_1.8.0.r44x201506110820 [973]". To avoid deadlock, thread "Thread[Worker-8,5,main]" is proceeding but "org.eclipse.wb.internal.core.editor.describer.JavaSourceUiDescriber" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="org.eclipse.wb.core"; type="osgi.bundle"; version:Version="1.8.0.r44x201506110820"; singleton:="true" [id=973] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:568)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.core.internal.content.ContentType.getDescriber(ContentType.java:271)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.collectMatchingByContents(ContentTypeCatalog.java:184)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.internalFindContentTypesFor(ContentTypeCatalog.java:403)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.internalFindContentTypesFor(ContentTypeCatalog.java:450)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:346)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:360)
+	at org.eclipse.core.internal.content.ContentTypeMatcher.getDescriptionFor(ContentTypeMatcher.java:86)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.readDescription(ContentDescriptionManager.java:445)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.getDescriptionFor(ContentDescriptionManager.java:355)
+	at org.eclipse.core.internal.resources.File.internalGetCharset(File.java:247)
+	at org.eclipse.core.internal.resources.File.getCharset(File.java:208)
+	at org.eclipse.core.internal.resources.File.getCharset(File.java:195)
+	at org.eclipse.ui.internal.editors.quickdiff.LastSaveReferenceProvider.readDocument(LastSaveReferenceProvider.java:247)
+	at org.eclipse.ui.internal.editors.quickdiff.LastSaveReferenceProvider.getReference(LastSaveReferenceProvider.java:124)
+	at org.eclipse.ui.internal.texteditor.quickdiff.DocumentLineDiffer$2.run(DocumentLineDiffer.java:537)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

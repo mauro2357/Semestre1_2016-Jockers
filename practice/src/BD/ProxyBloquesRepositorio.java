@@ -13,11 +13,8 @@ public class ProxyBloquesRepositorio implements IBloquesRepositorio{
         	System.out.println("No se puede agregar Bloque, su nombre no puede ser nulo");
         }
     }
-        
-    	
-	@Override
-	public void actualizar(Bloque Bloque1) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void actualizar(Bloque Bloque1){
+    	BloquesRepositorio bloquerepositorio= new BloquesRepositorio();
+    	bloquerepositorio.actualizar(Bloque1);
+    }
 }

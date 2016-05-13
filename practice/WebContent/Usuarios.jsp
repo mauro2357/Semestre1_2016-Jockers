@@ -65,7 +65,7 @@
 			<div id="header">
 			<ul class="nav">
 				
-				<li><a href="">Consultar Horarios</a>
+				<li><a>Consultar Horarios</a>
 					<ul>
 					<li><a href="ConsultaOficinasControlador">Horarios Oficinas</a>
 					<li><a href="ConsultaSalasControlador">Horarios Salas</a>
@@ -73,6 +73,8 @@
 					</ul>					
 				</li>			
 				<li><a href="ReporteControlador">Envie Sugerencias</a>
+				<li><a href="ImagenesUsuario.jsp">Envie Imágenes</a></li>
+				<li><a href="BloquesInfoControlador">Caracteristicas Bloques</a></li>
 				<li><a href="Administrador.jsp">Login</a></li>
 			</ul>
 		</div>

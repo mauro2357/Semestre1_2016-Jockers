@@ -9,10 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.ActualizacionBloquesRepositorio;
 import BD.ConsultaBloques;
+import BD.ProxyBloquesRepositorio;
 import Clases.Bloque;
-
 
 /**
  * Servlet implementation class ActualizacionBloquesControlador
@@ -34,7 +33,7 @@ public class ActualizacionBloquesControlador extends HttpServlet {
             String zona_estudio =request.getParameter("estudio");
             String nombre=request.getParameter("bloques");
             
-            Bloque nbloque=new Bloque(new ActualizacionBloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
+            Bloque nbloque=new Bloque(new ProxyBloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
             nbloque.actualizar();
             
         }catch (NumberFormatException e) {
