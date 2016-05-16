@@ -1,22 +1,21 @@
-<%@page import="java.sql.*"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
 <%@page import="Clases.Bloque"%>
-<%@page import="BD.ConsultaDatosBloques"%>
-
-<table style = "width:50%">      
-	<tbody>
-	<%Bloque bloque = (Bloque) request.getAttribute("bloque");{				  
-	out.println("<br>"+"Aulas: " +bloque.getAulas()+"</td>");
-	out.println("<br>"+"Baños: "+bloque.getBanos()+"</td>");
-	out.println("<br>"+"Laboratorios y Salas: "+bloque.getLaboratorios_salas()+"</td>");
-	out.println("<br>"+"Oficinas y Facultades: "+bloque.getOficinas_facultades()+"</td>");
-	out.println("<br>"+"Oratorio: "+bloque.getOratorios()+"</td>");
-	out.println("<br>"+"Parqueadero: "+bloque.getParqueaderos()+"</td>");
-	out.println("<br>"+"Pisos: "+bloque.getPisos()+"</td>");
-	out.println("<br>"+"Zonas de Estudio: "+bloque.getZonas_estudio()+"</td>");
-	}%>
-	</tbody>
-</table>
+<%@page import="java.util.ArrayList"%>
+<div id='infobloque'>  
+      			<select name='infobloque'>
+      			<%ArrayList<Bloque> lista = (ArrayList<Bloque>)request.getAttribute("InfoBloques");
+                        for (Bloque h : lista) {
+                    %>                    
+                    <option><%=("Aulas: "+h.getAulas())%></option>
+                    <option><%=("Pisos: "+h.getPisos())%></option> 
+                    <option><%=("Baños: "+h.getBanos())%></option> 
+                    <option><%=("Laboratorios y Salas: "+h.getLaboratorios_salas())%></option>
+                    <option><%=("Oficinas y Facultades: "+h.getOficinas_facultades())%></option>
+                    <option><%=("Oratorios: "+h.getOratorios())%></option> 
+                    <option><%=("Parqueadero: "+h.getParqueaderos())%></option> 
+                    <option><%=("Zonas de Estudio: "+h.getZonas_estudio())%></option>                          
+                    <%}
+                    %>
+                 </select>
+                 <br>        			
+      			</div>  
+      			

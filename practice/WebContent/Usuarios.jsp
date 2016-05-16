@@ -64,17 +64,21 @@
 			<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 			<div id="header">
 			<ul class="nav">
-				
-				<li><a>Consultar Horarios</a>
+				<li><a>Mapa: </a>
+				<ul>
+				<li><a href="BloquesPuntos.jsp">Bloques</a></li>
+				<li><a href="PorteriasPuntos.jsp">Porterias</a></li>
+				</ul>				
+				<li><a>Consultar: </a>
 					<ul>
 					<li><a href="ConsultaOficinasControlador">Horarios Oficinas</a>
 					<li><a href="ConsultaSalasControlador">Horarios Salas</a>
 					<li><a href="ConsultaLaboratoriosControlador">Horarios Laboratorios</a>
+					<li><a href="BloquesInfoControlador">Caracteristicas Bloques</a></li>
 					</ul>					
-				</li>			
-				<li><a href="ReporteControlador">Envie Sugerencias</a>
-				<li><a href="ImagenesUsuario.jsp">Envie Imágenes</a></li>
-				<li><a href="BloquesInfoControlador">Caracteristicas Bloques</a></li>
+				</li>
+				<li><a href="GuardarImagenesUsuarios.jsp">Envie Imágenes</a></li>			
+				<li><a href="ReporteControlador">Envie Sugerencias</a>												
 				<li><a href="Administrador.jsp">Login</a></li>
 			</ul>
 		</div>

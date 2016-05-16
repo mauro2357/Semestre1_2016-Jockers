@@ -18,10 +18,8 @@ public  class ImagenesSugeridasControlador extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	RequestDispatcher rd = request.getRequestDispatcher("Imagenesenviadas.jsp");
-	try{
-		
-		
+	RequestDispatcher rd = request.getRequestDispatcher("GuardarImagenesUsuarios.jsp");
+	try{		
 		String nombre=request.getParameter("nombre");
 	    String direccion = request.getParameter("direccion");
 	    FileInputStream guardar = new FileInputStream(direccion);
@@ -58,18 +56,12 @@ public  class ImagenesSugeridasControlador extends HttpServlet{
 	// TODO Auto-generated method stub
 	responder(request, response);
 	}
-
-
-
-		
-		@Override
-		protected Object clone() throws CloneNotSupportedException {
-			// TODO Auto-generated method stub
-			return super.clone();
-		}
-		
-
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
 	}
+}
 
 	
 	

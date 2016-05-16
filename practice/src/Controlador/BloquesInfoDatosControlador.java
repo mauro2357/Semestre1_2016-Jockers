@@ -32,8 +32,11 @@ public class BloquesInfoDatosControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("BloquesInfo.jsp");
-		rd.forward(request, response);
+		String bloques=request.getParameter("bloques");
+		request.setAttribute("InfoBloques", ConsultaDatosBloques.consultar(bloques));
+		RequestDispatcher rs=request.getRequestDispatcher("InfoBloques.jsp");
+		rs.forward(request, response);
+		System.out.println("Entro al Controlador2 doGet");
 	}
 
 	/**
@@ -41,8 +44,7 @@ public class BloquesInfoDatosControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nombre = request.getParameter("bloque");		        
-		ConsultaDatosBloques.consultar(nombre);	
+		
 	}
 
 }

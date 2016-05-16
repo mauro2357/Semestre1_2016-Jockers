@@ -1,7 +1,7 @@
 package Clases;
 
 import java.io.FileInputStream;
-
+import java.io.InputStream;
 
 import BD.IImagenesRepositorio;
 
@@ -14,13 +14,13 @@ private IImagenesRepositorio imagenesRepositorio;
 	}
 
 	private String nombre;
-	private FileInputStream direccion;
+	private InputStream direccion;
 	
 	
 	
 	
 	
-	public FileInputStream getdireccion() {
+	public InputStream getdireccion() {
 		return direccion;
 	}
 	public void setDireccion_imagen(FileInputStream direccion) {
@@ -39,7 +39,7 @@ public void setNombre(String nombre) {
 }
 
 	
-	public Imagen (BD.ImagenesRepositorio imagenesRepositorio ,String nombre, FileInputStream direccion) {
+	public Imagen (BD.ImagenesRepositorio imagenesRepositorio ,String nombre, InputStream direccion) {
 		super();
 		this.imagenesRepositorio=imagenesRepositorio;	
 		this.nombre=nombre;
@@ -47,6 +47,9 @@ public void setNombre(String nombre) {
 		
 	}
 	
+	public Imagen(String string, InputStream unicodeStream) {
+		// TODO Auto-generated constructor stub
+	}
 	public void agregar() {
 		imagenesRepositorio.agregar(this);  
 		}
