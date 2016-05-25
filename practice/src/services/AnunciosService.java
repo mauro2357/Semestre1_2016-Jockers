@@ -11,9 +11,9 @@ import Clases.Anuncios;
 @Path("/anuncios")
 public class AnunciosService {
 	@GET
-	@Path("/{param1}/{param2}/{param3}")
-	public Response crearZonaEstudio(@PathParam("param1") int empresa, @PathParam("param2") String anuncio, @PathParam("param3") String descripcion){ 
-		Anuncios nanuncio = new Anuncios(empresa, anuncio, descripcion);
+	@Path("/{param1}/{param2}")
+	public Response crearZonaEstudio(@PathParam("param1") String anuncio, @PathParam("param2") String descripcion){ 
+		Anuncios nanuncio = new Anuncios(anuncio, descripcion);
 		AnuncioRepositorio.agregar(nanuncio); 
  
 		return Response.status(200).entity("Su anuncio '"+anuncio +", "+ descripcion +"' fue enviado exitosamente").build();

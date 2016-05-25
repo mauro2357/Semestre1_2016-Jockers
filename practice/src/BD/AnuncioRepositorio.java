@@ -13,9 +13,9 @@ public class AnuncioRepositorio {
         Statement st;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "root");
             st = con.createStatement();
-            String i = "INSERT INTO anuncios (`empresa_anuncio`, `titulo_anuncio`, `descripcion_anuncio`) VALUES ("+ Anuncio1.getEmpresa_anuncio()+ ",'"+ Anuncio1.getTitulo_anuncio()+ "','" + Anuncio1.getDescripcion_anuncio()+ "')"; 
+            String i = "INSERT INTO anuncios (`titulo_anuncio`, `descripcion_anuncio`) VALUES ('"+ Anuncio1.getTitulo_anuncio()+ "','" + Anuncio1.getDescripcion_anuncio()+ "')"; 
             System.out.println(i);
             st.executeUpdate(i);
             st.close();

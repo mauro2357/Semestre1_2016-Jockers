@@ -9,37 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.AnuncioRepositorio;
-import Clases.Anuncios;
+import BD.ConsultaImagenes;
 
 /**
- * Servlet implementation class AnuncioControlador
+ * Servlet implementation class ConsultaSalasControlador
  */
-@WebServlet("/AnuncioControlador")
-public class AnuncioControlador extends HttpServlet {
+@WebServlet("/ConsultaSalasControlador")
+public class ConsultaImagenesControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd= request.getRequestDispatcher("Anuncios.jsp");
-        try{
-        	String titulo_anuncio=request.getParameter("nomanuncio");
-        	String descripcion_anuncio=request.getParameter("descanuncio");
-        	
-        	Anuncios nanuncio = new Anuncios(titulo_anuncio, descripcion_anuncio);
-        	AnuncioRepositorio.agregar(nanuncio);
-        }catch (NumberFormatException e) {
-        	e.printStackTrace();
-            request.setAttribute("estado", "error");
-        }finally{
-        	rd.forward(request, response);	
-        }        
-	}   
-	
-    public AnuncioControlador() {
+    public ConsultaImagenesControlador() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -49,7 +31,9 @@ public class AnuncioControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		RequestDispatcher rd = request.getRequestDispatcher("ConsultaImagenes.jsp");
+       	request.setAttribute("imagenes", ConsultaImagenes.getImagenes());
+        rd.forward(request, response);
 	}
 
 	/**
@@ -57,7 +41,6 @@ public class AnuncioControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);		
 	}
 
 }

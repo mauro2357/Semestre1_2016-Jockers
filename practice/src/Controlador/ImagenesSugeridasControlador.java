@@ -25,7 +25,7 @@ public  class ImagenesSugeridasControlador extends HttpServlet{
 	    FileInputStream guardar = new FileInputStream(direccion);
 	    String correo = request.getParameter("correo");
 	    String usuario =request.getParameter("datou");
-	    ImagenesSugeridas nimagen=new ImagenesSugeridas (nombre, guardar,correo,usuario);
+	    ImagenesSugeridas nimagen=new ImagenesSugeridas(nombre, guardar,correo,usuario);
 	    ImagenesSugeridasRepositorio.guardar(nimagen); 
 	    
 	}catch (NumberFormatException e) {

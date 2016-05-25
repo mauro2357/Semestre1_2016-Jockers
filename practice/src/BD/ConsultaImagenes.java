@@ -6,23 +6,22 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.LinkedList;
 
-import Clases.Anuncios;
+import Clases.Imagen;
 
-public class ConsultaAnuncios {
-
-	public static LinkedList<Anuncios> getAnuncios(){
-		LinkedList<Anuncios> ListaAnuncios = new LinkedList<Anuncios>();
+public class ConsultaImagenes {
+	public static LinkedList<Imagen> getImagenes(){
+		LinkedList<Imagen> ListaImagenes = new LinkedList<Imagen>();
         Connection con = null;
         Statement sql = null;
         {        	
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps", "root", "root");
             sql = con.createStatement();
-            ResultSet rs = sql.executeQuery("Select * from anuncios");  
+            ResultSet rs = sql.executeQuery("Select * from imagenes");  
             while (rs.next()){
-            	Anuncios Anuncio1 = new Anuncios(rs.getString("titulo_anuncio"), rs.getString("descripcion_anuncio"));
-            	ListaAnuncios.add(Anuncio1);
+            	Imagen Imagen1 = new Imagen(rs.getString("ima_nombre"), rs.getBinaryStream("ima_imagen"));
+            	ListaImagenes.add(Imagen1);
             }
             System.out.println("Conexion establecida en Anuncio");          
             rs.close();       
@@ -30,7 +29,9 @@ public class ConsultaAnuncios {
             System.out.println("error en la conexion" + e);
             }
         }
-		return ListaAnuncios; 
+		return ListaImagenes; 
 	}	
 }
            
+
+
