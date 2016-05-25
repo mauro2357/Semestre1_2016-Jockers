@@ -85,7 +85,7 @@ public class Bloque extends Lugar {
 		
 	}
 	public void actualizar(){
-		bloquesRepositorio.actualizar(this);
+		bloquesRepositorio.agregar(this);
 	}
 }
 	

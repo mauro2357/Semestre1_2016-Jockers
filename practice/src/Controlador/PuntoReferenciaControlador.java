@@ -30,9 +30,10 @@ public class PuntoReferenciaControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("Mapa.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("BloquesPuntos.jsp");
 		request.setAttribute("puntos", ConsultaPuntoReferencia.getPuntos());
         rd.forward(request, response);
+        System.out.println("entro servlet");
 	}
 
 	/**
@@ -40,6 +41,9 @@ public class PuntoReferenciaControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request,response);
+        System.out.println("entro servlet dopost");
+
 	}
 
 }

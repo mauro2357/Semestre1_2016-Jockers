@@ -9,12 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.ReporteFalloRepositorio;
-import BD.ReporteSugerenciaRepositorio;
-import Clases.Fallo;
-import Clases.Sugerencia;
-import Clases.Reporte;
-
+import Clases.Factory;
 /**
  * Servlet implementation class SugerenciasControlador
  */
@@ -27,19 +22,9 @@ public class ReporteControlador extends HttpServlet {
      */
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd= request.getRequestDispatcher("Reportes.jsp");
+        Factory unicaInstancia= Factory.getinstance();
         try{
-        	String reporte_nombre = request.getParameter("dato");
-        	String reporte_reporte = request.getParameter("sugrep");
-        	String reporte_correo = request.getParameter("sugcorreo");
-        	String reporte_usuario = request.getParameter("datou");
-        	
-        	if(request.getParameter("dato").equals("Fallo")){
-        		Reporte nfallo = new Fallo (new ReporteFalloRepositorio(), reporte_nombre, reporte_reporte, reporte_correo, reporte_usuario);
-        	    nfallo.agregar();              	           		  	            	 
-            	}else{
-            			Reporte nsugerencia = new Sugerencia(new ReporteSugerenciaRepositorio(), reporte_nombre, reporte_reporte, reporte_correo, reporte_usuario);
-                    	nsugerencia.agregar();             		       		
-            	}      	
+        	unicaInstancia.agregarReporte(request);    	
         }catch (NumberFormatException e) {
         	e.printStackTrace();
             request.setAttribute("estado", "error");

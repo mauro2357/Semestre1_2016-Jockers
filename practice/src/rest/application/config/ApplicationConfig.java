@@ -18,6 +18,7 @@ public class ApplicationConfig extends Application {
 		Set<Class<?>> resources = new java.util.HashSet<Class<?>>();
 		resources.add(services.HelloWorldService.class);
 		resources.add(services.ZonasEstudioService.class);
+		resources.add(services.AnunciosService.class);
 		return resources;    
     }
 

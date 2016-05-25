@@ -19,10 +19,8 @@
 <fullyQualifiedTypeName name="BD.ActualizacionOficinasRepositorio"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="BD.ActualizacionBloquesRepositorio"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Controlador.BloquesInfoControlador"/>
-<fullyQualifiedTypeName name="Clases.Bloque"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
@@ -32,4 +30,8 @@
 <fullyQualifiedTypeName name="services.HelloWorldService"/>
 <fullyQualifiedTypeName name="javax.ws.rs.ApplicationPath"/>
 <fullyQualifiedTypeName name="services.ZonasEstudioService"/>
+<fullyQualifiedTypeName name="BD.ActualizacionBloquesRepositorio"/>
+<fullyQualifiedTypeName name="Clases.Bloque"/>
+<fullyQualifiedTypeName name="Clases.Factory"/>
+<fullyQualifiedTypeName name="Clases.Administrador"/>
 </qualifiedTypeNameHistroy>

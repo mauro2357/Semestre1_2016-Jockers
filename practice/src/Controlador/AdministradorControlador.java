@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import BD.AdministradorRepositorio;
 import Clases.Administrador;
 
 /**
@@ -36,18 +35,19 @@ public class AdministradorControlador extends HttpServlet {
         
         Administrador nadministrador = new Administrador(adminuser, adminpass);
  		
-		if(AdministradorRepositorio.validate(nadministrador)){    
+		if (FacadeAdministrador.orquestador(nadministrador).equals("Ingreso")){  
             RequestDispatcher rd=request.getRequestDispatcher("MenuPrincipal.html");    
             rd.forward(request,response);
             out.println("Entro al if");
         }    
-        else{    
+        else if(FacadeAdministrador.orquestador(nadministrador).equals("NoIngreso")){{    
             out.print("<p style=\"color:red\">Usuario y/o Contraseña Invalidos</p>");    
             RequestDispatcher rd=request.getRequestDispatcher("Administrador.jsp");    
             rd.include(request,response);    
-        }   
-        out.close();    
-    } 
+        	}   
+        		out.close();    
+        } 
+	}
 }
 
 

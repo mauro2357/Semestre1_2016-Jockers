@@ -26,7 +26,8 @@
       			<select name='infobloque'>  
       			<option value='-1'></option>  
       			</select>  
-      			</div>                   
+      			</div> 
+      			<a href="MenuPrincipal.html">Regrese al Menu Principal</a>                  
 <script>
 function infobloques(str)
 {

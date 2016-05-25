@@ -27,7 +27,7 @@ public class ImagenesSugeridasRepositorio {
             Class.forName(driver).newInstance();  
             conn = DriverManager.getConnection(url + dbName, userName, password);  
   
-            pst = conn.prepareStatement("insert into ImagenesUsuarios values(?,?,?,?)");  
+            pst = conn.prepareStatement("insert into imagenes_sugeridas values(?,?,?,?)");  
             pst.setString(1, imagenA.getNombre());  
             pst.setBlob(2, imagenA.getdireccion());
             pst.setString(3, imagenA.getCorreo());

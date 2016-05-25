@@ -27,7 +27,7 @@ try{
     FileInputStream direccion2 = new FileInputStream(direccion);
     
     Imagen nimagen=new Imagen (nombre, direccion2);
-    ImagenesRepositorio.imagen(nimagen);  
+    ImagenesRepositorio.agregar(nimagen);  
         
 }catch (NumberFormatException e) {
     request.setAttribute("estado", "error");

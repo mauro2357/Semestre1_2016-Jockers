@@ -13,8 +13,5 @@ public class ProxyBloquesRepositorio implements IBloquesRepositorio{
         	System.out.println("No se puede agregar Bloque, su nombre no puede ser nulo");
         }
     }
-    public void actualizar(Bloque Bloque1){
-    	BloquesRepositorio bloquerepositorio= new BloquesRepositorio();
-    	bloquerepositorio.actualizar(Bloque1);
-    }
+   
 }
