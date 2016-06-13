@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import BD.ConsultaAnuncios;
+
 /**
  * Servlet implementation class ConsultaAnunciosControlador
  */
@@ -31,9 +32,15 @@ public class ConsultaAnunciosControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("ConsultaAnuncios.jsp");
-       	request.setAttribute("anuncios", ConsultaAnuncios.getAnuncios());
+       	try {
+			request.setAttribute("anuncios", ConsultaAnuncios.getAnuncios());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         rd.forward(request, response);
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

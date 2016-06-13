@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.ConsultaPuntoReferencia;
+import BD.ConsultaDatosPuntos;
+import BD.JsonO;
 
 /**
  * Servlet implementation class PuntoReferenciaControlador
@@ -30,20 +31,28 @@ public class PuntoReferenciaControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("BloquesPuntos.jsp");
-		request.setAttribute("puntos", ConsultaPuntoReferencia.getPuntos());
+		RequestDispatcher rd = request.getRequestDispatcher("Json.jsp");
+		try {
+			request.setAttribute("puntos", JsonO.getPunto());
+			System.out.println("Entro controlador 1 doget");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         rd.forward(request, response);
-        System.out.println("entro servlet");
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request,response);
-        System.out.println("entro servlet dopost");
-
+		// TODO Auto-generated method stub	        
+		try {
+			String punto = request.getParameter("punto");	
+			ConsultaDatosPuntos.consultar(punto);
+			System.out.println("Entro al Controlador1 doPost");		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

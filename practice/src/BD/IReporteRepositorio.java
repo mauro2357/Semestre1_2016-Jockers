@@ -3,6 +3,6 @@ package BD;
 import Clases.Reporte;
 
 public interface IReporteRepositorio {
-	public void agregar(Reporte Reporte1);
+	public void agregar(Reporte Reporte1) throws Exception;
 
 }

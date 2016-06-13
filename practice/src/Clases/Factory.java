@@ -12,7 +12,7 @@ public class Factory {
 		if (unicaInstancia==null)unicaInstancia= new Factory();
 		return unicaInstancia;
 	}
-	public void agregarReporte(HttpServletRequest request){
+	public void agregarReporte(HttpServletRequest request) throws Exception{
 		if(request.getParameter("dato").equals("Fallo")){
 			String reporte_nombre = request.getParameter("dato");
         	String reporte_reporte = request.getParameter("sugrep");

@@ -5,7 +5,7 @@ import Clases.Bloque;
 public class ProxyBloquesRepositorio implements IBloquesRepositorio{
 	public ProxyBloquesRepositorio() {
     }
-    public void agregar(Bloque Bloque1){
+    public void agregar(Bloque Bloque1) throws Exception{
     	BloquesRepositorio bloquerepositorio = new BloquesRepositorio();
         if (!Bloque1.getNombre_bloque().equals("null")){
         	bloquerepositorio.agregar(Bloque1);

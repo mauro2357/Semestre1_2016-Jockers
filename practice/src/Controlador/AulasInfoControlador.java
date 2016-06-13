@@ -32,9 +32,14 @@ public class AulasInfoControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rs= request.getRequestDispatcher("AulasInfo.jsp");
-		request.setAttribute("aulas", ConsultaAulas.getAula());
-		rs.forward(request, response);
+		try {
+			RequestDispatcher rs= request.getRequestDispatcher("AulasInfo.jsp");
+			request.setAttribute("aulas", ConsultaAulas.getAula());		
+			rs.forward(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -42,6 +47,11 @@ public class AulasInfoControlador extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String aula=request.getParameter("aulabloque");
-		ConsultaDatosAulas.Consultar(aula);
+		try {
+			ConsultaDatosAulas.Consultar(aula);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

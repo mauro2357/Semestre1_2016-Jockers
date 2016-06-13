@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Clases.Factory;
+
 /**
  * Servlet implementation class SugerenciasControlador
  */
@@ -18,13 +19,14 @@ public class ReporteControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
+     * @throws Exception 
      * @see HttpServlet#HttpServlet()
      */
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd= request.getRequestDispatcher("Reportes.jsp");
         Factory unicaInstancia= Factory.getinstance();
         try{
-        	unicaInstancia.agregarReporte(request);    	
+        	unicaInstancia.agregarReporte(request);          		       		
         }catch (NumberFormatException e) {
         	e.printStackTrace();
             request.setAttribute("estado", "error");
@@ -42,7 +44,12 @@ public class ReporteControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -50,7 +57,11 @@ public class ReporteControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

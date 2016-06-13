@@ -1,12 +1,14 @@
 package Controlador;
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import BD.ConsultaBloques;
 import BD.OratoriosRepositorio;
 import Clases.Oratorio;
@@ -19,9 +21,10 @@ public class OratoriosControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
+     * @throws Exception 
      * @see HttpServlet#HttpServlet()
      */
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd = request.getRequestDispatcher("Oratorios.jsp");
         try{
         	String nombre_bloque=request.getParameter("orabloque");
@@ -50,16 +53,24 @@ public class OratoriosControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
         RequestDispatcher rd = request.getRequestDispatcher("Oratorios.jsp");
-        request.setAttribute("bloques", ConsultaBloques.getBloques());
+        try {
+			request.setAttribute("bloques", ConsultaBloques.getBloques());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         rd.forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

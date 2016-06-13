@@ -21,7 +21,7 @@ import BD.ConsultaLaboratorios;
 public class ActualizacionLaboratoriosControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd = request.getRequestDispatcher("ActualizarHorarioLaboratorio.jsp");
         PrintWriter out = response.getWriter(); 
         try{
@@ -56,8 +56,14 @@ public class ActualizacionLaboratoriosControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("ActualizarHorarioLaboratorio.jsp");
-    	request.setAttribute("laboratorio", ConsultaLaboratorios.getLaboratorios());
-        request.setAttribute("horario", ConsultaHorarios.getHorario());
+    	try {
+    		request.setAttribute("horario", ConsultaHorarios.getHorario());
+    		request.setAttribute("laboratorio", ConsultaLaboratorios.getLaboratorios());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
         rd.forward(request, response);
         }
 	
@@ -67,7 +73,11 @@ public class ActualizacionLaboratoriosControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

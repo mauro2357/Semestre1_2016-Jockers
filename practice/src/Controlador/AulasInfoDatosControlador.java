@@ -32,7 +32,12 @@ public class AulasInfoDatosControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String aula=request.getParameter("aulas");
-		request.setAttribute("infoaula",ConsultaDatosAulas.Consultar(aula));
+		try {
+			request.setAttribute("infoaula",ConsultaDatosAulas.Consultar(aula));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		RequestDispatcher rs=request.getRequestDispatcher("InfoAulas.jsp");
 		rs.forward(request,response);
 	}

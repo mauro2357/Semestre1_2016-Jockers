@@ -32,7 +32,12 @@ public class ConsultaSalasControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("HorariosSalas.jsp");
-       	request.setAttribute("salas", ConsultaSala.getSalas());
+       	try {
+			request.setAttribute("salas", ConsultaSala.getSalas());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         rd.forward(request, response);
 	}
 

@@ -23,7 +23,7 @@ import Clases.MateriaHorarioAAA;
 @WebServlet("/MateriasControlador")
 public class MateriasControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd = request.getRequestDispatcher("Materia.jsp");   
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out= response.getWriter();
@@ -83,8 +83,13 @@ public class MateriasControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("Materia.jsp");
-        request.setAttribute("facultad", ConsultaFacultades.getFacultades());
-        request.setAttribute("bloques", ConsultaBloques.getBloques());
+        try {
+        	request.setAttribute("facultad", ConsultaFacultades.getFacultades());
+        	request.setAttribute("bloques", ConsultaBloques.getBloques());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         rd.forward(request, response);
 	}
 
@@ -93,8 +98,11 @@ public class MateriasControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
-
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

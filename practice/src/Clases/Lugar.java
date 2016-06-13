@@ -15,5 +15,5 @@ public abstract class Lugar{
 	public Lugar(){
 		super();
 	}
-	public abstract void agregar();
+	public abstract void agregar() throws Exception;
 }

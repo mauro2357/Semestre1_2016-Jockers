@@ -47,7 +47,7 @@ public abstract class Reporte {
 	public void setReporte_usuario(String reporte_usuario) {
 		this.reporte_usuario = reporte_usuario;
 	}	
-	public void agregar() {
+	public void agregar() throws Exception {
 		reporteRepositorio.agregar(this);		
 	}
 		

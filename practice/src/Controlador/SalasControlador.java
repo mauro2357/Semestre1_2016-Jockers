@@ -22,9 +22,10 @@ public class SalasControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
+     * @throws Exception 
      * @see HttpServlet#HttpServlet()
      */
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd = request.getRequestDispatcher("Salas.jsp");
         try{
         	String nombre_bloque = request.getParameter("blosala");
@@ -56,9 +57,14 @@ public class SalasControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
         RequestDispatcher rd = request.getRequestDispatcher("Salas.jsp");
-        request.setAttribute("bloques", ConsultaBloques.getBloques());
-   		request.setAttribute("Horario", ConsultaHorarios.getHorario());
-        rd.forward(request, response);
+        try {
+        	request.setAttribute("Horario", ConsultaHorarios.getHorario());
+        	request.setAttribute("bloques", ConsultaBloques.getBloques());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+   		rd.forward(request, response);
 	}
 
 	/**
@@ -66,7 +72,11 @@ public class SalasControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

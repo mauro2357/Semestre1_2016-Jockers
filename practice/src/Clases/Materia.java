@@ -42,7 +42,7 @@ public abstract class Materia extends Horario{
 		this.facultad_nombre=facultad_nombre;
 	}
 	
-	public boolean agregarbd (){
+	public boolean agregarbd () throws Exception{
 		if(MateriaRepositorio.agregar(this)) return true;
 		return false;		
 	}

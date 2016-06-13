@@ -80,11 +80,11 @@ public class Bloque extends Lugar {
 	}
 	
 	@Override
-	public void agregar() {
+	public void agregar() throws Exception {
 		bloquesRepositorio.agregar(this);
 		
 	}
-	public void actualizar(){
+	public void actualizar() throws Exception{
 		bloquesRepositorio.agregar(this);
 	}
 }

@@ -32,7 +32,12 @@ public class ConsultaLaboratoriosControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("HorariosLaboratorios.jsp");
-       	request.setAttribute("laboratorios", ConsultaLaboratorios.getLaboratorios());
+       	try {
+			request.setAttribute("laboratorios", ConsultaLaboratorios.getLaboratorios());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         rd.forward(request, response);
 	}
 

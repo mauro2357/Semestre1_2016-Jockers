@@ -25,7 +25,7 @@
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(marcadores[i][1], marcadores[i][2]),
           map: map,
-          icon : 'http://es.downloadicons.net/sites/default/files/icono-de-edificio-de-oficina-24421.png'
+          icon : 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png'
         });
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {

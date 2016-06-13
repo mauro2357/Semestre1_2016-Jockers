@@ -17,7 +17,7 @@ import Clases.ImagenesSugeridas;
 public  class ImagenesSugeridasControlador extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	RequestDispatcher rd = request.getRequestDispatcher("GuardarImagenesUsuarios.jsp");
 	try{		
 		String nombre=request.getParameter("nombre");
@@ -25,18 +25,18 @@ public  class ImagenesSugeridasControlador extends HttpServlet{
 	    FileInputStream guardar = new FileInputStream(direccion);
 	    String correo = request.getParameter("correo");
 	    String usuario =request.getParameter("datou");
-	    ImagenesSugeridas nimagen=new ImagenesSugeridas (nombre, guardar,correo,usuario);
+	    ImagenesSugeridas nimagen=new ImagenesSugeridas(nombre, guardar,correo,usuario);
 	    ImagenesSugeridasRepositorio.guardar(nimagen); 
 	    
 	}catch (NumberFormatException e) {
 	    request.setAttribute("estado", "error");
-	    }finally {
-	     rd.forward(request, response);
-	 }
+	    	}finally {
+	    	rd.forward(request, response);
+	    	}
 	}
 
 	public ImagenesSugeridasControlador() {
-	super();
+		super();
 	// TODO Auto-generated constructor stub
 
 	}
@@ -46,7 +46,12 @@ public  class ImagenesSugeridasControlador extends HttpServlet{
 	*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	// TODO Auto-generated method stub
-	responder(request, response);
+	try {
+		responder(request, response);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 
 	/**
@@ -54,7 +59,12 @@ public  class ImagenesSugeridasControlador extends HttpServlet{
 	*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	// TODO Auto-generated method stub
-	responder(request, response);
+	try {
+		responder(request, response);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 	@Override
 	protected Object clone() throws CloneNotSupportedException {

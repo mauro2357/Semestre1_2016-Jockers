@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.ActualizacionBloquesRepositorio;
 import BD.ConsultaBloques;
+import BD.ProxyBloquesRepositorio;
 import Clases.Bloque;
 
 /**
@@ -20,7 +20,7 @@ import Clases.Bloque;
 public class ActualizacionBloquesControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd = request.getRequestDispatcher("ActualizacionDatosBloques.jsp");
         try{
         	int aulas = Integer.parseInt(request.getParameter("numaulas")); 
@@ -33,7 +33,7 @@ public class ActualizacionBloquesControlador extends HttpServlet {
             String zona_estudio =request.getParameter("estudio");
             String nombre=request.getParameter("bloques");
             
-            Bloque nbloque=new Bloque(new ActualizacionBloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
+            Bloque nbloque=new Bloque(new ProxyBloquesRepositorio(), nombre, pisos, aulas, laboratorio_salas, oficinas_facultades, banos, oratorio, parqueadero, zona_estudio);
             nbloque.actualizar();
             
         }catch (NumberFormatException e) {
@@ -58,7 +58,12 @@ public class ActualizacionBloquesControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("ActualizacionDatosBloques.jsp");
-		request.setAttribute("bloques", ConsultaBloques.getBloques());
+		try {
+			request.setAttribute("bloques", ConsultaBloques.getBloques());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         rd.forward(request, response);
 	}
 
@@ -67,7 +72,11 @@ public class ActualizacionBloquesControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

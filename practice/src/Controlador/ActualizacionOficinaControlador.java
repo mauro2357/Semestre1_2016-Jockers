@@ -21,7 +21,7 @@ import BD.ConsultaOficinas;
 public class ActualizacionOficinaControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd = request.getRequestDispatcher("ActualizarHorarioOficina.jsp");
         PrintWriter out = response.getWriter(); 
         try{
@@ -55,8 +55,14 @@ public class ActualizacionOficinaControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("ActualizarHorarioOficina.jsp");
-        request.setAttribute("oficina", ConsultaOficinas.getOficinas());
-        request.setAttribute("horario", ConsultaHorarios.getHorario());
+        try {
+        	request.setAttribute("horario", ConsultaHorarios.getHorario());
+        	request.setAttribute("oficina", ConsultaOficinas.getOficinas());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         rd.forward(request, response);
 	}
 
@@ -65,7 +71,12 @@ public class ActualizacionOficinaControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

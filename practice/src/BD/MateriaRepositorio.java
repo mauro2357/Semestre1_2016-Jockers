@@ -1,8 +1,6 @@
 package BD;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 import Clases.Materia;
@@ -13,14 +11,10 @@ import Clases.MateriaHorarioAAA;
 public class MateriaRepositorio {
 	public MateriaRepositorio(Materia Materia1){
 	}
-	public static boolean agregar(Materia Materia1){
-		Connection con;
-        Statement st;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ucomaps","root", "");
-            st = con.createStatement();
-            if(Materia1 instanceof MateriaHorarioA){ 
+	public static boolean agregar(Materia Materia1) throws Exception{
+		Connection con = new Conexion().obtenerConexion() ;
+        Statement st = con.createStatement();
+        	if(Materia1 instanceof MateriaHorarioA){ 
             	String i = "INSERT INTO materias (`mat_nombre`, `mat_creditos`, `hor_nombre`, `blo_nombre`, `aul_nombre`, `fac_nombre` ) VALUES ('"+ Materia1.getMateria_nombre()+ "',"+ Materia1.getMateria_creditos()+ ",'" + Materia1.getHorario_nombre() +"','" + Materia1.getNombre_bloque()+ "','" + Materia1.getAula_nombre()+"','" + Materia1.getFacultad_nombre()+ "')"; 
             	System.out.println("Horario A " + i);
             	st.executeUpdate(i);
@@ -37,14 +31,8 @@ public class MateriaRepositorio {
                 System.out.println("Horario AAA " + i);
                 st.executeUpdate(i);
                 st.close();
-                }         			
-       }catch (ClassNotFoundException e){
-            System.out.println("La clase no existe");
-            return false;
-        }catch (SQLException e){
-            throw new RuntimeException(e);
-        }
-		return true;
+                }     			
+            return true;
     }
 }
 

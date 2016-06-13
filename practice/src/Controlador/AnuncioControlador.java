@@ -18,19 +18,21 @@ import Clases.Anuncios;
 @WebServlet("/AnuncioControlador")
 public class AnuncioControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public AnuncioControlador() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+    protected void responder(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RequestDispatcher rd= request.getRequestDispatcher("Anuncios.jsp");
         try{
-        	int empresa_anuncio=Integer.parseInt(request.getParameter("empanuncio"));
         	String titulo_anuncio=request.getParameter("nomanuncio");
         	String descripcion_anuncio=request.getParameter("descanuncio");
         	
-        	Anuncios nanuncio = new Anuncios(empresa_anuncio, titulo_anuncio, descripcion_anuncio);
+        	Anuncios nanuncio = new Anuncios(titulo_anuncio, descripcion_anuncio);
         	AnuncioRepositorio.agregar(nanuncio);
         }catch (NumberFormatException e) {
         	e.printStackTrace();
@@ -38,19 +40,19 @@ public class AnuncioControlador extends HttpServlet {
         }finally{
         	rd.forward(request, response);	
         }        
-	}   
-	
-    public AnuncioControlador() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -58,7 +60,12 @@ public class AnuncioControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		responder(request,response);		
+		try {
+			responder(request,response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

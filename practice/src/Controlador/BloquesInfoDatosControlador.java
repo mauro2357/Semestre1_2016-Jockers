@@ -33,11 +33,16 @@ public class BloquesInfoDatosControlador extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String bloques=request.getParameter("bloques");
-		request.setAttribute("InfoBloques", ConsultaDatosBloques.consultar(bloques));
-		RequestDispatcher rs=request.getRequestDispatcher("InfoBloques.jsp");
-		rs.forward(request, response);
-		System.out.println("Entro al Controlador2 doGet");
-	}
+		try {
+			request.setAttribute("InfoBloques", ConsultaDatosBloques.consultar(bloques));
+			RequestDispatcher rs=request.getRequestDispatcher("InfoBloques.jsp");
+			rs.forward(request, response);
+			System.out.println("Entro al Controlador2 doGet");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

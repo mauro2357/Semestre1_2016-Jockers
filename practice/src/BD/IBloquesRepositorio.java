@@ -3,5 +3,5 @@ package BD;
 import Clases.Bloque;
 
 public interface IBloquesRepositorio {
-	public void agregar(Bloque Bloque1);
+	public void agregar(Bloque Bloque1) throws Exception;
 }

@@ -8,12 +8,12 @@ public class EnvioReporte {
 		this.ordenEnvioSugerencia = ordenEnvioSugerencia;
 		this.ordenEnvioFallo = ordenEnvioFallo;		
 	}
-	public void envioSugerencia(){
+	public void envioSugerencia() throws Exception{
 		ordenEnvioSugerencia.execute();	
     	System.out.println("Enviada llego hasta aca");
 
 	}
-	public void envioFallo(){
+	public void envioFallo() throws Exception{
 		ordenEnvioFallo.execute();
 	}
 }

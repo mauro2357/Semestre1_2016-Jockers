@@ -8,7 +8,7 @@ public class EnvioSugerencia implements ICommand{
 	}
 
 	@Override
-	public void execute() {
+	public void execute() throws Exception {
 		// TODO Auto-generated method stub
 		mireporte.agregar();
     	System.out.println("Enviada llego hasta aca");

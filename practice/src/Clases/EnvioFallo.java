@@ -8,7 +8,7 @@ public class EnvioFallo implements ICommand{
 	}
 
 	@Override
-	public void execute() {
+	public void execute() throws Exception {
 		// TODO Auto-generated method stub
 		mireporte.agregar();
 	}
