@@ -1,0 +1,332 @@
+/*
+Created: 16/03/2016
+Modified: 18/03/2016
+Model: Universal
+Database: MySQL 5.1
+*/
+
+-- Create tables section -------------------------------------------------
+
+-- Table bloques
+
+CREATE TABLE bloques
+(
+  blo_nombre Varchar(20) NOT NULL,
+  blo_aulas Int NOT NULL,
+  blo_pisos Int NOT NULL,
+  blo_banos Int NOT NULL,
+  blo_salas_laboratorios Int NOT NULL,
+  blo_oficinas_facultades Int NOT NULL,
+  blo_oratorio Char(1) NOT NULL,
+  blo_parqueadero Char(1) NOT NULL,
+  blo_zona_estudio Char(1) NOT NULL
+)
+;
+
+ALTER TABLE bloques ADD PRIMARY KEY (blo_nombre)
+;
+
+-- Table aulas
+
+CREATE TABLE aulas
+(
+  blo_nombre Varchar(20) NOT NULL,
+  aul_nombre Varchar(20) NOT NULL,
+  aul_videobeam_tv Char(1) NOT NULL,
+  aul_capacidad Int NOT NULL
+)
+;
+
+ALTER TABLE aulas ADD PRIMARY KEY (blo_nombre,aul_nombre)
+;
+
+-- Table facultades
+
+CREATE TABLE facultades
+(
+  fac_telefono Int NOT NULL,
+  fac_horario Varchar(20) NOT NULL,
+  fac_descripcion Varchar(100) NOT NULL,
+  fac_nombre Varchar(20) NOT NULL,
+  blo_nombre Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE facultades ADD PRIMARY KEY (fac_nombre)
+;
+
+-- Table salas
+
+CREATE TABLE salas
+(
+  blo_nombre Varchar(20) NOT NULL,
+  sal_nombre Varchar(20) NOT NULL,
+  sal_numero_equipos Int NOT NULL,
+  sal_videobeam Char(1) NOT NULL,
+  hor_nombre Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE salas ADD PRIMARY KEY (blo_nombre,hor_nombre,sal_nombre)
+;
+
+-- Table laboratorios
+
+CREATE TABLE laboratorios
+(
+  blo_nombre Varchar(20) NOT NULL,
+  lab_nombre Varchar(20) NOT NULL,
+  lab_descripcion Varchar(100) NOT NULL,
+  lab_videobeam_tv Char(1) NOT NULL,
+  hor_nombre Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE laboratorios ADD PRIMARY KEY (blo_nombre,hor_nombre,lab_nombre)
+;
+
+-- Table oratorios
+
+CREATE TABLE oratorios
+(
+  blo_nombre Varchar(20) NOT NULL,
+  ora_nombre Varchar(20) NOT NULL,
+  ora_capacidad Int NOT NULL
+)
+;
+
+ALTER TABLE oratorios ADD PRIMARY KEY (blo_nombre,ora_nombre)
+;
+
+-- Table oficinas
+
+CREATE TABLE oficinas
+(
+  blo_nombre Varchar(20) NOT NULL,
+  ofi_nombre Varchar(20) NOT NULL,
+  ofi_telefono Int NOT NULL,
+  ofi_descripcion Varchar(100) NOT NULL,
+  hor_nombre Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE oficinas ADD PRIMARY KEY (blo_nombre,hor_nombre,ofi_nombre)
+;
+
+-- Table kioscos
+
+CREATE TABLE kioscos
+(
+  blo_nombre Varchar(20) NOT NULL,
+  kio_nombre Varchar(20) NOT NULL,
+  kio_capacidad Int NOT NULL
+)
+;
+
+ALTER TABLE kioscos ADD PRIMARY KEY (blo_nombre,kio_nombre)
+;
+
+-- Table auditorios
+
+CREATE TABLE auditorios
+(
+  blo_nombre Varchar(20) NOT NULL,
+  aud_nombre Varchar(20) NOT NULL,
+  aud_capacidad Int NOT NULL
+)
+;
+
+ALTER TABLE auditorios ADD PRIMARY KEY (blo_nombre,aud_nombre)
+;
+
+-- Table cafeterias
+
+CREATE TABLE cafeterias
+(
+  blo_nombre Varchar(20) NOT NULL,
+  caf_nombre Varchar(20) NOT NULL,
+  caf_capacidad Int NOT NULL
+)
+;
+
+ALTER TABLE cafeterias ADD PRIMARY KEY (blo_nombre,caf_nombre)
+;
+
+-- Table parqueaderos
+
+CREATE TABLE parqueaderos
+(
+  blo_nombre Varchar(20) NOT NULL,
+  par_nombre Varchar(20) NOT NULL,
+  par_capacidad Int NOT NULL
+)
+;
+
+ALTER TABLE parqueaderos ADD PRIMARY KEY (blo_nombre,par_nombre)
+;
+
+-- Table zona_estudio
+
+CREATE TABLE zona_estudio
+(
+  zon_nombre Varchar(20) NOT NULL,
+  zon_capacidad Int NOT NULL,
+  blo_nombre Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE zona_estudio ADD PRIMARY KEY (zon_nombre,blo_nombre)
+;
+
+-- Table administradores
+
+CREATE TABLE administradores
+(
+  adminidentificacion Int NOT NULL,
+  adminuser Varchar(20) NOT NULL,
+  adminpass Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE administradores ADD PRIMARY KEY (adminidentificacion)
+;
+
+-- Table materias
+
+CREATE TABLE materias
+(
+  mat_nombre Varchar(100) NOT NULL,
+  mat_creditos Int NOT NULL,
+  hor_nombre Varchar(20) NOT NULL,
+  blo_nombre Varchar(20) NOT NULL,
+  aul_nombre Varchar(20) NOT NULL,
+  fac_nombre Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE materias ADD PRIMARY KEY (aul_nombre,blo_nombre,hor_nombre,mat_nombre,fac_nombre)
+;
+
+-- Table horario
+
+CREATE TABLE horario
+(
+  hor_nombre Varchar(20) NOT NULL,
+  hor_hora_inicio Varchar(20) NOT NULL,
+  hor_hora_fin Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE horario ADD PRIMARY KEY (hor_nombre);
+
+-- Table reportes
+
+CREATE TABLE reportes (
+  rep_consecutivo Int NOT NULL,
+  rep_tipo varchar(45) NOT NULL,
+  rep_descripcion varchar(1000) NOT NULL,
+  rep_usuario varchar(100) NOT NULL,
+  rep_correo varchar(100) NOT NULL
+);
+
+ALTER TABLE reportes ADD PRIMARY KEY (rep_consecutivo);
+
+ALTER TABLE reportes CHANGE COLUMN rep_consecutivo rep_consecutivo INT(11) NOT NULL AUTO_INCREMENT;
+
+-- Table puntos_referencia
+
+CREATE TABLE puntos_referencia (
+  pun_nombre varchar(100) NOT NULL,
+  pun_latitud double NOT NULL,
+  pun_longitud double NOT NULL
+);
+
+ALTER TABLE puntos_referencia ADD PRIMARY KEY (pun_nombre);
+
+-- Table imagenes
+
+CREATE TABLE imagenes (
+  ima_nombre varchar(100) NOT NULL,
+  ima_imagen blob NOT NULL
+);
+
+ALTER TABLE imagenes ADD PRIMARY KEY (ima_nombre);
+;
+
+
+-- Table imagenes_sugeridas
+
+CREATE TABLE imagenes_sugeridas (
+  imasug_nombre varchar(100) NOT NULL,
+  imasug_imagen blob NOT NULL,
+  imasug_correo varchar(100) NOT NULL,
+  imasug_usuario varchar(100) NOT NULL
+);
+
+ALTER TABLE imagenes_sugeridas ADD PRIMARY KEY (imasug_nombre);
+
+-- Table anuncios
+
+CREATE TABLE anuncios (
+  numero_anuncio Int NOT NULL,
+  titulo_anuncio varchar(100) NOT NULL,
+  descripcion_anuncio varchar(1000) NOT NULL
+);
+
+ALTER TABLE anuncios ADD PRIMARY KEY (numero_anuncio);
+
+ALTER TABLE anuncios CHANGE COLUMN numero_anuncio numero_anuncio INT(11) NOT NULL AUTO_INCREMENT;
+
+-- Create relationships section ------------------------------------------------- 
+
+ALTER TABLE aulas ADD CONSTRAINT bloques_aulas FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE salas ADD CONSTRAINT bloques_salas FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE laboratorios ADD CONSTRAINT bloques_laboratorios FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE oratorios ADD CONSTRAINT bloques_oratorios FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE oficinas ADD CONSTRAINT bloques_oficinas FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE kioscos ADD CONSTRAINT bloques_kioscos FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE cafeterias ADD CONSTRAINT bloques_cafeterias FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE auditorios ADD CONSTRAINT bloques_auditorios FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE parqueaderos ADD CONSTRAINT bloques_parqueaderos FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE zona_estudio ADD CONSTRAINT bloques_zona_estudio FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE materias ADD CONSTRAINT horario_materias FOREIGN KEY (hor_nombre) REFERENCES horario (hor_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE salas ADD CONSTRAINT horarios_salas FOREIGN KEY (hor_nombre) REFERENCES horario (hor_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE oficinas ADD CONSTRAINT horarios_oficinas FOREIGN KEY (hor_nombre) REFERENCES horario (hor_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE laboratorios ADD CONSTRAINT horarios_laboratorios FOREIGN KEY (hor_nombre) REFERENCES horario (hor_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE materias ADD CONSTRAINT aulas_materias FOREIGN KEY (blo_nombre, aul_nombre) REFERENCES aulas (blo_nombre, aul_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE facultades ADD CONSTRAINT bloques_facultades FOREIGN KEY (blo_nombre) REFERENCES bloques (blo_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
+ALTER TABLE materias ADD CONSTRAINT facultades_materias FOREIGN KEY (fac_nombre) REFERENCES facultades (fac_nombre) ON DELETE NO ACTION ON UPDATE NO ACTION
+;
+
