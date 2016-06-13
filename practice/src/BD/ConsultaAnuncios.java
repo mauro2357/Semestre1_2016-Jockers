@@ -21,7 +21,7 @@ public class ConsultaAnuncios {
             sql = con.createStatement();
             ResultSet rs = sql.executeQuery("Select * from anuncios");  
             while (rs.next()){
-            	Anuncios Anuncio1 = new Anuncios(rs.getString("titulo_anuncio"), rs.getString("descripcion_anuncio"));
+            	Anuncios Anuncio1 = new Anuncios(rs.getInt("empresa_anuncio"), rs.getString("titulo_anuncio"), rs.getString("descripcion_anuncio"));
             	ListaAnuncios.add(Anuncio1);
             }
             System.out.println("Conexion establecida en Anuncio");          

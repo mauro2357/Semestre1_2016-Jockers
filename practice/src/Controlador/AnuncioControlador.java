@@ -26,10 +26,11 @@ public class AnuncioControlador extends HttpServlet {
 	protected void responder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd= request.getRequestDispatcher("Anuncios.jsp");
         try{
+        	int empresa_anuncio=Integer.parseInt(request.getParameter("empanuncio"));
         	String titulo_anuncio=request.getParameter("nomanuncio");
         	String descripcion_anuncio=request.getParameter("descanuncio");
         	
-        	Anuncios nanuncio = new Anuncios(titulo_anuncio, descripcion_anuncio);
+        	Anuncios nanuncio = new Anuncios(empresa_anuncio, titulo_anuncio, descripcion_anuncio);
         	AnuncioRepositorio.agregar(nanuncio);
         }catch (NumberFormatException e) {
         	e.printStackTrace();

@@ -10,6 +10,7 @@
 	<body>
 	<h1>Registra tu negocio o asunto en UCOMAPS</h1>
 <form action="AnuncioControlador" method="POST">
+	<p>Ingrese numero de registro: <input type="text" name="empanuncio" value="<%=request.getParameter("empanuncio")!=null?request.getParameter("empanuncio"):""%>"  />
 	<p>Ingrese el titulo del anuncio: <input type="text" name="nomanuncio" value="<%=request.getParameter("nomanuncio")!=null?request.getParameter("nomanuncio"):""%>"  />
 	<p>Ingrese la descripcion de su anuncio:<br>
 	<br><textarea name="descanuncio" rows="10" cols="30"></textarea>
