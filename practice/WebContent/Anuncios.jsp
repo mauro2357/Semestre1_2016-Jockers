@@ -5,10 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Anuncios en UcoMaps</title>
-</head>
 	<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
-	<body>
-	<h1>Registra tu negocio o asunto en UCOMAPS</h1>
+	</head>
+	<body>	
+	<div class="post">	
+	<h2>Registra tu negocio o asunto en UCOMAPS</h2><br>
 <form action="AnuncioControlador" method="POST">
 	<p>Ingrese el titulo del anuncio: <input type="text" name="nomanuncio" value="<%=request.getParameter("nomanuncio")!=null?request.getParameter("nomanuncio"):""%>"  />
 	<p>Ingrese la descripcion de su anuncio:<br>
@@ -17,5 +18,6 @@
 </form>
 <a href="Usuarios.jsp">Regrese al Menu Principal</a>
 <% request.getAttribute("estado"); %>
+</div>
 </body>
 </html>

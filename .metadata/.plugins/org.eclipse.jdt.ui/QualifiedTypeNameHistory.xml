@@ -12,14 +12,12 @@
 <fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="BD.ConsultaInformacionRepositorio"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="BD.ConsultaBloques"/>
 <fullyQualifiedTypeName name="BD.ConsultaOficinas"/>
 <fullyQualifiedTypeName name="BD.ConsultaHorarios"/>
 <fullyQualifiedTypeName name="BD.ActualizacionOficinasRepositorio"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Controlador.BloquesInfoControlador"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
@@ -34,4 +32,10 @@
 <fullyQualifiedTypeName name="Clases.Bloque"/>
 <fullyQualifiedTypeName name="Clases.Factory"/>
 <fullyQualifiedTypeName name="Clases.Administrador"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="BD.ConsultaPuntoReferencia"/>
+<fullyQualifiedTypeName name="Clases.PuntoReferencia"/>
+<fullyQualifiedTypeName name="Controlador.ConsultaRutasMapaControlador"/>
 </qualifiedTypeNameHistroy>

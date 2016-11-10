@@ -10,9 +10,10 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<h1>Consulte Informacion de Bloques</h1>
+<h2>Consulte Informacion de Bloques</h2>
 <form action ="BloquesInfoControlador" method="post">
-<br>Seleccione el Bloque:<select name="bloques" onchange="infobloques(this.value)">
+<br>Seleccione el Bloque:
+<select name="bloques" onchange="infobloques(this.value)">
 				    <option value="1">Seleccione un bloque</option> 
 				    <%ArrayList<Bloque> lista = (ArrayList<Bloque>)request.getAttribute("bloques");
                         for (Bloque h : lista) {
@@ -21,12 +22,13 @@
                     <%}
                     %>
                  </select>
-                 <br>  
+                 <br> <br> 
       			<div id='infobloque'>  
       			<select name='infobloque'>  
       			<option value='-1'></option>  
       			</select>  
-      			</div>                   
+      			</div>
+      			<br><a href="index.jsp">Regrese al menu principal</a>                  
 <script>
 function infobloques(str)
 {

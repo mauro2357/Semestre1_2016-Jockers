@@ -7,11 +7,10 @@
 <title>Ingreso Administrador</title>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 </head>
-<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<form action="AdministradorControlador" method="post">  
-        <fieldset style="width: 300px">  
-            <legend> Login en UCOMAPS </legend>  
+<form action="AdministradorControlador" method="post">        
+            <h2> Ingreso de Administradores </h2><br>
+              <fieldset style="width:300px"> 
             <table>  
                 <tr>  
                     <td>Nombre de Usuario</td>  
@@ -25,7 +24,7 @@
                     <td><input type="submit" value="Ingresar" /></td>  
                 </tr>  
             </table>  
-        </fieldset> 
+        </fieldset><br>
         <a href="Usuarios.jsp">Regresar al Menu Principal</a> 
     </form>
 </body>

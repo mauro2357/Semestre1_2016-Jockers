@@ -6,3 +6,4 @@ org.eclipse.jdt.core.compiler.compliance=1.7
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 org.eclipse.jdt.core.compiler.source=1.7
+org.eclipse.jdt.core.userLibrary.JSF\ 2.1\ (Mojarra\ 2.1.6-FCS)=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="C\:/Users/ISABELRINCON/Documents/GitHub/Semestre1_2016-Jockers/libraries/JSF 2.1 (Mojarra 2.1.6-FCS)/mojarra-2.1.6-FCS/lib/javax.faces.jar"/>\r\n</userlibrary>\r\n

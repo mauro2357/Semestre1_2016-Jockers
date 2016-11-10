@@ -8,7 +8,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Envie sus sugerencias a UcoMaps</h1>
+	<h2>Envie sus sugerencias a UcoMaps</h2><br>
 	<form action ="ReporteControlador" method="post">
 	<p>Seleccione:<br>
 	Sugerencia: <input type="radio" name="dato" value="Sugerencia" value="<%=request.getParameter("dato")!=null && request.getParameter("dato").equals("Sugerencia")?"selected='selected'":""%>" checked="checked"/><br>    

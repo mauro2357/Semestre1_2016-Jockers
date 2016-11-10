@@ -1,25 +1,28 @@
-@CHARSET "ISO-8859-1";
-
-
 body {
-    text-align: center;
-    background-color: #43AD74;
-    font-size: 20px;
+	margin: 0;
+	padding: 200px;
+	background: #fff url(images/relleno.jpg) repeat-x left top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
 }
 
-h1 {
-    font-family: "Courier new";
-    text-align: center;
-    color: black;
-    }
-h2 {
-    text-align: center;
-    color: grey;    
-    }   
+h1, h2, h3 {
+	margin: 0;
+	text-transform: capitalize
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #000000;
+}
 
-p {
-    text-align: left;
-    font-family: "Arial";
-    font-size: 15px;
-    color: black;
+h1 { font-size: 44px; }
+
+h2 { font-size: 25px; }
+
+h3 { }
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 100%;
+	text-align: justify;
 }
