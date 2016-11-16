@@ -8,7 +8,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<h1>Agregar una nueva imagen </h1>
+<h2>Agregar una nueva imagen </h2>
 <form method="post"  action="ImagenesUsuarioControlador">
 <p>Nombre de la imagen:<input type="text"  name ="nombre" value="<%=request.getParameter("nombre")!=null?request.getParameter("nombre"):""%>"  /><br/></p>
 <p>Buscar:<input type="file" name ="direccion" value="<%=request.getParameter("direccion")!=null?request.getParameter("direccion"):""%>"  /><br/> </p>

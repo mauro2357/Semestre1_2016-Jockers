@@ -7,11 +7,9 @@
 <title>cargar_imagen</title>
 </head>
 <body>
-<h1>guardar una nueva imagen </h1>
+<h2>guardar una nueva imagen </h2>
 <div class="caja">
 <form method="post"  action="ImagenesControlador"  enctype="multipar/form-data">
-
-
 <p> nombre de la imagen <input type="text"  name ="nombre" value="<%=request.getParameter("nombre")!=null?request.getParameter("nombre"):""%>"  /><br/></p>
 <p>buscar la direccion<input type ="file" name ="direccion"  value="<%=request.getParameter("direccion")!=null?request.getParameter("direccion"):""%>"  />/><br/> </p>
 <input type="submit"name ="boton" >

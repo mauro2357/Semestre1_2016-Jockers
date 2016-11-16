@@ -25,7 +25,7 @@
                 </tr>  
             </table>  
         </fieldset><br>
-        <a href="Usuarios.jsp">Regresar al Menu Principal</a> 
+	  <a href="VistaPrincipalControlador">Regrese al Menu Principal</a>
     </form>
 </body>
 </html>

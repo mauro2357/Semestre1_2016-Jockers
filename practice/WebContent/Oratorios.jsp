@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registrar oratorio en la aplicacion</h1>
+	<h2>Registrar oratorio en la aplicacion</h2>
 	<form action ="OratoriosControlador" method="post">
 	<p>Ingrese el nombre del oratorio: <input type="text" name="oranombre" value="<%=request.getParameter("oranombre")!=null?request.getParameter("oranombre"):""%>"  />	
 	<br>	

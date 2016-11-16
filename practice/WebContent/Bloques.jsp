@@ -8,7 +8,7 @@
 	</head>
 	<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 	<body>
-	<h1>Registrar nuevo bloque en UCOMAPS</h1>
+	<h2>Registrar nuevo bloque en UCOMAPS</h2>
 <form action="BloquesControlador" method="POST"> 
 	<p>Ingrese el nombre del bloque: <input type="text" name="nombloque" value="<%=request.getParameter("nombrebloque")!=null?request.getParameter("nombloque"):""%>"  />
 	<p>Ingrese el numero de pisos: <input type="text" name="numpiso" value="<%=request.getParameter("numpisos")!=null?request.getParameter("numpisos"):""%>"  />

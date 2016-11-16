@@ -11,7 +11,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registre oficinas en la aplicacion</h1>
+	<h2>Registre oficinas en la aplicacion</h2>
 	<form action="OficinasControlador" method="post">
 	<p>Ingrese el nombre de la oficina: <input type="text" name="ofinombre" value="<%=request.getParameter("ofinombre")!=null?request.getParameter("ofinombre"):""%>"  />	
 	<br>

@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registre la facultad en la aplicacion</h1>
+	<h2>Registre la facultad en la aplicacion</h2>
 	<form action="FacultadControlador" method="post">
 	<p>Ingrese el nombre de la facultad: <input type="text" name="facunombre" value="<%=request.getParameter("facunombre")!=null?request.getParameter("facunombre"):""%>"  />
 	<br>	

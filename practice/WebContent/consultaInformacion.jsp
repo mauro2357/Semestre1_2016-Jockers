@@ -31,7 +31,6 @@
       			<option value='-1'></option>  
       			</select>  
       			</div>
-      			<br><a href="index.jsp">Regrese al menu principal</a>                  
 <script>
 function infobloques(str)
 {
@@ -58,11 +57,7 @@ function stateChange(){
 	}
 }
 </script>
-
-
-
-	
-			</div>
+</div>
 			
 		<div id="sidebar">			
 			<h2>Informacion Aulas</h2>
@@ -111,7 +106,9 @@ function stateChange(){
 	       <p>
             </div>
 		<div style="clear: both;">&nbsp;</div>
+			<a href="VistaPrincipalControlador">Regrese al Menu Principal</a>
+		
 	</div>
-	</div>
+	</div><br>
 </body>
 </html>

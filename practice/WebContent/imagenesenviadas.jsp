@@ -7,7 +7,7 @@
 <title>enviar imagenes</title>
 </head>
 <body>
-<h1>sugerir una nueva imagen </h1>
+<h2>sugerir una nueva imagen </h2>
 <div class="caja">
 <form method="post"  action="ImagenesSugeridasControlador"  enctype="multipar/form-data">
 <p> ingrese un nombre a la imagen <input type="text"  name ="nombre" value="<%=request.getParameter("nombre")!=null?request.getParameter("nombre"):""%>"  /> /><br/></p>

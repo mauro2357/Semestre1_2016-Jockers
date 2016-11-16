@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registre un parqueadero en la aplicacion</h1>
+	<h2>Registre un parqueadero en la aplicacion</h2>
 	<form action="ParqueaderosControlador" method="post">
 	<p>Ingrese el nombre del parqueadero: <input type="text" name="parnombre" value="<%=request.getParameter("parnombre")!=null?request.getParameter("parnombre"):""%>"  />	
 	<br>	

@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<h1>Imagenes UcoMaps</h1>
+<h2>Imagenes UcoMaps</h2>
 <table style = "width:100%">
             <thead>
             	<tr>

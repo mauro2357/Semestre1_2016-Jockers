@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import BD.ConsultaPuntoReferencia;
-import Clases.PuntoReferencia;
 
 /**
  * Servlet implementation class ConsultaRutasMapaControlador

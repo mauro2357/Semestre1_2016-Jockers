@@ -8,7 +8,7 @@
 	</head>
 	<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 	<body>
-	<h1>Registrar Usuario</h1>
+	<h2>Registrar Usuario</h2>
 <form action="ServicioControlador" method="POST"> 
 	<p>Ingrese el ID: <input type="text" name="id" value="<%=request.getParameter("id")!=null?request.getParameter("id"):""%>"  />
 	<p>Ingrese el Nombre: <input type="text" name="nombre" value="<%=request.getParameter("nombre")!=null?request.getParameter("nombre"):""%>"  />

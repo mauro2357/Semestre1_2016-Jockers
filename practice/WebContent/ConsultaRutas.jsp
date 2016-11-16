@@ -22,6 +22,6 @@ Seleccione Ruta: <select name="rutas">
                 </select><br>
                 <br>
                 <p><input type="submit" name="Generar" value="Generar"/><br><br>
-                <a href="Usuarios.jsp">Regrese al Menu Principal</a>
+                <a href="VistaPrincipalControlador">Regrese al Menu Principal</a>
                 </body>
 </html>

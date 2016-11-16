@@ -37,10 +37,10 @@ public class ConsultaPuntoReferencia {
     rs.close();  
     return listaPuntos; 
 	}
-	 public String GetVectorScript() throws Exception{
+	 public String GetVectorScript(String ruta) throws Exception{
 		 Connection con = new Conexion().obtenerConexion();
 		 PreparedStatement pst = null;
-	        pst = con.prepareStatement("Select * from puntos_referencia"); 
+	        pst = con.prepareStatement("select * from puntos_referencia where pun_nombre like '%"+ruta+"%'"); 
 	        ResultSet  rs=pst.executeQuery();
 	        rs.next();
 	        String Retorno ="[";

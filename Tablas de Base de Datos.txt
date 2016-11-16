@@ -238,7 +238,9 @@ ALTER TABLE reportes CHANGE COLUMN rep_consecutivo rep_consecutivo INT(11) NOT N
 CREATE TABLE puntos_referencia (
   pun_nombre varchar(100) NOT NULL,
   pun_latitud double NOT NULL,
-  pun_longitud double NOT NULL
+  pun_longitud double NOT NULL,
+  pun_ruta varchar(100) NOT NULL,
+  pun_id Int NOT NULL AUTO_INCREMENT 
 );
 
 ALTER TABLE puntos_referencia ADD PRIMARY KEY (pun_nombre);

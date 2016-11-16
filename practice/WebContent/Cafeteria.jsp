@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registre la cafeteria en la aplicacion</h1>
+	<h2>Registre la cafeteria en la aplicacion</h2>
 	<form action="CafeteriaControlador" method ="post">
 	<p>Ingrese el nombre de la cafeteria: <input type="text" name="cafnombre" value="<%=request.getParameter("cafnombre")!=null?request.getParameter("cafnombre"):""%>"  />	
 	<br>	

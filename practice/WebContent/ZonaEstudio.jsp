@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registre una zona estudio en la aplicacion</h1>
+	<h2>Registre una zona estudio en la aplicacion</h2>
 	<form action="ZonaEstudioControlador" method="post">
 	<p>Ingrese el nombre de la zona de estudio: <input type="text" name="zonanom" value="<%=request.getParameter("zonanom")!=null?request.getParameter("zonanom"):""%>"  />
 	<br>	

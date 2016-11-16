@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,7 +23,7 @@
 	Otro: <input type="radio" name="datou" value="Otro" value="<%=request.getParameter("datou")!=null?request.getParameter("datou"):""%>" /><br>	
 	<p><input type="submit" name="Ingresar" value="Enviar"/>
 </form>
-<a href="Usuarios.jsp">Regrese al Menu Principal</a>
+<a href="VistaPrincipalControlador">Regrese al Menu Principal</a>
 <% request.getAttribute("estado"); %>
 </body>
 </html>

@@ -11,7 +11,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registrar un laboratorio en la aplicacion</h1>
+	<h2>Registrar un laboratorio en la aplicacion</h2>
 	<form action ="LaboratoriosControlador" method="post">
 	<p>Ingrese el nombre del laboratorio: <input type="text" name="nomlab" value="<%=request.getParameter("nomlab")!=null?request.getParameter("nomlab"):""%>"  />	
 	<br>	

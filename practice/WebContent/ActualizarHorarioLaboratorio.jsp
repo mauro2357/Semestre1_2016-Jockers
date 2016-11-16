@@ -11,7 +11,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<h1>Actualice Horario del Laboratorio</h1>
+<h2>Actualice Horario del Laboratorio</h2>
 <form action ="ActualizacionLaboratoriosControlador" method="post">
 Seleccione Laboratorio: <select name="laboratorio"> 
                     <%ArrayList<Laboratorio> lista = (ArrayList<Laboratorio>)request.getAttribute("laboratorio");

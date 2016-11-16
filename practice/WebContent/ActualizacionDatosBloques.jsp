@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<h1>Actualice Informacion del Bloque</h1>
+<h2>Actualice Informacion del Bloque</h2>
 <form action ="ActualizacionBloquesControlador" method="post">
 <br>Selecciones el Bloque:<select name="bloques"> 
                    <%ArrayList<Bloque> lista = (ArrayList<Bloque>)request.getAttribute("bloques");

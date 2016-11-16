@@ -8,7 +8,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<h1>Agregar Imagen</h1>
+<h2>Agregar Imagen</h2>
 <div class="caja">
 <form method="post"  action="ImagenesAdministradorControlador"  enctype="multipar/form-data">
 <p>Nombre:<input type="text"  name ="nombre" value="<%=request.getParameter("nombre")!=null?request.getParameter("nombre"):""%>"/><br/></p>

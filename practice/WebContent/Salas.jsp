@@ -11,7 +11,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registre un centro de informatica</h1>
+	<h2>Registre un centro de informatica</h2>
 	<form action="SalasControlador" method ="post">
 	<p>Ingrese el nombre del centro informatico: <input type="text" name="nomsala" value="<%=request.getParameter("nomsala")!=null?request.getParameter("nomsala"):""%>"  />	
 	<br>	

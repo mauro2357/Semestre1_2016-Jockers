@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registre un auditorio en la aplicacion</h1>
+	<h2>Registre un auditorio en la aplicacion</h2>
 	<form action ="AuditoriosControlador" method="post">
 	<p>Ingrese el nombre del auditorio: <input type="text" name="audnombre" value="<%=request.getParameter("audnombre")!=null?request.getParameter("audnombre"):""%>"  />	
 	<br>

@@ -15,8 +15,8 @@
 	<p>Ingrese la descripcion de su anuncio:<br>
 	<br><textarea name="descanuncio" rows="10" cols="30"></textarea>
 	<p><input type="submit" name="Ingresar" value="Enviar"/>
-</form>
-<a href="Usuarios.jsp">Regrese al Menu Principal</a>
+</form><br>
+<a href="VistaPrincipalControlador">Regrese al Menu Principal</a>
 <% request.getAttribute("estado"); %>
 </div>
 </body>

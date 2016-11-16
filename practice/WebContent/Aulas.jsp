@@ -10,7 +10,7 @@
 	</head>
 	<link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 	<body>
-	<h1>Registrar nueva aula en UCO-Maps</h1>
+	<h2>Registrar nueva aula en UCO-Maps</h2>
 	<form action="AulasControlador" method ="post">
 	<p>Ingrese el nombre del aula: <input type="text" name="nomaula" value="<%=request.getParameter("nomaula")!=null?request.getParameter("nomaula"):""%>"  />
 	<br>

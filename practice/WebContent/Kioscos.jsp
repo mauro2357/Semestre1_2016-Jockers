@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-	<h1>Registrar kiosco en la aplicacion</h1>
+	<h2>Registrar kiosco en la aplicacion</h2>
 	<form action = "KioscosControlador" method="post">
 	<p>Ingrese el nombre del kiosco: <input type="text" name="kionombre" value="<%=request.getParameter("kionombre")!=null?request.getParameter("kionombre"):""%>"  />	
 	<br>

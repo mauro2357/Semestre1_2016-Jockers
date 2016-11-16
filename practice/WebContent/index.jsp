@@ -15,17 +15,17 @@
 <div id="wrapper">
 	<div id="logo">
 		<h1>UcoMaps</h1>
-		<p><em>Aplicacion<a href="http://www.freecsstemplates.org/"></a></em></p>
+		<p><em>Aplicación<a href="http://www.freecsstemplates.org/"></a></em></p>
 	</div>
 	<hr />
 	<!-- end #logo -->
 	<div id="header">
 		<div id="menu">
 			<ul>
-				<li><a href="PuntoReferenciaControlador">Mapas</a></li>
+				<li><a href="ConsultaPuntos.jsp">Mapas</a></li>
 				<li><a href="ConsultaRutasMapaControlador">Rutas</a></li>
 				<li><a href="ConsultaHorariosControlador">Consulte Horarios</a></li>
-				<li><a href="InformacionLugaresControlador">Consulte Informacion</a></li>
+				<li><a href="InformacionLugaresControlador">Consulte Información</a></li>
 				<li><a href="Reportes.jsp">Contacto</a></li>
 				<li><a href="Administrador.jsp">Login</a></li>
 			</ul>
@@ -52,11 +52,11 @@
 				}
 				</script>
 				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdXWWU2BPWI7i2_6UPhZM9Ru5nfGtU23w&callback=myMap"></script>				
-			    <br><p>Gracias por usar la aplicacion, proximamente disponible para moviles.</p>
+			    <br><p>Gracias por usar la aplicación, próximamente disponible para móviles.</p>
 			  	</div>
 			</div>
 			<div class="post">
-			  <h2 class="title"><a href="#">Galeria de Imagenes</a></h2>
+			  <h2 class="title"><a href="#">Galería de Imágenes</a></h2>
 					  <table style = "width:100%">
             <thead>
             	<tr>
@@ -74,7 +74,7 @@
 				%>
 				  </tbody>
 				</table>
-				<br><a href="#">Envie sus imagenes</a>
+				<br><a href="#">Envíe sus imágenes</a>
 			  </div>
 			</div>
 	</div>
@@ -103,11 +103,11 @@
 				%>
 				  </tbody>
 				</table><br>
-				<a href='Anuncios.jsp'>Envie un anuncio. Click aqui</a><br><br>		
+				<a href='Anuncios.jsp'>Envíe su anuncio. Clic aquí</a><br><br>		
 					<h2>Aliados</h2>
 					<ul>
-						<li><a href="http://www.uco.edu.co/Paginas/home.aspx">Universidad Catolica de Oriente</a></li>
-						<li><a href="https://www.facebook.com/isuco/?fref=ts">Ingenieria de Sistemas Uco</a></li>
+						<li><a href="http://www.uco.edu.co/Paginas/home.aspx">Universidad Católica de Oriente</a></li>
+						<li><a href="https://www.facebook.com/isuco/?fref=ts">Ingeniería de Sistemas Uco</a></li>
 						<li><a href="https://developers.google.com/maps/?hl=es-419">API de Google Maps</a></li>
 					</ul>
 				</li>

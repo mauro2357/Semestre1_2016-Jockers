@@ -11,7 +11,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="estilo1.css" media="screen"/>
 <body>
-<h1>Agregue una nueva materia</h1>
+<h2>Agregue una nueva materia</h2>
 	<form action ="MateriasControlador" method="post">
 	<p>Ingrese el nombre de la Materia: <input type="text" name="matnombre" value="<%=request.getParameter("matnombre")!=null?request.getParameter("matnombre"):""%>"  />	
 	<br>

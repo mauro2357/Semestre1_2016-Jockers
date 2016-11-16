@@ -58,8 +58,9 @@
                 
 			</div>
 		<div style="clear: both;">&nbsp;</div>
+		<a href="VistaPrincipalControlador">Regrese al Menu Principal</a>
 		</div>
 	</div>
-	</div>
+	</div><br>
 </body>
 </html>
