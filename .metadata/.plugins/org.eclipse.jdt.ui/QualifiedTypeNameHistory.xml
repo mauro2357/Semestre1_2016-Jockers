@@ -34,8 +34,9 @@
 <fullyQualifiedTypeName name="Clases.Administrador"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="BD.ConsultaPuntoReferencia"/>
 <fullyQualifiedTypeName name="Clases.PuntoReferencia"/>
 <fullyQualifiedTypeName name="Controlador.ConsultaRutasMapaControlador"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>

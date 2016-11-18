@@ -1,29 +1,24 @@
 package Clases;
 
-import java.io.FileInputStream;
+import BD.ImagenesSugeridasRepositorio;
 
-public class ImagenesSugeridas {
-	
+public class ImagenesSugeridas {	
 		private String nombre;
-		private FileInputStream direccion;
+		private String direccion;
 		private String correo;
-		private String  usuario;
-		
-		
-		
-		public FileInputStream getdireccion() {
-			return direccion;
-		}
-		public void setDireccion_imagen(FileInputStream direccion) {
-			this.direccion = direccion;
-		}
-		
+		private String usuario;
 		
 		public String getNombre() {
 			return nombre;
 		}
 		public void setNombre(String nombre) {
 			this.nombre = nombre;
+		}
+		public String getDireccion() {
+			return direccion;
+		}
+		public void setDireccion(String direccion) {
+			this.direccion = direccion;
 		}
 		public String getCorreo() {
 			return correo;
@@ -36,21 +31,15 @@ public class ImagenesSugeridas {
 		}
 		public void setUsuario(String usuario) {
 			this.usuario = usuario;
-		}
-		
-		public  ImagenesSugeridas (String nombre ,FileInputStream direccion,String correo,String usuario){
+		}		
+		public ImagenesSugeridas (String nombre ,String direccion,String correo,String usuario){
 		    super();
 			this.nombre=nombre;
 			this.direccion=direccion;
 			this.correo=correo;
 			this.usuario=usuario;
-			
-			
-			
 		}
-			
-				
+		public void agregar() throws Exception {
+			ImagenesSugeridasRepositorio.agregar(this);			
 		}
-
-
-
+}

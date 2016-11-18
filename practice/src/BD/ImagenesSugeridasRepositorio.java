@@ -2,39 +2,13 @@ package BD;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import Clases.ImagenesSugeridas;
 
-public class ImagenesSugeridasRepositorio {	
-
-	public static boolean guardar (ImagenesSugeridas imagenA) throws Exception {          
-        boolean status = false;  
-        Connection con = new Conexion().obtenerConexion();  
-        PreparedStatement pst = con.prepareStatement("insert into imagenes_sugeridas values(?,?,?,?)");
-        pst.setString(1, imagenA.getNombre());  
-        pst.setBlob(2, imagenA.getdireccion());
-        pst.setString(3, imagenA.getCorreo());
-        pst.setString(4, imagenA.getUsuario());
-        System.out.println(pst);
+public class ImagenesSugeridasRepositorio {
+	public static void agregar (ImagenesSugeridas imagen1) throws Exception {          
+		Connection con = new Conexion().obtenerConexion();  
+        PreparedStatement pst = con.prepareStatement("INSERT INTO imagenes_sugeridas(imasug_imagen,imasug_nombre,imasug_usuario,imasug_correo) VALUES ('"+ imagen1.getUsuario()+ "','"+ imagen1.getCorreo()+ "','"+ imagen1.getNombre()+ "','"+ imagen1.getDireccion()+ "')");
         pst.execute();
-        pst.close();            
-  
-         if (con != null) {  
-                try {  
-                    con.close();  
-                } catch (SQLException e) {  
-                    e.printStackTrace();  
-                }  
-            }  
-            if (pst != null) {  
-                try {  
-                    pst.close();  
-                } catch (SQLException e) {  
-                    e.printStackTrace();  
-                }  
-            }        
-        return status;  
-    }
-
-	
+        pst.close();
+	}
 }

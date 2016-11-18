@@ -9,20 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.ConsultaAnuncios;
-import BD.VistaImagenesRepositorio;
+import BD.ConsultaLaboratorios;
+import BD.ConsultaOficinas;
+import BD.ConsultaSala;
 
 /**
- * Servlet implementation class VistaPrincipalControlador
+ * Servlet implementation class ConsultaLugaresControlador
  */
-@WebServlet("/VistaPrincipalControlador")
-public class VistaPrincipalControlador extends HttpServlet {
+@WebServlet("/ConsultaLugaresControlador")
+public class ConsultaLugaresControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public VistaPrincipalControlador() {
+    public ConsultaLugaresControlador() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,17 +33,17 @@ public class VistaPrincipalControlador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("UbicacionLugares.jsp");
        	try {
-       		request.setAttribute("imagenes", VistaImagenesRepositorio.getImagenTabla());
-			request.setAttribute("anuncios", ConsultaAnuncios.getAnuncios());			
+			request.setAttribute("laboratorios", ConsultaLaboratorios.getLaboratoriosL());
+			request.setAttribute("oficinas", ConsultaOficinas.getOficinasL());
+			request.setAttribute("salas", ConsultaSala.getSalasL());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         rd.forward(request, response);
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

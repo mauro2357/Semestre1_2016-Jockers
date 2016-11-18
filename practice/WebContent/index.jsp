@@ -24,8 +24,9 @@
 			<ul>
 				<li><a href="ConsultaPuntos.jsp">Mapas</a></li>
 				<li><a href="ConsultaRutasMapaControlador">Rutas</a></li>
-				<li><a href="ConsultaHorariosControlador">Consulte Horarios</a></li>
-				<li><a href="InformacionLugaresControlador">Consulte Información</a></li>
+				<li><a href="ConsultaHorariosControlador">Horarios</a></li>
+				<li><a href="ConsultaLugaresControlador">Ubicación Lugares</a></li>
+				<li><a href="InformacionLugaresControlador">Información</a></li>
 				<li><a href="Reportes.jsp">Contacto</a></li>
 				<li><a href="Administrador.jsp">Login</a></li>
 			</ul>
@@ -68,13 +69,13 @@
 				for (int i=0;i<lista.size();i++)
 				{
 				   out.println("<tr>");
-				   out.println("<td>"+lista.get(i).getdireccion()+"</td>");
+				   out.println("<td>"+lista.get(i).getPhoto()+"</td>");
 				   out.println("</tr>");
 				}
 				%>
 				  </tbody>
 				</table>
-				<br><a href="#">Envíe sus imágenes</a>
+				<br><a href="GuardarImagenesUsuario.jsp">Envíe sus imágenes</a>
 			  </div>
 			</div>
 	</div>

@@ -9,11 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import BD.ConsultaImagenes;
+import BD.VistaImagenesRepositorio;
 
-/**
- * Servlet implementation class ConsultaImagenesControlador
- */
 @WebServlet("/ConsultaImagenesControlador")
 public class ConsultaImagenesControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,7 +30,7 @@ public class ConsultaImagenesControlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd = request.getRequestDispatcher("ConsultaImagenes.jsp");
        	try {
-			request.setAttribute("imagenes", ConsultaImagenes.getImagenes());
+			request.setAttribute("imagenes", VistaImagenesRepositorio.getImagen());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,44 +1,36 @@
 package Clases;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-
 import BD.IImagenesRepositorio;
 
-
 public class Imagen {
-private IImagenesRepositorio imagenesRepositorio;
-	
-	public Imagen(IImagenesRepositorio ImagenesRepositorio) {
-		this.imagenesRepositorio=ImagenesRepositorio; 
-	}
 	private String nombre;
-	private InputStream direccion;	
+	private String photo;
+	private IImagenesRepositorio imagenesRepositorio;
 	
-	public InputStream getdireccion() {
-		return direccion;
+	public String getPhoto() {
+		return photo;
 	}
-	public void setDireccion_imagen(FileInputStream direccion) {
-		this.direccion = direccion;
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 	public String getNombre() {
-	return nombre;
+		return nombre;
 	}
 	public void setNombre(String nombre) {
-	this.nombre = nombre;
+		this.nombre = nombre;
 	}	
-	public Imagen (BD.ImagenesRepositorio imagenesRepositorio, String nombre, InputStream direccion) {
-		super();
-		this.imagenesRepositorio=imagenesRepositorio;	
-		this.nombre=nombre;
-		this.direccion=direccion;
-		
+	public IImagenesRepositorio getImagenesRepositorio() {
+		return imagenesRepositorio;
 	}
-	
-	public Imagen(String string, InputStream unicodeStream) {
-		// TODO Auto-generated constructor stub
+	public void setImagenesRepositorio(IImagenesRepositorio imagenesRepositorio) {
+		this.imagenesRepositorio = imagenesRepositorio;
+	}
+	public Imagen(IImagenesRepositorio ImagenesRepositorio, String nombre, String photo) {
+		this.imagenesRepositorio=ImagenesRepositorio;
+		this.nombre=nombre;
+		this.photo=photo;
 	}
 	public void agregar() throws Exception {
-		imagenesRepositorio.agregar(this);  
-		}
+		imagenesRepositorio.agregar(this);
+	}
 }

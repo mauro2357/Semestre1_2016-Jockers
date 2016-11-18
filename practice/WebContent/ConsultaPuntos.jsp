@@ -11,7 +11,8 @@
 Seleccione puntos: <select name="rutas">                                    
                     <option value="Bloque">Bloques</option> 
                     <option value="Cancha">Escenarios Deportivos</option> 
-                    <option value="Porteria">Porterias</option>                    
+                    <option value="Porteria">Porterias</option> 
+                    <option value="Parqueadero">Parqueaderos</option>                   
                     </select><br>
                 <br>
                 <p><input type="submit" name="Generar" value="Generar"/><br><br>
